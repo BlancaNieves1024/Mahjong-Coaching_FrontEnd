@@ -1,0 +1,26 @@
+{
+    "kyoku": "East 4",
+    "turn": 6,
+    "tehai": [
+        "4m",
+        "5m",
+        "6m",
+        "7m",
+        "6p",
+        "6p",
+        "3s",
+        "3s",
+        "4s",
+        "4s",
+        "5s",
+        "c",
+        "c",
+        "3m"
+    ],
+    "player_discard": "5s",
+    "player_ev": 60.14213,
+    "ai_discard": "c",
+    "ai_ev": 65.02212,
+    "loss": 4.87999,
+    "commentary": "ここにAIからのコメントが入ります。"
+}

@@ -100,7 +100,8 @@ def extract_max_loss_turn(html_path):
                     "player_ev": round(player_ev, 5),
                     "ai_discard": get_tile_id(ai_best_row.find("use")),
                     "ai_ev": round(ai_ev, 5),
-                    "loss": round(loss, 5)
+                    "loss": round(loss, 5),
+                    "commentary": "ここにAIからのコメントが入ります。"
                 }
     return max_loss_data
 
@@ -116,3 +117,9 @@ if __name__ == "__main__":
     # 処理を実行
     result = extract_max_loss_turn(html_file_path)
     print(json.dumps(result, indent=4, ensure_ascii=False))
+
+    # JSONファイルとして保存
+    with open('data.json', 'w', encoding='utf-8') as f:
+        json.dump(result,f, indent=4, ensure_ascii=False)
+
+    print("data.json を出力しました。")
