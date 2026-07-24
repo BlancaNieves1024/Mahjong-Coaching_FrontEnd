@@ -111,12 +111,14 @@
 </div>
 
 <script>
+    // 💡 関数を小分けにする「センスの良い」JavaScriptの記述例
     const errorArea = document.getElementById('errorArea');
     const urlInput = document.getElementById('urlInput');
     const submitBtn = document.getElementById('submitBtn');
 
-    // 1. バリデーション関数
+    // 1. バリデーション関数（ダメならエラー文字を返す、通れば空文字を返す）
     function validateUrl(url) {
+        // 早期リターン（Early Return）の考え方を適用
         if (!url) {
             return "URLを入力してください";
         }
@@ -126,56 +128,35 @@
         if (!url.includes("mahjongsoul") && !url.includes("tenhou.net")) {
             return "雀魂または天鳳の有効な牌譜URLを入力してください";
         }
-        return "";
+        return ""; // エラーなし
     }
 
-    // 2. メインの解析処理（バックエンドへ送信）
-    async function startAnalysis() {
+    // 2. メインの解析処理（送信ボタンが押された時の動き）
+    function startAnalysis() {
         const urlValue = urlInput.value.trim();
         
-        // バリデーションチェック
+        // 入力チェックの実行
         const errorMessage = validateUrl(urlValue);
+        
         if (errorMessage) {
+            // エラーがあったら画面に表示して処理を終了（早期リターン）
             errorArea.innerText = errorMessage;
             return;
         }
 
+        // 正常な場合：エラーを消し、ローディング状態（非活性化）にする
         errorArea.innerText = "";
         setLoadingState(true);
 
-        try {
-            // Flask側のエンドポイント（例: /api/analyze）へPOSTリクエストを送信
-            const response = await fetch('/api/analyze', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                // URLデータをJSON形式に変換してボディに格納
-                body: JSON.stringify({ url: urlValue }),
-            });
-
-            if (!response.ok) {
-                throw new Error('サーバー側でエラーが発生しました');
-            }
-
-            // バックエンドから返ってきた結果（JSON）を取得
-            const result = await response.json();
-            console.log('解析結果:', result);
-
-            alert("バックエンドへの送信が成功しました！");
-            
-            // 本番ではここで結果画面に遷移したり、結果データを描画する処理を挟みます
-
-        } catch (error) {
-            console.error('通信エラー:', error);
-            errorArea.innerText = "通信に失敗しました。時間をおいて再度お試しください。";
-        } finally {
-            // 成功・失敗にかかわらずローディング状態を解除
+        // 趣味のチーム開発用の模擬API通信（2.5秒後に結果が出たと仮定）
+        setTimeout(() => {
+            alert("バックエンドへURLの送信が成功しました！\n送信データ: " + JSON.stringify({ url: urlValue }));
             setLoadingState(false);
-        }
+            // 本番ではここで「出力画面」に画面遷移（Router等）させます
+        }, 2500);
     }
 
-    // 3. UIの状態を制御する関数
+    // 3. UIのステート（状態）を制御する関数
     function setLoadingState(isLoading) {
         if (isLoading) {
             submitBtn.disabled = true;
