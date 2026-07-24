@@ -6,6 +6,7 @@
 
 * **Flaskによるサーバーサイドレンダリング構成**
 * プロジェクト構成を app.py と templates/（index.html / template.html）に整理し、Python（Flask）を軸にしたシンプルなMVCライクな構造を採用。
+* 時間に余裕があれば03_InputOutputHTMLの仕様をREADMEから説明する。
 
 
 * **関心事の分離（データ処理と可視化の連携）**
