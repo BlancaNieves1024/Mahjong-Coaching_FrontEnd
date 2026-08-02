@@ -31,6 +31,9 @@ def analyze():
     url = request.form.get("url")
     print(f"受け取ったURL: {url}")
 
+# --- 500エラーのテスト用にあえて例外を発生させる ---
+    #raise Exception("テスト用の強制エラーです")
+
     # --- 【あなたのお手元のコードをここに組み込むイメージ】 ---
     # 本来はここでURLからデータを抽出して data.json を作る処理が入ります
     # 今回のデモでは、ダミーの result データを用意します
@@ -43,6 +46,7 @@ def analyze():
         "loss": 5.31,
         "commentary": "ここにAIからのコメントが入ります。"
     }
+
 
     # 一時的に data.json に保存する処理（お手元のコードの再現）
     with open("data.json", "w", encoding="utf-8") as f:
@@ -62,5 +66,41 @@ def analyze():
     return render_template("template.html", **data)
 
 
+# --- エラーハンドラーの設定 ---
+
+# 404エラー（ページが見つからない場合）
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template(
+        "error.html",
+        error_code="404",
+        error_title="ページが見つかりません",
+        error_message="お探しのページは移動または削除されたか、URLが間違っている可能性があります。"
+    ), 404
+
+# 400エラー（不正なリクエスト等の場合）
+@app.errorhandler(400)
+def bad_request(e):
+    return render_template(
+        "error.html",
+        error_code="400",
+        error_title="不正なリクエストです",
+        error_message="送信されたデータに誤りがあるか、処理できない形式のリクエストです。"
+    ), 400
+
+# 500エラー（サーバー内部で予期せぬエラーが発生した場合）
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template(
+        "error.html",
+        error_code="500",
+        error_title="サーバーエラーが発生しました",
+        error_message="バックエンド側で問題が発生しました。しばらく時間を置いてから再度お試しください。"
+    ), 500
+
+
+
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
+# 500エラー（サーバー内部で予期せぬエラーが発生した場合）を発生させるテスト時にコメントアウトする
+    #app.run(debug=False, port=5000)
