@@ -12,7 +12,7 @@ TILE_MAP = {
     '1s': '🀐', '2s': '🀑', '3s': '🀒', '4s': '🀓', '5s': '🀔', '6s': '🀕', '7s': '🀖', '8s': '🀗', '9s': '🀘',
     '5mr': '🀋(赤)','5pr': '🀝(赤)', '5sr': '🀔(赤)',# 赤ドラ
     'e': '🀀', 's_n': '🀁', 'w': '🀂', 'n': '🀃',
-    'h': '🀆', 'f': '🀅', 'c': '🀄'
+    'h': '🀆', 'f': '🀅', 'c': '🀄\uFE0E'
 }
 def convert_tiles(tile_code):
     return TILE_MAP.get(tile_code, f"[{tile_code}]")
@@ -37,7 +37,7 @@ def analyze():
     result = {
         "kyoku": "東1局",
         "turn": 8,
-        "tehai": ["4m", "6m", "9p", "9p", "3s", "3s", "4s", "4s", "5s", "7s", "8s", "8s", "e", "1s"],
+        "tehai": ["4m", "6m", "9p", "9p", "3s", "3s", "4s", "4s", "5s", "7s", "8s", "8s", "c", "1s"],
         "player_discard": "6m",
         "ai_discard": "1s",
         "loss": 5.31,
