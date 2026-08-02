@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>麻雀 AI牌譜添削ツール - 解析結果</title>
     <style>
-        /* 💡 将来の複数局面対応を見据えたレイアウト（Grid / Flexbox）の定義 */
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             background-color: #f4f7f6;
@@ -13,16 +12,6 @@
             margin: 0;
             display: flex;
             min-height: 100vh;
-        }
-
-        /* 将来用のサイドバー（MVPでは非表示）
-           将来的にはここに「1局目」「2局目」のリストが入るスペースを確保 */
-        .sidebar-space {
-            display: none; /* 👈 将来全出力対応するときはここを flex に変更 */
-            width: 200px;
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px;
         }
 
         .main-content {
@@ -43,7 +32,6 @@
             box-sizing: border-box;
         }
 
-        /* 局面ヘッダー */
         .header-area {
             border-bottom: 2px solid #ecf0f1;
             padding-bottom: 15px;
@@ -56,7 +44,6 @@
             margin: 0;
         }
 
-        /* 手牌表示エリア */
         .tiles-area {
             background-color: #e8f4f8;
             padding: 12px;
@@ -67,15 +54,21 @@
             margin-bottom: 20px;
             color: #2980b9;
         }
-        /* 牌のフォントサイズを大きくするスタイル */
+        
+/* 牌のフォントサイズを調整するスタイル */
         .tile-font {
-            font-size: 2.5em; /* 数値を大きくすると牌も大きくなります */
+            font-size: 1.5em; /* 2.5em から小さく変更（例: 1.5em ~ 1.8em） */
             line-height: 1;
             vertical-align: middle;
-            margin: 0 2px;    /* 牌同士の間隔 */
+            margin: 0 -5px;    /* 牌同士の間隔も必要に応じて狭める */
+        }
+
+        /* 💡 赤ドラ用のスタイル（赤みと、必要に応じて微調整） */
+        .red-tile {
+            color: #e74c3c !important;
+            text-shadow: 0 0 2px rgba(231, 76, 60, 0.3);
         }
             
-        /* 打牌比較（実打牌 vs 推奨打牌） */
         .comparison-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -107,7 +100,6 @@
         .box-user .tile-name { color: #c0392b; }
         .box-ai .tile-name { color: #27ae60; }
 
-        /* q_value 期待値差分 */
         .q-value-badge {
             background-color: #e67e22;
             color: white;
@@ -115,11 +107,10 @@
             border-radius: 20px;
             font-size: 14px;
             font-weight: bold;
-            display: inline-block;
+            display: inline-box;
             margin-bottom: 20px;
         }
 
-        /* LLM解説エリア */
         .commentary-area {
             background-color: #f9f9f9;
             border-left: 4px solid #3498db;
@@ -129,24 +120,6 @@
             line-height: 1.6;
         }
 
-        /* ノーミス（完璧な対局）時のお祝いスタイル */
-        .perfect-message {
-            display: none;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        .perfect-title {
-            font-size: 24px;
-            color: #27ae60;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .perfect-badge {
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
-
-        /* ボタン類 */
         .btn-back {
             display: inline-block;
             width: 100%;
@@ -166,102 +139,50 @@
         .btn-back:hover {
             background-color: #95a5a6;
         }
-
-        /* デモ切り替え用スイッチ（画面最上部に固定） */
-        .demo-switcher {
-            margin-bottom: 20px;
-            background: #e2e8f0;
-            padding: 10px;
-            border-radius: 8px;
-        }
-        .demo-switcher button {
-            margin: 0 5px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
 
-<!-- 将来用のサイドバースペース（CSSで現在は非表示、全出力時に活用） -->
-<div class="sidebar-space">
-    <h3>指摘局面一覧</h3>
-    <p>#1 東1局 5巡目</p>
-</div>
-
 <div class="main-content">
-    <!-- デモ状態切り替えスイッチ -->
-    <div class="demo-switcher">
-        <span>【デモ用状態切替】: </span>
-        <button onclick="toggleState('review')">添削ありパターン(MVP)</button>
-        <button onclick="toggleState('perfect')">ノーミスお祝いパターン</button>
+    <div class="container">
+        <div class="header-area">
+            <div class="episode-title">{{ kyoku }} {{ turn }}巡目</div>
+        </div>
+
+        <!-- 手牌の表示（赤ドラは .red-tile で赤く染める） -->
+        <div class="tiles-area">
+            手牌: 
+            <span class="tile-font">
+                {% for tile in tehai_data %}
+                    <span class="tile-font {% if tile.is_red %}red-tile{% endif %}">{{ tile.emoji }}</span>
+                {% endfor %}
+            </span>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="comparison-box box-user">
+                <div class="box-label">あなたの打牌</div>
+                <div class="tile-name {% if player_is_red %}red-tile{% endif %}">{{ player_discard }}</div>
+            </div>
+            <div class="comparison-box box-ai">
+                <div class="box-label">AIの推奨打牌</div>
+                <div class="tile-name {% if ai_is_red %}red-tile{% endif %}">{{ ai_discard }}</div>
+            </div>
+        </div>
+
+        <div class="q-value-badge">期待値ロス: {{ "%.4f"|format(loss) }}</div>
+
+        <div class="commentary-area">
+            <strong>💡 AIからのアドバイス：</strong><br>
+            {{ commentary }}
+        </div>
+
+        <button class="btn-back" onclick="goToTop()">トップに戻る</button>
     </div>
-
-    <!-- メインのコンテナ -->
-<div class="container">
-    
-    <!-- 条件分岐: lossが0なら完璧な対局、それ以外は通常表示 -->
-    {% if loss == 0 %}
-        <!-- 2. ノーミス時の特殊表示エリア -->
-        <div id="perfectResult" class="perfect-message">
-            <div class="perfect-badge">👑✨🀄✨👑</div>
-            <div class="perfect-title">素晴らしい！完璧な対局でした！</div>
-            <p style="color: #7f8c8d;">AIの最適解とあなたの打牌が完全に一致しています。</p>
-        </div>
-    {% else %}
-        <!-- 1. 通常の添削表示エリア -->
-        <div id="reviewResult">
-            <div class="header-area">
-                <div class="episode-title" id="episodeTitle">{{ kyoku }} {{ turn }}巡目</div>
-            </div>
-
-            <div class="tiles-area" id="tilesView">
-                手牌: <span class="tile-font">{{ tehai | join('') }}</span>
-            </div>
-
-            <div class="comparison-grid">
-                <div class="comparison-box box-user">
-                    <div class="box-label">あなたの打牌</div>
-                    <div class="tile-name" id="userPlay">{{ player_discard }}</div>
-                </div>
-                <div class="comparison-box box-ai">
-                    <div class="box-label">AIの推奨打牌</div>
-                    <div class="tile-name" id="aiPlay">{{ ai_discard }}</div>
-                </div>
-            </div>
-
-            <div class="q-value-badge" id="qValueLoss">期待値ロス: {{ "%.4f"|format(loss) }}</div>
-
-            <div class="commentary-area" id="aiCommentary">
-                <strong>💡 AIからのアドバイス：</strong><br>
-                {{ commentary }}
-            </div>
-        </div>
-    {% endif %}
-
-    <!-- トップに戻るボタン（常に最下部に配置） -->
-    <button class="btn-back" onclick="goToTop()">トップに戻る</button>
-
 </div>
 
 <script>
-    // 💡 状態（ステート）を切り替えるためのシンプルなUI制御関数
-    function toggleState(state) {
-        const reviewResult = document.getElementById('reviewResult');
-        const perfectResult = document.getElementById('perfectResult');
-
-        if (state === 'review') {
-            reviewResult.style.display = 'block';
-            perfectResult.style.display = 'none';
-        } else if (state === 'perfect') {
-            reviewResult.style.display = 'none';
-            perfectResult.style.display = 'block';
-        }
-    }
-
-    // トップに戻るアクション
     function goToTop() {
-        // Flaskのトップ画面（'/'）へ遷移
         window.location.href = "/";
     }
 </script>
