@@ -40,7 +40,7 @@ def analyze():
     print(f"受け取ったURL: {url}")
 
     # --- 500エラーのテスト用にあえて例外を発生させる ---
-    # raise Exception("テスト用の強制エラーです")
+    #raise Exception("テスト用の強制エラーです")
 
     # ダミーの result データ（赤ドラを含む）
     result = {
@@ -110,4 +110,4 @@ def internal_server_error(e):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=8080)
