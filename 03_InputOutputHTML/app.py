@@ -75,8 +75,8 @@ def analyze():
     # 不要になった元キーを削除（混同防止）
     del data["tehai"]
 
-    # 結果用のHTMLテンプレート（template.html）にデータを流し込んで表示する
-    return render_template("template.html", **data)
+    # 結果用のHTMLテンプレート（result.html）にデータを流し込んで表示する
+    return render_template("result.html", **data)
 
 
 # --- エラーハンドラーの設定 ---
