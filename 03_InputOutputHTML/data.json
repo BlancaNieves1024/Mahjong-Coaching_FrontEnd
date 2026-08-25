@@ -20,5 +20,5 @@
     "player_discard": "6m",
     "ai_discard": "1s",
     "loss": 5.31,
-    "commentary": "ここにAIからのコメントが入ります。"
+    "commentary": "【入力ソース: file / 自家: 0番】ここにAIからのコメントが入ります。"
 }

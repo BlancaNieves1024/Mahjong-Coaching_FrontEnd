@@ -1,6 +1,6 @@
 import json
 import os
-from flask import Flask, jsonify, render_template, render_template_string, request, abort
+from flask import Flask, jsonify, render_template, render_template_string, request
 
 app = Flask(__name__)
 
@@ -36,44 +36,11 @@ def index():
 # 2. 解析＆画面遷移の処理（フォームからPOST送信されたとき）
 @app.route("/analyze", methods=["POST"])
 def analyze():
-    input_data = request.form.get("input_data", "").strip()
-    uploaded_file = request.files.get("file")
-    seat = request.form.get("seat", "0") # 自家指定（0:東, 1:南, 2:西, 3:北）
-
-    source_type = None
-
-    # --- source_type の判定ロジック ---
-    if uploaded_file and uploaded_file.filename != "":
-        # 1. ファイルアップロードがある場合
-        source_type = "file"
-        # ファイルからJSONとして読み込む処理（今回はダミーなのでファイルオブジェクトの存在確認のみ）
-        uploaded_file.read() 
-        print("入力形式: file (ファイルアップロード)")
-
-    elif input_data:
-        # テキストエリアに入力がある場合、JSONかURLかを判定
-        try:
-            # JSON形式としてパースできるか試す
-            json.loads(input_data)
-            source_type = "json"
-            print("入力形式: json (テキストデータ)")
-        except json.JSONDecodeError:
-            # パースできなければURL（または文字列）として扱う
-            if input_data.startswith("http://") or input_data.startswith("https://"):
-                source_type = "url"
-                print(f"入力形式: url -> {input_data}")
-            else:
-                # どちらでもない場合は不正なリクエストとして400エラー
-                abort(400)
-    else:
-        # いずれの入力もない場合は400エラー
-        abort(400)
-
-    print(f"選択された自家 (seat): {seat}")
-    print(f"判定された source_type: {source_type}")
+    url = request.form.get("url")
+    print(f"受け取ったURL: {url}")
 
     # --- 500エラーのテスト用にあえて例外を発生させる ---
-    # raise Exception("テスト用の強制エラーです")
+    #raise Exception("テスト用の強制エラーです")
 
     # ダミーの result データ（赤ドラを含む）
     result = {
@@ -83,7 +50,7 @@ def analyze():
         "player_discard": "6m",
         "ai_discard": "1s",
         "loss": 5.31,
-        "commentary": f"【入力ソース: {source_type} / 自家: {seat}番】ここにAIからのコメントが入ります。"
+        "commentary": "ここにAIからのコメントが入ります。"
     }
 
     # 一時的に data.json に保存
@@ -94,7 +61,7 @@ def analyze():
     with open("data.json", "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # 赤ドラ対応の変換処理
+    # 赤ドラ対応の変換処理（手牌は各要素を辞書型リストに、打牌は絵文字と赤フラグを分離して渡す）
     data["tehai_data"] = [convert_tile_detail(t) for t in data["tehai"]]
     
     player_res = convert_tile_detail(data["player_discard"])
