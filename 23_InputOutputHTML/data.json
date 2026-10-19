@@ -1,0 +1,4121 @@
+{
+  "title": "牌譜検討",
+  "engine": "AI",
+  "warning_threshold": 0.15,
+  "meta_items": [
+    [
+      "局数",
+      9
+    ],
+    [
+      "局面数",
+      109
+    ],
+    [
+      "AI一致率",
+      "75/109 = 68.807%"
+    ],
+    [
+      "注意局面",
+      "29/109（期待値差 0.15 以上）"
+    ]
+  ],
+  "kyokus": [
+    {
+      "anchor": "kyoku-0-0",
+      "name": "東1局",
+      "end_status": "",
+      "entries": [
+        {
+          "turn": 1,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "5s",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "4p",
+            "7s",
+            "7s",
+            "8s",
+            "w",
+            "w"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "4p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "loss": 0.39808,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 2,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "8s",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "5s",
+            "7s",
+            "7s",
+            "8s",
+            "w",
+            "w"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 3,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "9p",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "7s",
+            "7s",
+            "8s",
+            "8s",
+            "w",
+            "w"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 4,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "5s",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "7s",
+            "7s",
+            "8s",
+            "8s",
+            "w",
+            "w"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "w"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "loss": 1.16347,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 5,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "8p",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "5s",
+            "7s",
+            "7s",
+            "8s",
+            "8s",
+            "w"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "w"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "loss": 0.10297,
+          "is_match": false,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 5,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "8m",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "8p",
+            "5s",
+            "7s",
+            "7s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 6,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "6p",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "8p",
+            "5s",
+            "7s",
+            "7s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 6,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "6s",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "6p",
+            "8p",
+            "7s",
+            "7s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "chi",
+            "with_tiles": [
+              "7s",
+              "8s"
+            ]
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.17004,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 7,
+          "wall_remaining": null,
+          "trigger": null,
+          "trigger_label": "",
+          "trigger_tile": null,
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "6p",
+            "8p",
+            "7s",
+            "8s"
+          ],
+          "melds": [
+            {
+              "type": "chi",
+              "from": "上家",
+              "tiles": [
+                {
+                  "code": "6s",
+                  "rotated": true
+                },
+                {
+                  "code": "7s",
+                  "rotated": false
+                },
+                {
+                  "code": "8s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "8p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "6m"
+          },
+          "loss": 0.99305,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 8,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "n",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "6p",
+            "7s",
+            "8s"
+          ],
+          "melds": [
+            {
+              "type": "chi",
+              "from": "上家",
+              "tiles": [
+                {
+                  "code": "6s",
+                  "rotated": true
+                },
+                {
+                  "code": "7s",
+                  "rotated": false
+                },
+                {
+                  "code": "8s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "6p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "6p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 9,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "7s",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "7s",
+            "8s",
+            "n"
+          ],
+          "melds": [
+            {
+              "type": "chi",
+              "from": "上家",
+              "tiles": [
+                {
+                  "code": "6s",
+                  "rotated": true
+                },
+                {
+                  "code": "7s",
+                  "rotated": false
+                },
+                {
+                  "code": "8s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "n"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "8s"
+          },
+          "loss": 0.08877,
+          "is_match": false,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 10,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "7p",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "7s",
+            "7s",
+            "8s"
+          ],
+          "melds": [
+            {
+              "type": "chi",
+              "from": "上家",
+              "tiles": [
+                {
+                  "code": "6s",
+                  "rotated": true
+                },
+                {
+                  "code": "7s",
+                  "rotated": false
+                },
+                {
+                  "code": "8s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "7p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "7p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 11,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "9p",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "7s",
+            "7s",
+            "8s"
+          ],
+          "melds": [
+            {
+              "type": "chi",
+              "from": "上家",
+              "tiles": [
+                {
+                  "code": "6s",
+                  "rotated": true
+                },
+                {
+                  "code": "7s",
+                  "rotated": false
+                },
+                {
+                  "code": "8s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 11,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "9m",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "7s",
+            "7s",
+            "8s"
+          ],
+          "melds": [
+            {
+              "type": "chi",
+              "from": "上家",
+              "tiles": [
+                {
+                  "code": "6s",
+                  "rotated": true
+                },
+                {
+                  "code": "7s",
+                  "rotated": false
+                },
+                {
+                  "code": "8s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 12,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "9s",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "7s",
+            "7s",
+            "8s"
+          ],
+          "melds": [
+            {
+              "type": "chi",
+              "from": "上家",
+              "tiles": [
+                {
+                  "code": "6s",
+                  "rotated": true
+                },
+                {
+                  "code": "7s",
+                  "rotated": false
+                },
+                {
+                  "code": "8s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "8m"
+          },
+          "loss": 0.65278,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 13,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "5sr",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "7s",
+            "7s",
+            "8s"
+          ],
+          "melds": [
+            {
+              "type": "chi",
+              "from": "上家",
+              "tiles": [
+                {
+                  "code": "6s",
+                  "rotated": true
+                },
+                {
+                  "code": "7s",
+                  "rotated": false
+                },
+                {
+                  "code": "8s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "8s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "8m"
+          },
+          "loss": 0.40587,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 14,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "8p",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "5sr",
+            "7s",
+            "7s"
+          ],
+          "melds": [
+            {
+              "type": "chi",
+              "from": "上家",
+              "tiles": [
+                {
+                  "code": "6s",
+                  "rotated": true
+                },
+                {
+                  "code": "7s",
+                  "rotated": false
+                },
+                {
+                  "code": "8s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "8p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "8p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 15,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "6s",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "5sr",
+            "7s",
+            "7s"
+          ],
+          "melds": [
+            {
+              "type": "chi",
+              "from": "上家",
+              "tiles": [
+                {
+                  "code": "6s",
+                  "rotated": true
+                },
+                {
+                  "code": "7s",
+                  "rotated": false
+                },
+                {
+                  "code": "8s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "7s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "7s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 16,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "9s",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "5sr",
+            "6s",
+            "7s"
+          ],
+          "melds": [
+            {
+              "type": "chi",
+              "from": "上家",
+              "tiles": [
+                {
+                  "code": "6s",
+                  "rotated": true
+                },
+                {
+                  "code": "7s",
+                  "rotated": false
+                },
+                {
+                  "code": "8s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 17,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "2p",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "5sr",
+            "6s",
+            "7s"
+          ],
+          "melds": [
+            {
+              "type": "chi",
+              "from": "上家",
+              "tiles": [
+                {
+                  "code": "6s",
+                  "rotated": true
+                },
+                {
+                  "code": "7s",
+                  "rotated": false
+                },
+                {
+                  "code": "8s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "2p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "2p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 18,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "1s",
+          "hand": [
+            "3m",
+            "3m",
+            "6m",
+            "6m",
+            "6m",
+            "7m",
+            "8m",
+            "5sr",
+            "6s",
+            "7s"
+          ],
+          "melds": [
+            {
+              "type": "chi",
+              "from": "上家",
+              "tiles": [
+                {
+                  "code": "6s",
+                  "rotated": true
+                },
+                {
+                  "code": "7s",
+                  "rotated": false
+                },
+                {
+                  "code": "8s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "1s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "1s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        }
+      ]
+    },
+    {
+      "anchor": "kyoku-1-1",
+      "name": "東2局 1本場",
+      "end_status": "",
+      "entries": [
+        {
+          "turn": 1,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "8s",
+          "hand": [
+            "3m",
+            "5m",
+            "3p",
+            "5p",
+            "9p",
+            "3s",
+            "6s",
+            "6s",
+            "7s",
+            "9s",
+            "9s",
+            "f",
+            "c"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 2,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "2p",
+          "hand": [
+            "3m",
+            "5m",
+            "3p",
+            "5p",
+            "3s",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s",
+            "9s",
+            "f",
+            "c"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "f"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "f"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 2,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "4p",
+          "hand": [
+            "3m",
+            "5m",
+            "2p",
+            "3p",
+            "5p",
+            "3s",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s",
+            "9s",
+            "c"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 3,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "s",
+          "hand": [
+            "3m",
+            "5m",
+            "2p",
+            "3p",
+            "5p",
+            "3s",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s",
+            "9s",
+            "c"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "c"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "s"
+          },
+          "loss": 0.79933,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 3,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "1p",
+          "hand": [
+            "3m",
+            "5m",
+            "2p",
+            "3p",
+            "5p",
+            "3s",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s",
+            "9s",
+            "s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 4,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "5pr",
+          "hand": [
+            "3m",
+            "5m",
+            "2p",
+            "3p",
+            "5p",
+            "3s",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s",
+            "9s",
+            "s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 5,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "9p",
+          "hand": [
+            "3m",
+            "5m",
+            "2p",
+            "3p",
+            "5pr",
+            "5p",
+            "3s",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 6,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "3p",
+          "hand": [
+            "3m",
+            "5m",
+            "2p",
+            "3p",
+            "5pr",
+            "5p",
+            "3s",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "loss": 0.63015,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 7,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "9m",
+          "hand": [
+            "3m",
+            "5m",
+            "2p",
+            "3p",
+            "3p",
+            "5pr",
+            "5p",
+            "3s",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9m"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9m"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 8,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "1m",
+          "hand": [
+            "3m",
+            "5m",
+            "2p",
+            "3p",
+            "3p",
+            "5pr",
+            "5p",
+            "3s",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 8,
+          "wall_remaining": null,
+          "trigger": "対面打",
+          "trigger_label": "対面打 ",
+          "trigger_tile": "3p",
+          "hand": [
+            "1m",
+            "3m",
+            "5m",
+            "2p",
+            "3p",
+            "3p",
+            "5pr",
+            "5p",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 8,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "6s",
+          "hand": [
+            "1m",
+            "3m",
+            "5m",
+            "2p",
+            "3p",
+            "3p",
+            "5pr",
+            "5p",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 9,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "9p",
+          "hand": [
+            "1m",
+            "3m",
+            "5m",
+            "2p",
+            "3p",
+            "3p",
+            "5pr",
+            "5p",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 10,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "f",
+          "hand": [
+            "1m",
+            "3m",
+            "5m",
+            "2p",
+            "3p",
+            "3p",
+            "5pr",
+            "5p",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "f"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "f"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 11,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "6p",
+          "hand": [
+            "1m",
+            "3m",
+            "5m",
+            "2p",
+            "3p",
+            "3p",
+            "5pr",
+            "5p",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "1m"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "loss": 0.70212,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 12,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "7s",
+          "hand": [
+            "3m",
+            "5m",
+            "2p",
+            "3p",
+            "3p",
+            "5pr",
+            "5p",
+            "6p",
+            "6s",
+            "6s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "2p"
+          },
+          "loss": 0.11551,
+          "is_match": false,
+          "is_warning": false,
+          "commentary": null
+        }
+      ]
+    },
+    {
+      "anchor": "kyoku-2-0",
+      "name": "東3局",
+      "end_status": "",
+      "entries": [
+        {
+          "turn": 1,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "1m",
+          "hand": [
+            "4m",
+            "9m",
+            "1p",
+            "1p",
+            "5p",
+            "5s",
+            "8s",
+            "e",
+            "s",
+            "n",
+            "n",
+            "p",
+            "c"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "1m"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "1m"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 2,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "4m",
+          "hand": [
+            "4m",
+            "9m",
+            "1p",
+            "1p",
+            "5p",
+            "5s",
+            "8s",
+            "e",
+            "s",
+            "n",
+            "n",
+            "p",
+            "c"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "5p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9m"
+          },
+          "loss": 1.11392,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 3,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "2m",
+          "hand": [
+            "4m",
+            "4m",
+            "9m",
+            "1p",
+            "1p",
+            "5s",
+            "8s",
+            "e",
+            "s",
+            "n",
+            "n",
+            "p",
+            "c"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "8s"
+          },
+          "loss": 0.58139,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 4,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "3s",
+          "hand": [
+            "2m",
+            "4m",
+            "4m",
+            "9m",
+            "1p",
+            "1p",
+            "5s",
+            "8s",
+            "e",
+            "s",
+            "n",
+            "n",
+            "c"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "8s"
+          },
+          "loss": 0.17222,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 5,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "8p",
+          "hand": [
+            "2m",
+            "4m",
+            "4m",
+            "9m",
+            "1p",
+            "1p",
+            "3s",
+            "5s",
+            "8s",
+            "e",
+            "n",
+            "n",
+            "c"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9m"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "8s"
+          },
+          "loss": 0.08519,
+          "is_match": false,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 6,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "1s",
+          "hand": [
+            "2m",
+            "4m",
+            "4m",
+            "1p",
+            "1p",
+            "8p",
+            "3s",
+            "5s",
+            "8s",
+            "e",
+            "n",
+            "n",
+            "c"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "c"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "n"
+          },
+          "loss": 0.50003,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 6,
+          "wall_remaining": null,
+          "trigger": "下家打",
+          "trigger_label": "下家打 ",
+          "trigger_tile": "1p",
+          "hand": [
+            "2m",
+            "4m",
+            "4m",
+            "1p",
+            "1p",
+            "8p",
+            "1s",
+            "3s",
+            "5s",
+            "8s",
+            "e",
+            "n",
+            "n"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 7,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "4p",
+          "hand": [
+            "2m",
+            "4m",
+            "4m",
+            "1p",
+            "1p",
+            "8p",
+            "1s",
+            "3s",
+            "5s",
+            "8s",
+            "e",
+            "n",
+            "n"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "4p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "4p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 8,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "9m",
+          "hand": [
+            "2m",
+            "4m",
+            "4m",
+            "1p",
+            "1p",
+            "8p",
+            "1s",
+            "3s",
+            "5s",
+            "8s",
+            "e",
+            "n",
+            "n"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "1p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "1p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 9,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "1p",
+          "hand": [
+            "2m",
+            "4m",
+            "4m",
+            "9m",
+            "1p",
+            "8p",
+            "1s",
+            "3s",
+            "5s",
+            "8s",
+            "e",
+            "n",
+            "n"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9m"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "1p"
+          },
+          "loss": 1.56014,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        }
+      ]
+    },
+    {
+      "anchor": "kyoku-3-0",
+      "name": "東4局",
+      "end_status": "",
+      "entries": [
+        {
+          "turn": 0,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "7m",
+          "hand": [
+            "1m",
+            "8m",
+            "9m",
+            "3p",
+            "3p",
+            "6p",
+            "7p",
+            "8p",
+            "8p",
+            "6s",
+            "9s",
+            "e",
+            "c"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 1,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "2m",
+          "hand": [
+            "1m",
+            "8m",
+            "9m",
+            "3p",
+            "3p",
+            "6p",
+            "7p",
+            "8p",
+            "8p",
+            "6s",
+            "9s",
+            "e",
+            "c"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "e"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "loss": 0.49102,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 2,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "5p",
+          "hand": [
+            "1m",
+            "2m",
+            "8m",
+            "9m",
+            "3p",
+            "3p",
+            "6p",
+            "7p",
+            "8p",
+            "8p",
+            "6s",
+            "9s",
+            "c"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "c"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "loss": 0.37153,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 2,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "5pr",
+          "hand": [
+            "1m",
+            "2m",
+            "8m",
+            "9m",
+            "3p",
+            "3p",
+            "5p",
+            "6p",
+            "7p",
+            "8p",
+            "8p",
+            "6s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 3,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "1s",
+          "hand": [
+            "1m",
+            "2m",
+            "8m",
+            "9m",
+            "3p",
+            "3p",
+            "5p",
+            "6p",
+            "7p",
+            "8p",
+            "8p",
+            "6s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 3,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "5p",
+          "hand": [
+            "1m",
+            "2m",
+            "8m",
+            "9m",
+            "3p",
+            "3p",
+            "5p",
+            "6p",
+            "7p",
+            "8p",
+            "8p",
+            "1s",
+            "6s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 4,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "f",
+          "hand": [
+            "1m",
+            "2m",
+            "8m",
+            "9m",
+            "3p",
+            "3p",
+            "5p",
+            "6p",
+            "7p",
+            "8p",
+            "8p",
+            "1s",
+            "6s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "6s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "8m"
+          },
+          "loss": 1.303,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 5,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "8m",
+          "hand": [
+            "1m",
+            "2m",
+            "8m",
+            "9m",
+            "3p",
+            "3p",
+            "5p",
+            "6p",
+            "7p",
+            "8p",
+            "8p",
+            "1s",
+            "f"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "1s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "1s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        }
+      ]
+    },
+    {
+      "anchor": "kyoku-3-1",
+      "name": "東4局 1本場",
+      "end_status": "",
+      "entries": [
+        {
+          "turn": 1,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "1s",
+          "hand": [
+            "5m",
+            "6m",
+            "1p",
+            "6p",
+            "7p",
+            "2s",
+            "7s",
+            "8s",
+            "9s",
+            "e",
+            "s",
+            "w",
+            "f"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "f"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "s"
+          },
+          "loss": 1.36499,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 2,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "3p",
+          "hand": [
+            "5m",
+            "6m",
+            "1p",
+            "6p",
+            "7p",
+            "1s",
+            "2s",
+            "7s",
+            "8s",
+            "9s",
+            "e",
+            "s",
+            "w"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "w"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "s"
+          },
+          "loss": 0.4169,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 3,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "5m",
+          "hand": [
+            "5m",
+            "6m",
+            "1p",
+            "3p",
+            "6p",
+            "7p",
+            "1s",
+            "2s",
+            "7s",
+            "8s",
+            "9s",
+            "e",
+            "s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "e"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "s"
+          },
+          "loss": 0.24645,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 4,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "7p",
+          "hand": [
+            "5m",
+            "5m",
+            "6m",
+            "1p",
+            "3p",
+            "6p",
+            "7p",
+            "1s",
+            "2s",
+            "7s",
+            "8s",
+            "9s",
+            "s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 5,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "6m",
+          "hand": [
+            "5m",
+            "5m",
+            "6m",
+            "1p",
+            "3p",
+            "6p",
+            "7p",
+            "7p",
+            "1s",
+            "2s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "3p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "2s"
+          },
+          "loss": 1.01606,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 6,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "7p",
+          "hand": [
+            "5m",
+            "5m",
+            "6m",
+            "6m",
+            "1p",
+            "6p",
+            "7p",
+            "7p",
+            "1s",
+            "2s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "1p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "1p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 7,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "4m",
+          "hand": [
+            "5m",
+            "5m",
+            "6m",
+            "6m",
+            "6p",
+            "7p",
+            "7p",
+            "7p",
+            "1s",
+            "2s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "6p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "2s"
+          },
+          "loss": 1.48144,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 8,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "2p",
+          "hand": [
+            "4m",
+            "5m",
+            "5m",
+            "6m",
+            "6m",
+            "7p",
+            "7p",
+            "7p",
+            "1s",
+            "2s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "2s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "2p"
+          },
+          "loss": 1.24931,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 8,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "8s",
+          "hand": [
+            "4m",
+            "5m",
+            "5m",
+            "6m",
+            "6m",
+            "2p",
+            "7p",
+            "7p",
+            "7p",
+            "1s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 9,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "2s",
+          "hand": [
+            "4m",
+            "5m",
+            "5m",
+            "6m",
+            "6m",
+            "2p",
+            "7p",
+            "7p",
+            "7p",
+            "1s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "2p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "2p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 10,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "4m",
+          "hand": [
+            "4m",
+            "5m",
+            "5m",
+            "6m",
+            "6m",
+            "7p",
+            "7p",
+            "7p",
+            "1s",
+            "2s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "riichi"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "2s"
+          },
+          "loss": 0.3639,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 10,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "4m",
+          "hand": [
+            "4m",
+            "5m",
+            "5m",
+            "6m",
+            "6m",
+            "7p",
+            "7p",
+            "7p",
+            "1s",
+            "2s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "7p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "7p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 14,
+          "wall_remaining": null,
+          "trigger": "下家打",
+          "trigger_label": "下家打 ",
+          "trigger_tile": "3s",
+          "hand": [
+            "4m",
+            "4m",
+            "5m",
+            "5m",
+            "6m",
+            "6m",
+            "7p",
+            "7p",
+            "1s",
+            "2s",
+            "7s",
+            "8s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "ron"
+          },
+          "ai_choice": {
+            "type": "ron"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        }
+      ]
+    },
+    {
+      "anchor": "kyoku-4-0",
+      "name": "南1局",
+      "end_status": "",
+      "entries": [
+        {
+          "turn": 1,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "3m",
+          "hand": [
+            "8m",
+            "9m",
+            "1p",
+            "3p",
+            "9p",
+            "4s",
+            "6s",
+            "6s",
+            "8s",
+            "9s",
+            "9s",
+            "s",
+            "s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 2,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "8p",
+          "hand": [
+            "3m",
+            "8m",
+            "9m",
+            "1p",
+            "3p",
+            "4s",
+            "6s",
+            "6s",
+            "8s",
+            "9s",
+            "9s",
+            "s",
+            "s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "8p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "8p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 2,
+          "wall_remaining": null,
+          "trigger": "対面打",
+          "trigger_label": "対面打 ",
+          "trigger_tile": "s",
+          "hand": [
+            "3m",
+            "8m",
+            "9m",
+            "1p",
+            "3p",
+            "4s",
+            "6s",
+            "6s",
+            "8s",
+            "9s",
+            "9s",
+            "s",
+            "s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "pon",
+            "with_tiles": [
+              "s",
+              "s"
+            ]
+          },
+          "ai_choice": {
+            "type": "pon",
+            "with_tiles": [
+              "s",
+              "s"
+            ]
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 3,
+          "wall_remaining": null,
+          "trigger": null,
+          "trigger_label": "",
+          "trigger_tile": null,
+          "hand": [
+            "3m",
+            "8m",
+            "9m",
+            "1p",
+            "3p",
+            "4s",
+            "6s",
+            "6s",
+            "8s",
+            "9s",
+            "9s"
+          ],
+          "melds": [
+            {
+              "type": "pon",
+              "from": "対面",
+              "tiles": [
+                {
+                  "code": "s",
+                  "rotated": false
+                },
+                {
+                  "code": "s",
+                  "rotated": true
+                },
+                {
+                  "code": "s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "3m"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "3m"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 4,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "9s",
+          "hand": [
+            "8m",
+            "9m",
+            "1p",
+            "3p",
+            "4s",
+            "6s",
+            "6s",
+            "8s",
+            "9s",
+            "9s"
+          ],
+          "melds": [
+            {
+              "type": "pon",
+              "from": "対面",
+              "tiles": [
+                {
+                  "code": "s",
+                  "rotated": false
+                },
+                {
+                  "code": "s",
+                  "rotated": true
+                },
+                {
+                  "code": "s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "8s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "8s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 5,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "3s",
+          "hand": [
+            "8m",
+            "9m",
+            "1p",
+            "3p",
+            "4s",
+            "6s",
+            "6s",
+            "9s",
+            "9s",
+            "9s"
+          ],
+          "melds": [
+            {
+              "type": "pon",
+              "from": "対面",
+              "tiles": [
+                {
+                  "code": "s",
+                  "rotated": false
+                },
+                {
+                  "code": "s",
+                  "rotated": true
+                },
+                {
+                  "code": "s",
+                  "rotated": false
+                }
+              ]
+            }
+          ],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9m"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "8m"
+          },
+          "loss": 0.72611,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        }
+      ]
+    },
+    {
+      "anchor": "kyoku-5-0",
+      "name": "南2局",
+      "end_status": "",
+      "entries": [
+        {
+          "turn": 1,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "8m",
+          "hand": [
+            "8m",
+            "1p",
+            "4p",
+            "5p",
+            "8p",
+            "1s",
+            "3s",
+            "4s",
+            "5sr",
+            "7s",
+            "9s",
+            "9s",
+            "w"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "8p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "1p"
+          },
+          "loss": 1.21326,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 1,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "5s",
+          "hand": [
+            "8m",
+            "8m",
+            "1p",
+            "4p",
+            "5p",
+            "1s",
+            "3s",
+            "4s",
+            "5sr",
+            "7s",
+            "9s",
+            "9s",
+            "w"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 2,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "6s",
+          "hand": [
+            "8m",
+            "8m",
+            "1p",
+            "4p",
+            "5p",
+            "1s",
+            "3s",
+            "4s",
+            "5sr",
+            "7s",
+            "9s",
+            "9s",
+            "w"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "1p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "1p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 3,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "n",
+          "hand": [
+            "8m",
+            "8m",
+            "4p",
+            "5p",
+            "1s",
+            "3s",
+            "4s",
+            "5sr",
+            "6s",
+            "7s",
+            "9s",
+            "9s",
+            "w"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "n"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "n"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 4,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "8p",
+          "hand": [
+            "8m",
+            "8m",
+            "4p",
+            "5p",
+            "1s",
+            "3s",
+            "4s",
+            "5sr",
+            "6s",
+            "7s",
+            "9s",
+            "9s",
+            "w"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "8p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "8p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 5,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "4s",
+          "hand": [
+            "8m",
+            "8m",
+            "4p",
+            "5p",
+            "1s",
+            "3s",
+            "4s",
+            "5sr",
+            "6s",
+            "7s",
+            "9s",
+            "9s",
+            "w"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "w"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "w"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 6,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "2s",
+          "hand": [
+            "8m",
+            "8m",
+            "4p",
+            "5p",
+            "1s",
+            "3s",
+            "4s",
+            "4s",
+            "5sr",
+            "6s",
+            "7s",
+            "9s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "5p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "loss": 1.62828,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 7,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "9m",
+          "hand": [
+            "8m",
+            "8m",
+            "4p",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "4s",
+            "5sr",
+            "6s",
+            "7s",
+            "9s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "4p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "4p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 8,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "c",
+          "hand": [
+            "8m",
+            "8m",
+            "9m",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "4s",
+            "5sr",
+            "6s",
+            "7s",
+            "9s",
+            "9s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "c"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "c"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        }
+      ]
+    },
+    {
+      "anchor": "kyoku-6-0",
+      "name": "南3局",
+      "end_status": "",
+      "entries": [
+        {
+          "turn": 1,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "7m",
+          "hand": [
+            "3m",
+            "5m",
+            "8m",
+            "8m",
+            "9m",
+            "5p",
+            "6p",
+            "7p",
+            "7p",
+            "3s",
+            "4s",
+            "8s",
+            "w"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "w"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "w"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 2,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "5sr",
+          "hand": [
+            "3m",
+            "5m",
+            "7m",
+            "8m",
+            "8m",
+            "9m",
+            "5p",
+            "6p",
+            "7p",
+            "7p",
+            "3s",
+            "4s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "8s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "8s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 2,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "9m",
+          "hand": [
+            "3m",
+            "5m",
+            "7m",
+            "8m",
+            "8m",
+            "9m",
+            "5p",
+            "6p",
+            "7p",
+            "7p",
+            "3s",
+            "4s",
+            "5sr"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 3,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "1s",
+          "hand": [
+            "3m",
+            "5m",
+            "7m",
+            "8m",
+            "8m",
+            "9m",
+            "5p",
+            "6p",
+            "7p",
+            "7p",
+            "3s",
+            "4s",
+            "5sr"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "1s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "1s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 3,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "2s",
+          "hand": [
+            "3m",
+            "5m",
+            "7m",
+            "8m",
+            "8m",
+            "9m",
+            "5p",
+            "6p",
+            "7p",
+            "7p",
+            "3s",
+            "4s",
+            "5sr"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 4,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "e",
+          "hand": [
+            "3m",
+            "5m",
+            "7m",
+            "8m",
+            "8m",
+            "9m",
+            "5p",
+            "6p",
+            "7p",
+            "7p",
+            "3s",
+            "4s",
+            "5sr"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "e"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "e"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 5,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "n",
+          "hand": [
+            "3m",
+            "5m",
+            "7m",
+            "8m",
+            "8m",
+            "9m",
+            "5p",
+            "6p",
+            "7p",
+            "7p",
+            "3s",
+            "4s",
+            "5sr"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "n"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "n"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 6,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "e",
+          "hand": [
+            "3m",
+            "5m",
+            "7m",
+            "8m",
+            "8m",
+            "9m",
+            "5p",
+            "6p",
+            "7p",
+            "7p",
+            "3s",
+            "4s",
+            "5sr"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "e"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "e"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 6,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "6p",
+          "hand": [
+            "3m",
+            "5m",
+            "7m",
+            "8m",
+            "8m",
+            "9m",
+            "5p",
+            "6p",
+            "7p",
+            "7p",
+            "3s",
+            "4s",
+            "5sr"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 7,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "4p",
+          "hand": [
+            "3m",
+            "5m",
+            "7m",
+            "8m",
+            "8m",
+            "9m",
+            "5p",
+            "6p",
+            "7p",
+            "7p",
+            "3s",
+            "4s",
+            "5sr"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "riichi"
+          },
+          "ai_choice": {
+            "type": "riichi"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 11,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "4m",
+          "hand": [
+            "3m",
+            "5m",
+            "7m",
+            "8m",
+            "9m",
+            "4p",
+            "5p",
+            "6p",
+            "7p",
+            "7p",
+            "3s",
+            "4s",
+            "5sr"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "ron"
+          },
+          "ai_choice": {
+            "type": "ron"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        }
+      ]
+    },
+    {
+      "anchor": "kyoku-7-0",
+      "name": "南4局",
+      "end_status": "",
+      "entries": [
+        {
+          "turn": 0,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "1p",
+          "hand": [
+            "1m",
+            "2m",
+            "3m",
+            "2p",
+            "3p",
+            "4p",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s",
+            "s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 1,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "5mr",
+          "hand": [
+            "1m",
+            "2m",
+            "3m",
+            "2p",
+            "3p",
+            "4p",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s",
+            "s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 2,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "8m",
+          "hand": [
+            "1m",
+            "2m",
+            "3m",
+            "5mr",
+            "2p",
+            "3p",
+            "4p",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "8m"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "8m"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 3,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "9m",
+          "hand": [
+            "1m",
+            "2m",
+            "3m",
+            "5mr",
+            "2p",
+            "3p",
+            "4p",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9m"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9m"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 3,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "2s",
+          "hand": [
+            "1m",
+            "2m",
+            "3m",
+            "5mr",
+            "2p",
+            "3p",
+            "4p",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 4,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "9p",
+          "hand": [
+            "1m",
+            "2m",
+            "3m",
+            "5mr",
+            "2p",
+            "3p",
+            "4p",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "9p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "9p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 4,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "4p",
+          "hand": [
+            "1m",
+            "2m",
+            "3m",
+            "5mr",
+            "2p",
+            "3p",
+            "4p",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 5,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "2m",
+          "hand": [
+            "1m",
+            "2m",
+            "3m",
+            "5mr",
+            "2p",
+            "3p",
+            "4p",
+            "1s",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "1s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "2m"
+          },
+          "loss": 0.17629,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 6,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "1s",
+          "hand": [
+            "1m",
+            "2m",
+            "2m",
+            "3m",
+            "5mr",
+            "2p",
+            "3p",
+            "4p",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "1s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "2m"
+          },
+          "loss": 0.1088,
+          "is_match": false,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 6,
+          "wall_remaining": null,
+          "trigger": "上家打",
+          "trigger_label": "上家打 ",
+          "trigger_tile": "5s",
+          "hand": [
+            "1m",
+            "2m",
+            "2m",
+            "3m",
+            "5mr",
+            "2p",
+            "3p",
+            "4p",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "skip"
+          },
+          "ai_choice": {
+            "type": "skip"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 7,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "1p",
+          "hand": [
+            "1m",
+            "2m",
+            "2m",
+            "3m",
+            "5mr",
+            "2p",
+            "3p",
+            "4p",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "1p"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "1p"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 8,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "6s",
+          "hand": [
+            "1m",
+            "2m",
+            "2m",
+            "3m",
+            "5mr",
+            "2p",
+            "3p",
+            "4p",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "6s"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "6s"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 9,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "2m",
+          "hand": [
+            "1m",
+            "2m",
+            "2m",
+            "3m",
+            "5mr",
+            "2p",
+            "3p",
+            "4p",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "riichi"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "1m"
+          },
+          "loss": 0.47899,
+          "is_match": false,
+          "is_warning": true,
+          "commentary": "【入力ソース: url / 自家: 0番】ここにAIからのコメントが入ります。"
+        },
+        {
+          "turn": 9,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "2m",
+          "hand": [
+            "1m",
+            "2m",
+            "2m",
+            "3m",
+            "5mr",
+            "2p",
+            "3p",
+            "4p",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "discard",
+            "tile": "1m"
+          },
+          "ai_choice": {
+            "type": "discard",
+            "tile": "1m"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        },
+        {
+          "turn": 18,
+          "wall_remaining": null,
+          "trigger": "自摸",
+          "trigger_label": "自摸 ",
+          "trigger_tile": "4m",
+          "hand": [
+            "2m",
+            "2m",
+            "2m",
+            "3m",
+            "5mr",
+            "2p",
+            "3p",
+            "4p",
+            "2s",
+            "3s",
+            "4s",
+            "8s",
+            "8s"
+          ],
+          "melds": [],
+          "player_choice": {
+            "type": "tsumo"
+          },
+          "ai_choice": {
+            "type": "tsumo"
+          },
+          "loss": 0.0,
+          "is_match": true,
+          "is_warning": false,
+          "commentary": null
+        }
+      ]
+    }
+  ]
+}
