@@ -1,11 +1,11 @@
-○東南戦
+# v1 開発時（2026/07）東南戦
 https://tenhou.net/0/?log=2026070520gm-0009-0000-44bf82d0&tw=2
 https://tenhou.net/5/?log=2026071121gm-0009-0000-e5ca1e7f&tw=0
 https://tenhou.net/0/?log=2026071208gm-0009-0000-32be102c&tw=0
 https://tenhou.net/0/?log=2026071209gm-0009-0000-49c7ba3c&tw=0
 https://tenhou.net/0/?log=2026071211gm-0009-0000-4888ed75&tw=1
 
-○20260908追加分
+# v2 開発時に追加（2026/09/08）
 https://tenhou.net/0/?log=2026090718gm-0009-0000-60972c5f&tw=2
 
 
