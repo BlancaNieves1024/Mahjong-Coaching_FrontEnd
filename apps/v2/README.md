@@ -17,14 +17,15 @@ Flask製のアプリ（`app.py`）を起動し、ブラウザで牌譜検討の�
 ```
 プロジェクト/
 ├ app.py
-├ dummy_backend_response.json      ← ダミーのバックエンド返り値（半荘全部・109局面）
+├ data/
+│   └ dummy_backend_response.json  ← ダミーのバックエンド返り値（半荘全部・109局面）
 └ templates/
     ├ index.html                   ← 入力画面（お手元のもの）
     ├ error.html                   ← エラー画面（お手元のもの）
     └ result_manyhands.html        ← 結果画面
 ```
 
-- `dummy_backend_response.json` は `app.py` と同じフォルダに置く。
+- `dummy_backend_response.json` は `app.py` と同じフォルダの `data/` に置く。
 - HTMLは `templates` フォルダに置く（Flaskの決まり）。
 - `index.html` のフォームは、次の条件を満たすこと。
   - 送信先: `/analyze`、方式: `POST`
@@ -149,7 +150,7 @@ curl -s -X POST http://127.0.0.1:8080/analyze -F "input_data=https://example.com
 |---|---|
 | `ModuleNotFoundError: No module named 'flask'` | `pip install flask` を実行する（仮想環境を使う場合は有効化してから） |
 | `TemplateNotFound` | `templates` フォルダの場所とファイル名を確認する |
-| `FileNotFoundError: dummy_backend_response.json` | `app.py` と同じフォルダに置く |
+| `FileNotFoundError: dummy_backend_response.json` | `app.py` と同じフォルダの `data/` に置く |
 | 送信すると必ず400になる | `index.html` のフォームの項目名・送信先・方式を確認する（2章） |
 | ファイルを送ると400になる | フォームに `enctype="multipart/form-data"` があるか確認する |
 | 牌が `[xx]` と文字で出る | 牌コードが想定外。ターミナルのメッセージを確認する |

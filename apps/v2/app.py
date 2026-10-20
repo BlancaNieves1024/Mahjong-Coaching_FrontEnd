@@ -93,7 +93,7 @@ REPORT_TITLE = "牌譜検討"
 AI_LABEL = "AI"                                              # 画面の「AI: 打 ○」の表示名
 
 DATA_PATH = os.path.join(app.root_path, "data.json")                         # 画面に渡したJSON（確認用）
-DUMMY_PATH = os.path.join(app.root_path, "dummy_backend_response.json")      # ダミーのバックエンド返り値
+DUMMY_PATH = os.path.join(app.root_path, "data", "dummy_backend_response.json")  # ダミーのバックエンド返り値
 KYOKU_WINDS = "東南西北"
 
 # 行動の表記
