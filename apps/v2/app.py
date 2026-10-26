@@ -34,18 +34,21 @@ app = Flask(__name__)
 #                       trigger_tile                                 opponent_discard → 「上家打」「対面打」「下家打」
 #                                                                    trigger が null → ツモ牌なし（鳴いた直後）
 #   副露                self.melds                                  tiles / called / from（type は使わない）
+#   各家の河            self.river / others.*.river                 tile / tsumogiri / riichi / called_by
+#                       （others は shimocha・toimen・kamicha）      立直宣言牌は横向き、鳴かれた牌は薄く、ツモ切りは下線
 #   プレイヤーの行動    decision.player_choice
 #   AIの行動            decision.ai_choice
 #   期待値差・注意局面  decision.loss                               絶対値が EV_WARNING_THRESHOLD 以上で注意
 #   AIのアドバイス      commentary                                  注意局面にだけ表示
 #
-#   読まない項目: situation.wall_remaining、self の wind / score / river / is_dealer、others、hidden_info、
+#   読まない項目: situation.wall_remaining、self の wind / score / is_dealer、others の河以外、hidden_info、
 #                 decision の candidates と各期待値、meta の engine / dora_indicators / kyotaku
 #                 （読まないので、中身が不正でも検査しない）
 #
 # 行動（player_choice / ai_choice）は {"type": ...} のオブジェクト
-#   {"type": "discard", "tile": "6m"}                                   打牌
+#   {"type": "discard", "tile": "6m"}                                   打牌（立直宣言つきは "riichi": true を足す）
 #   {"type": "pon" | "chi", "with_tiles": ["c","c"], "then_discard": "9s"}   鳴き（then_discard は省略可）
+#   {"type": "daiminkan" | "kakan" | "ankan", "tile": "w"}              カン（大明槓・加槓・暗槓）
 #   {"type": "skip"} / {"type": "ron"} / {"type": "tsumo"} / {"type": "riichi"}
 #
 # 牌コードは mjai 表記のみ（天鳳形式の数字コードは受け付けない）
@@ -71,6 +74,13 @@ app = Flask(__name__)
 #     これに合わせて、返り値から画面に必要な項目だけを抽出する処理を入れた（上の表）。
 #     画面に出す情報は変えていない（残り枚数は、JSONにあるが従来どおり表示しない）。
 #     旧形式のJSONが貼り付けられたときは、400エラーにする（黙ってダミーを出さない）。
+#  7. 【今回】ダミーを、Akochanの実出力（半荘・6局・63局面）から作ったものに差し替えた。
+#     Akochanにある「カン」と「立直宣言つきの打牌」を表せるようにした（行動の種類に追加）。
+#       - カン: {"type": "daiminkan" | "kakan" | "ankan", "tile": ...} → 画面に「大明槓 ○」「加槓 ○」「暗槓 ○」と表示
+#       - 立直宣言つきの打牌: {"type": "discard", "tile": ..., "riichi": true} → 「打 ○ 立直」と表示
+#  8. 【今回】各局面に、4人の河（自分・下家・対面・上家）を表示するようにした。
+#     self.river と others.*.river を読む（rivers_view）。河が無い局面（古い形式など）は、河の欄を出さない。
+#     自分の河にも called_by（誰に鳴かれたか）を持たせた（他家の河と同じ形）。
 # =============================================================================
 
 
@@ -117,9 +127,13 @@ TRIGGER_KINDS = {"draw", "opponent_discard"}
 TRIGGER_ACTORS = {"上家", "対面", "下家"}                    # opponent_discard のときの trigger_actor
 # 行動（choice）の type
 CHOICE_NO_ARG = {"skip", "ron", "tsumo", "riichi"}
+CHOICE_KAN = {"daiminkan", "kakan", "ankan"}                 # {"type": ..., "tile": ...}
 MELD_TYPES = {"chi", "pon", "daiminkan", "kakan", "ankan"}
 MELD_FROM = {"上家", "対面", "下家"}
 NESTED_KEYS = ("meta", "situation", "self", "decision")      # 新形式のトップキー
+RIVER_OWNERS = (("self", "自分"), ("shimocha", "下家"), ("toimen", "対面"), ("kamicha", "上家"))   # 河の表示順
+RIVER_PER_ROW = 6                                            # 河は1段に6枚
+CALLED_BY = {"自分", "下家", "対面", "上家"}
 LEGACY_KEYS = ("tehai", "player_discard", "ai_discard")      # 旧形式（平らな形式）のキー
 
 
@@ -202,14 +216,24 @@ def parse_choice(choice, path):
     """行動 {"type": ...} → 画面用の辞書（検査つき）。不正なら ValueError
 
     {"type":"discard","tile":"6m"} / {"type":"pon","with_tiles":["c","c"],"then_discard":"9s"} /
-    {"type":"skip"} など。then_discard は省略可。
+    {"type":"daiminkan","tile":"w"} / {"type":"skip"} など。then_discard は省略可。
+    立直宣言つきの打牌は {"type":"discard","tile":"4s","riichi":true}。
     """
     if not isinstance(choice, dict) or "type" not in choice:
         raise ValueError(f'{path} は {{"type": ...}} のオブジェクトで渡してください: {choice!r}')
     kind = choice["type"]
     if kind == "discard":
         check_tile(choice.get("tile"), f"{path}.tile")
-        return {"type": "discard", "tile": choice["tile"]}
+        out = {"type": "discard", "tile": choice["tile"]}
+        riichi = choice.get("riichi")
+        if riichi is not None and not isinstance(riichi, bool):
+            raise ValueError(f"{path}.riichi は true / false にしてください: {riichi!r}")
+        if riichi:
+            out["riichi"] = True                                # 立直宣言つきの打牌
+        return out
+    if kind in CHOICE_KAN:
+        check_tile(choice.get("tile"), f"{path}.tile")
+        return {"type": kind, "tile": choice["tile"]}
     if kind in ("pon", "chi"):
         tiles = choice.get("with_tiles")
         if not isinstance(tiles, list) or len(tiles) != 2:
@@ -224,7 +248,7 @@ def parse_choice(choice, path):
     if kind in CHOICE_NO_ARG:
         return {"type": kind}
     raise ValueError(f"{path}.type = {kind!r} は不正です。"
-                     f"discard / pon / chi / skip / ron / tsumo / riichi のどれかにしてください")
+                     f"discard / pon / chi / daiminkan / kakan / ankan / skip / ron / tsumo / riichi のどれかにしてください")
 
 
 def validate_meld(meld, path):
@@ -241,6 +265,21 @@ def validate_meld(meld, path):
         check_tile(meld["called"], f"{path}.called")
     if meld.get("from") is not None and meld["from"] not in MELD_FROM:
         raise ValueError(f"{path}.from は {sorted(MELD_FROM)} のどれかにしてください: {meld['from']!r}")
+
+
+def validate_river(river, path):
+    """河（古い順の配列）。1枚ごとに {"tile", "tsumogiri", "riichi", "called_by"}。tile 以外は省略可"""
+    if not isinstance(river, list):
+        raise ValueError(f"{path} は配列にしてください: {river!r}")
+    for j, item in enumerate(river):
+        if not isinstance(item, dict):
+            raise ValueError(f"{path}[{j}] がオブジェクトではありません: {item!r}")
+        check_tile(item.get("tile"), f"{path}[{j}].tile")
+        for key in ("tsumogiri", "riichi"):
+            if item.get(key) is not None and not isinstance(item[key], bool):
+                raise ValueError(f"{path}[{j}].{key} は true / false にしてください: {item[key]!r}")
+        if item.get("called_by") is not None and item["called_by"] not in CALLED_BY:
+            raise ValueError(f"{path}[{j}].called_by は {sorted(CALLED_BY)} か null にしてください: {item['called_by']!r}")
 
 
 def validate_record(rec, i):
@@ -292,6 +331,12 @@ def validate_record(rec, i):
     for j, meld in enumerate(melds):
         validate_meld(meld, f"{path}.self.melds[{j}]")
 
+    # --- 河（任意。あれば検査して、画面に出す） ---
+    for owner, _ in RIVER_OWNERS:
+        holder = me if owner == "self" else (rec.get("others") or {}).get(owner)
+        if isinstance(holder, dict) and holder.get("river") is not None:
+            validate_river(holder["river"], f"{path}.{'self' if owner == 'self' else 'others.' + owner}.river")
+
     # --- decision: 行動と期待値差 ---
     dec = require_dict(rec, "decision", path)
     parse_choice(dec.get("player_choice"), f"{path}.decision.player_choice")
@@ -335,19 +380,56 @@ def kyoku_anchor(title, fallback):
 
 
 def meld_view(m):
-    """副露 → 表示用の牌リスト。鳴いた牌だけ横向き(rotated)にする（位置は from で決まる。type は使わない）"""
+    """副露 → 表示用の牌リスト。鳴いた牌だけ横向き(rotated)にする（位置は from で決まる。type は使わない）
+
+    加槓（kakan）は、元のポン3枚のうち鳴いた牌の上に、加えた牌（tiles の最後の1枚）を重ねて表示する。
+    """
     tiles = list(m.get("tiles", []))
     called, src = m.get("called"), m.get("from")
+    added = None
+    if m.get("type") == "kakan" and len(tiles) == 4 and called in tiles[:3]:
+        added, tiles = tiles[3], tiles[:3]
     pos = None
     if called in tiles and src:
         pos = {"上家": 0, "対面": 1, "下家": len(tiles) - 1}.get(src)     # チーは常に上家から → 先頭が鳴いた牌
     if pos is None:
-        return {"from": src, "tiles": [{"code": t, "rotated": False} for t in tiles]}
+        return {"from": src, "tiles": [{"code": t, "rotated": False, "added": None} for t in tiles + ([added] if added else [])]}
     rest = list(tiles)
     rest.remove(called)
     ordered = rest[:pos] + [called] + rest[pos:]
     return {"from": src,
-            "tiles": [{"code": t, "rotated": i == pos} for i, t in enumerate(ordered)]}
+            "tiles": [{"code": t, "rotated": i == pos, "added": added if i == pos else None} for i, t in enumerate(ordered)]}
+
+
+def river_note(tile):
+    """河の牌1枚に付ける説明（マウスを重ねたときに出る）"""
+    parts = []
+    if tile["riichi"]:
+        parts.append("立直宣言牌")
+    if tile["tsumogiri"]:
+        parts.append("ツモ切り")
+    if tile["called_by"]:
+        parts.append(f'{tile["called_by"]}に鳴かれた')
+    return "・".join(parts)
+
+
+def rivers_view(rec):
+    """4人の河 → 表示用。1段に RIVER_PER_ROW 枚。河が無い人は出さない"""
+    out = []
+    for owner, label in RIVER_OWNERS:
+        holder = rec["self"] if owner == "self" else (rec.get("others") or {}).get(owner)
+        river = holder.get("river") if isinstance(holder, dict) else None
+        if river is None:
+            continue
+        tiles = []
+        for r in river:
+            t = {"code": r["tile"], "tsumogiri": bool(r.get("tsumogiri")), "riichi": bool(r.get("riichi")),
+                 "called_by": r.get("called_by")}
+            t["note"] = river_note(t)
+            tiles.append(t)
+        out.append({"owner": owner, "label": f"{label}の河", "count": len(tiles),
+                    "rows": [tiles[i:i + RIVER_PER_ROW] for i in range(0, len(tiles), RIVER_PER_ROW)]})
+    return out
 
 
 def entry_view(rec, threshold):
@@ -373,7 +455,8 @@ def entry_view(rec, threshold):
         "trigger_label": f"{trigger} " if trigger else "",
         "trigger_tile": trigger_tile,
         "hand": hand,
-        "melds": [meld_view(m) for m in me.get("melds", [])],
+        "melds": [meld_view(m) for m in reversed(me.get("melds", []))],      # 新しく鳴いた副露を左に（元のレポートと同じ並び）
+        "rivers": rivers_view(rec),
         "player_choice": player_choice,
         "ai_choice": ai_choice,
         "loss": loss,
@@ -412,6 +495,7 @@ def build_report(records):
             ["AI一致率", f"{matched}/{total} = {matched / total * 100:.3f}%"],
             ["注意局面", f"{warned}/{total}（期待値差 {EV_WARNING_THRESHOLD} 以上）"],
         ],
+        "has_rivers": any(e["rivers"] for e in entries),          # 河の見方の説明を出すか
         "kyokus": list(kyokus.values()),
     }
 

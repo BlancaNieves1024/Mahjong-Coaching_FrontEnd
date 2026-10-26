@@ -307,7 +307,8 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -596,12 +597,14 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -910,12 +913,14 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -1225,17 +1230,20 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "e",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -1597,22 +1605,26 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "e",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -1938,27 +1950,32 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "e",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -2305,32 +2322,38 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "e",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2p",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -2697,37 +2720,44 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "e",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2p",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -3115,42 +3145,50 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "e",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2p",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -3559,47 +3597,56 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "e",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2p",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "1m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -4118,47 +4165,56 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "e",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2p",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "1m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -4578,52 +4634,62 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "e",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2p",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "1m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "3m",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -5073,57 +5139,68 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "e",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2p",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "1m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "3m",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -5584,57 +5661,68 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "e",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2p",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "1m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "3m",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -6104,62 +6192,74 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "e",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2p",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "1m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "3m",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9m",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -6662,62 +6762,74 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "e",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2p",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "1m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "3m",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9m",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },
@@ -7208,67 +7320,80 @@
         {
           "tile": "w",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "e",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8s",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2p",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9s",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "1m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "3m",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "2m",
           "tsumogiri": false,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "9m",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         },
         {
           "tile": "8s",
           "tsumogiri": true,
-          "riichi": false
+          "riichi": false,
+          "called_by": null
         }
       ]
     },

@@ -25,7 +25,7 @@ Mahjong-Coaching_FrontEnd/
 └ apps/v2/
     ├ app.py
     ├ data/
-    │   ├ dummy_backend_response.json    ← ダミーのバックエンド返り値（半荘全部・109局面。入力JSON仕様と同じ入れ子の形式）
+    │   ├ dummy_backend_response.json    ← ダミーのバックエンド返り値（Akochanの実出力から作成。半荘・6局・63局面。入力JSON仕様と同じ入れ子の形式）
     │   ├ sample_render_data.json        ← 画面に渡すJSON（data.json）のサンプル。テンプレートだけを触るとき用
     │   └ archive/                       ← 旧形式のデータ（参照用）
     ├ templates/
@@ -33,7 +33,8 @@ Mahjong-Coaching_FrontEnd/
     │   ├ error.html                     ← エラー画面
     │   └ result_manyhands.html          ← 結果画面
     └ tools/
-        └ extract_dummy_backend_response.py  ← ダミーの再生成スクリプト
+        ├ build_ai_input.py                  ← Akochanのレポート(HTML)から、入力JSONを作る。ダミーの再生成にも使う
+        └ reconstruct_table_state.py         ← 上のスクリプトが使う、河・副露・他家の手牌の復元
 ```
 
 - `app.py` は `apps/v2/` で起動する。ダミーは `apps/v2/data/` から読む。
@@ -92,7 +93,7 @@ python app.py
 
 ## 4. 動作確認
 
-### 4-1. ダミー（半荘全部）を表示する
+### 4-1. ダミー（半荘・6局）を表示する
 
 1. `http://127.0.0.1:8080/` を開く。
 2. テキスト欄に `https://example.com` と入力して送信する。ファイルを選んで送信しても、同じダミーが出る。
@@ -100,12 +101,13 @@ python app.py
 
 | 見る場所 | 期待する表示 |
 |---|---|
-| 目次 | 東1局、東2局 1本場、東3局、東4局、東4局 1本場、南1局、南2局、南3局、南4局（9局） |
-| メタデータ | 局数 9／局面数 109／AI一致率 75/109 = 68.807%／注意局面 29/109 |
-| 東1局 | 21局面。⚠️がついた局面だけ開いていて、AIアドバイス欄がある |
-| 東1局 6巡目 | プレイヤー「[7s][8s] チー」、AI「スルー」、期待値差 0.17004 |
-| 東1局 7巡目 | 手牌の右に副露（6sが横向きの6s7s8s）。ツモ牌の表示なし |
-| 南1局 2巡目 | 「対面打」の南。プレイヤーもAIも「南南 ポン」 |
+| 目次 | 東1局、東1局 1本場、東1局 2本場、東2局、東2局 1本場、東2局 2本場（6局） |
+| メタデータ | 局数 6／局面数 63／AI一致率 33/63 = 52.381%／注意局面 17/63 |
+| 東1局 2本場 0巡目 | 「期待値差を算出できませんでした」（Akochanが評価できなかった局面） |
+| 東1局 2本場 3巡目 | プレイヤー「大明槓 西」、AI「スルー」、期待値差 2.17907。手牌の右に、白のポンが見える |
+| 東2局 14巡目・15巡目 | 14巡目はプレイヤーもAIも「加槓 南」。15巡目は、副露の南が4枚（鳴いた牌の上に重ねて表示） |
+| 東2局 2本場 2巡目 | プレイヤーもAIも「打 4s 立直」 |
+| 各局面の手牌の下 | 4人の河（自分・下家・対面・上家）。1段に6枚。横向きの牌は立直宣言牌、薄い牌は鳴かれた牌、牌の下の青い線はツモ切り（ページ上部に凡例） |
 
 ### 4-2. バックエンドのJSONを貼り付けて表示する
 
@@ -130,7 +132,7 @@ python app.py
 
 - 8巡目が1件表示され、⚠️・期待値差 5.31000・コメントが出れば正常。
 - 複数巡目は、同じ形式のオブジェクトを `[ ... , ... ]` の配列にして貼る。
-- `others`（他家の情報）、`hidden_info`、`decision.candidates` などは、あっても読まない。仕様どおりの完全な形（東1局・18局面）は `shared/samples/ai_input_sample_east1.json` にあり、ファイルの中身をそのまま貼って確認できる（注意局面は3巡目と8巡目の2件）。
+- 各家の河（`self.river`、`others.*.river`）は読んで、画面に出す。河が無いJSON（上の最小の例）では、河の欄が出ない。`others` の河以外、`hidden_info`、`decision.candidates` などは、あっても読まない。仕様どおりの完全な形（東1局・自分の席0・18局面）は `shared/samples/ai_input_sample_east1.json` にあり、ファイルの中身をそのまま貼って確認できる（注意局面は3巡目と8巡目の2件）。ダミー（`apps/v2/data/dummy_backend_response.json`）も同じ形式なので、中身を貼って確認できる（約280KB）。
 - 画面が読む項目の一覧は、`app.py` の冒頭コメントを参照。
 - 旧形式（`kyoku` / `tehai` / `player_discard` ... の平らな形式）を貼ると、400のエラー画面になる。
 
@@ -185,7 +187,9 @@ curl -s -X POST http://127.0.0.1:8080/analyze -F "input_data=https://example.com
 - 今のバックエンドはダミー。本物をつなぐときは、`app.py` の `call_backend()` の中身だけ差し替える。
 - AIコメントは、ダミーでは注意局面にだけ固定文が付く。
 - 注意局面の基準は `EV_WARNING_THRESHOLD`（0.15）。
-- バックエンドの返り値は、入力JSONの `commentary` にAIのアドバイスを入れたもの。`app.py` は、その中から画面に必要な項目だけを読む。
 - バックエンドの返り値の形式は `docs/api/ai-input-format.md`。入力JSONの `commentary` にAIのアドバイスを入れたもの。`app.py` は、その中から画面に必要な項目だけを読む（読む項目の一覧は `app.py` の冒頭コメント）。
 - ダミー（`data/dummy_backend_response.json`）を作り直すときは、リポジトリのルートで次を実行する。実行時には使わない。
-  `python apps/v2/tools/extract_dummy_backend_response.py prototypes/02_ScreenHTML/template_manyhands_v2.html apps/v2/data/dummy_backend_response.json`
+  `python apps/v2/tools/build_ai_input.py <AkochanのレポートHTML> apps/v2/data/dummy_backend_response.json --lines`
+  - 複数局のレポート、自分の席が0以外のレポートにも対応している。`--lines` は、1局面を1行で書き出す指定。
+  - 元のレポートHTMLには、プレイヤー名（対局のID）が含まれるため、リポジトリには入れていない。手元のファイルを指定する。
+  - 手牌・副露がレポートの表示と一致しない局面があると、エラーで止まる。
