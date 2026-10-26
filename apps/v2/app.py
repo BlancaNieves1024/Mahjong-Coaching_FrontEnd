@@ -8,29 +8,45 @@ app = Flask(__name__)
 
 
 # =============================================================================
-# バックエンドから渡されるJSON（1局面 = 1オブジェクト。複数巡目は配列で渡す）
+# バックエンドから渡されるJSON（入力JSON仕様 ai-input-format.md と同じ形式）
 # -----------------------------------------------------------------------------
+# 返り値は「入力JSONの commentary 欄に、AIのアドバイスを入れたもの」。入力JSONと形式の差はない。
+# 1局面 = 1オブジェクト。複数巡目・複数局は配列で渡す（局面が1件なら単独のオブジェクトでも可）。
+#
 #   {
-#       "kyoku": "東1局",                      局（同じ局の局面は、この文字列が同じであること）
-#       "turn": 8,                             巡目
-#       "tehai": ["4m", "6m", ..., "1s"],      手牌の牌コード（閉じた手牌のみ）。最後の1枚がツモ牌
-#       "player_discard": "6m",                自分の選択（下記の「行動の表記」）
-#       "ai_discard": "1s",                    AIの選択（同上）
-#       "loss": 5.31,                          期待値差（AI − 自分）。null可
-#       "commentary": "..."                    AIのコメント。省略・null可
+#     "meta":        { "kyoku": "東1局", "honba": 0, ... },
+#     "situation":   { "turn": 8, "trigger": "draw", "trigger_actor": "自分", "trigger_tile": "6p", ... },
+#     "self":        { "hand_with_trigger_tile": [...], "melds": [...], ... },
+#     "others":      ...  ← 画面では使わない（読まない）
+#     "hidden_info": ...  ← 画面では使わない（読まない）
+#     "decision":    { "player_choice": {...}, "ai_choice": {...}, "loss": 0.89, ... },
+#     "commentary":  "AIのアドバイス文"
 #   }
 #
-# 行動の表記（player_discard / ai_discard）
-#   打牌            牌コード                          例 "6m"
-#   それ以外        "スルー" "立直" "ロン" "ツモ"
-#   チー・ポン      鳴きに使う手牌2枚 + チー/ポン       例 "7s8sチー" "ssポン"
+# 画面に出す情報は、下の表の項目だけをJSONから抽出する（extract 処理: entry_view / build_report）。
 #
-# 任意キー（無ければ省略。基本形式に無い局面を表すためのもの）
-#   "trigger": "自摸" | "上家打" | "対面打" | "下家打" | null
-#        省略＝"自摸"。他家の打牌への判断（スルー・鳴き・ロン）は "上家打" などで、tehai の最後がその牌。
-#        null＝鳴いた直後でツモ牌なし（tehai の最後はツモ牌ではない）
-#   "melds": [{"type": "chi"|"pon"|"daiminkan"|"kakan"|"ankan", "tiles": [...], "called": "6s", "from": "上家"|"対面"|"下家"}]
-#        副露済みの面子（tehai には含めない）。called と from は暗槓・加槓では省略可
+#   画面の情報          JSONの場所                                  備考
+#   ------------------  ------------------------------------------  ------------------------------------------
+#   局の見出し・目次    meta.kyoku （+ meta.honba）                  honba が1以上なら「東2局 1本場」と表示
+#   巡目                situation.turn
+#   手牌                self.hand_with_trigger_tile                 きっかけの牌（下記）を末尾に分けて表示
+#   自摸/他家の打牌     situation.trigger / trigger_actor /          draw → 「自摸」
+#                       trigger_tile                                 opponent_discard → 「上家打」「対面打」「下家打」
+#                                                                    trigger が null → ツモ牌なし（鳴いた直後）
+#   副露                self.melds                                  tiles / called / from（type は使わない）
+#   プレイヤーの行動    decision.player_choice
+#   AIの行動            decision.ai_choice
+#   期待値差・注意局面  decision.loss                               絶対値が EV_WARNING_THRESHOLD 以上で注意
+#   AIのアドバイス      commentary                                  注意局面にだけ表示
+#
+#   読まない項目: situation.wall_remaining、self の wind / score / river / is_dealer、others、hidden_info、
+#                 decision の candidates と各期待値、meta の engine / dora_indicators / kyotaku
+#                 （読まないので、中身が不正でも検査しない）
+#
+# 行動（player_choice / ai_choice）は {"type": ...} のオブジェクト
+#   {"type": "discard", "tile": "6m"}                                   打牌
+#   {"type": "pon" | "chi", "with_tiles": ["c","c"], "then_discard": "9s"}   鳴き（then_discard は省略可）
+#   {"type": "skip"} / {"type": "ron"} / {"type": "tsumo"} / {"type": "riichi"}
 #
 # 牌コードは mjai 表記のみ（天鳳形式の数字コードは受け付けない）
 #   萬子 1m〜9m / 筒子 1p〜9p / 索子 1s〜9s / 赤5 5mr・5pr・5sr
@@ -42,19 +58,19 @@ app = Flask(__name__)
 # -----------------------------------------------------------------------------
 #  1. 表示するHTMLを result.html → result_manyhands.html（複数局・複数巡目のレポート画面）に変更。
 #  2. バックエンドの返り値を、1局面のオブジェクトから「局面のリスト」に変更（単独のオブジェクトも可）。
-#     同じ kyoku の局面は1つの局にまとめ、目次・局見出しをつけて出力する（build_report() 参照）。
+#     同じ局の局面は1つの局にまとめ、目次・局見出しをつけて出力する（build_report() 参照）。
 #  3. 手牌の絵文字変換（convert_tile_detail）は廃止。画面側が牌のSVG（#pai-<牌コード>）で描画する。
 #     TILE_MAP は「有効な牌コードの一覧」として残し、字牌キーの修正メモも維持している。
-#  4. バックエンドからの受け取りを validate_record() で検査する。
-#     必須キーの欠け・型の誤り・不正な牌コード（天鳳の数字コード含む）は400エラー（理由はコンソールに出力）。
-#  5. 期待値差（loss）が EV_WARNING_THRESHOLD 以上の局面だけ、⚠️・展開・AIアドバイス欄を表示。
-#     これまでブラウザ側JSがやっていた判定を、app.py側で行うように変更した。
-#  6. バックエンド呼び出しは call_backend() に分離。今はダミーを返す（旧版の固定 result の代わり）。
+#  4. 期待値差（loss）が EV_WARNING_THRESHOLD 以上の局面だけ、⚠️・展開・AIアドバイス欄を表示。
+#  5. バックエンド呼び出しは call_backend() に分離。今はダミーを返す（旧版の固定 result の代わり）。
 #     本物のバックエンドをつなぐときは、この関数の中身だけ差し替える。
-#  7. 【今回】ダミーを「半荘全部（9局・109局面）」に変更。データは dummy_backend_response.json に分離した。
-#     これに伴い、打牌以外の判断（スルー・立直・ロン・ツモ・チー・ポン）、副露済みの手牌、
-#     他家の打牌への判断、鳴いた直後（ツモ牌なし）を表せるように、上記の「行動の表記」と
-#     任意キー trigger / melds を追加した（基本の7キーは変更なし）。
+#  6. 【今回】バックエンドの返り値の形式が変わった。
+#       旧: 画面用に平らにした形式 {kyoku, turn, tehai, player_discard, ai_discard, loss, commentary, trigger, melds}
+#       新: 入力JSON仕様と同じ入れ子の形式 {meta, situation, self, others, hidden_info, decision, commentary}
+#           （入力JSONの commentary にAIのアドバイスを入れるだけ。他の差はない）
+#     これに合わせて、返り値から画面に必要な項目だけを抽出する処理を入れた（上の表）。
+#     画面に出す情報は変えていない（残り枚数は、JSONにあるが従来どおり表示しない）。
+#     旧形式のJSONが貼り付けられたときは、400エラーにする（黙ってダミーを出さない）。
 # =============================================================================
 
 
@@ -96,54 +112,69 @@ DATA_PATH = os.path.join(app.root_path, "data.json")                         # �
 DUMMY_PATH = os.path.join(app.root_path, "data", "dummy_backend_response.json")  # ダミーのバックエンド返り値
 KYOKU_WINDS = "東南西北"
 
-# 行動の表記
-ACTION_WORDS = {"スルー": "skip", "立直": "riichi", "ロン": "ron", "ツモ": "tsumo"}
-CALL_PATTERN = re.compile(r"^((?:[1-9][mps]r?|[ewnspfc]){2})(チー|ポン)$")      # 例: 7s8sチー / ssポン
-TILE_TOKEN = re.compile(r"[1-9][mps]r?|[ewnspfc]")
-# 任意キーの値
-TRIGGERS = {"自摸", "上家打", "対面打", "下家打"}
+# situation.trigger の値
+TRIGGER_KINDS = {"draw", "opponent_discard"}
+TRIGGER_ACTORS = {"上家", "対面", "下家"}                    # opponent_discard のときの trigger_actor
+# 行動（choice）の type
+CHOICE_NO_ARG = {"skip", "ron", "tsumo", "riichi"}
 MELD_TYPES = {"chi", "pon", "daiminkan", "kakan", "ankan"}
 MELD_FROM = {"上家", "対面", "下家"}
+NESTED_KEYS = ("meta", "situation", "self", "decision")      # 新形式のトップキー
+LEGACY_KEYS = ("tehai", "player_discard", "ai_discard")      # 旧形式（平らな形式）のキー
 
 
 # -----------------------------------------------------------------------------
 # バックエンド呼び出し（今はダミー）
 # -----------------------------------------------------------------------------
 def dummy_backend_response(source_type, seat):
-    """ダミーのバックエンド返り値。半荘全部（9局・109局面）を返す（旧版の固定 result の代わり）。
+    """ダミーのバックエンド返り値。半荘全部（9局・109局面）を新形式で返す。
 
-    注意局面（loss が閾値以上）にだけ、ダミーのコメントを付ける。
+    本物のバックエンドは、AIのアドバイスを commentary に入れて返す。ダミーでは、注意局面にだけ固定文を入れる。
     """
     with open(DUMMY_PATH, "r", encoding="utf-8") as f:
         records = json.load(f)
     note = f"【入力ソース: {source_type} / 自家: {seat}番】ここにAIからのコメントが入ります。"
     for rec in records:
-        if rec["loss"] is not None and abs(rec["loss"]) >= EV_WARNING_THRESHOLD:
+        loss = rec["decision"]["loss"]
+        if loss is not None and abs(loss) >= EV_WARNING_THRESHOLD and rec.get("commentary") is None:
             rec["commentary"] = note
     return records
 
 
+def first_record(obj):
+    return obj[0] if isinstance(obj, list) and obj else obj
+
+
 def looks_like_backend_response(obj):
-    """貼り付けられたJSONが、バックエンドの返り値の形（局面のオブジェクト or そのリスト）か"""
-    first = obj[0] if isinstance(obj, list) and obj else obj
-    return isinstance(first, dict) and any(k in first for k in ("tehai", "player_discard", "ai_discard"))
+    """貼り付けられたJSONが、新形式の返り値（局面のオブジェクト or そのリスト）か"""
+    first = first_record(obj)
+    return isinstance(first, dict) and any(k in first for k in NESTED_KEYS)
+
+
+def looks_like_legacy_response(obj):
+    """貼り付けられたJSONが、旧形式（kyoku / tehai / player_discard ... の平らな形式）か"""
+    first = first_record(obj)
+    return isinstance(first, dict) and any(k in first for k in LEGACY_KEYS) and not looks_like_backend_response(obj)
 
 
 def call_backend(source_type, input_data, seat):
     """バックエンドを呼び出して、局面のリストを返す。
 
     今はダミー。本物のバックエンドをつなぐときは、この関数の中身だけ差し替える。
-    （テスト用: JSONの貼り付けが上記の形なら、それをバックエンドの返り値として使う）
+    （テスト用: JSONの貼り付けが新形式なら、それをバックエンドの返り値として使う）
     """
     if source_type == "json":
         parsed = json.loads(input_data)
+        if looks_like_legacy_response(parsed):
+            raise ValueError("旧形式（kyoku / tehai / player_discard ...）のJSONです。"
+                             "新形式（meta / situation / self / decision / commentary）で渡してください")
         if looks_like_backend_response(parsed):
             return parsed, "貼り付けられたJSONをバックエンドの返り値として使用"
     return dummy_backend_response(source_type, seat), "ダミーのバックエンド返り値を使用"
 
 
 # -----------------------------------------------------------------------------
-# バックエンドの返り値の検査
+# バックエンドの返り値の検査（画面で使う項目だけを検査する）
 # -----------------------------------------------------------------------------
 def is_tenhou_code(code):
     return isinstance(code, int) or (isinstance(code, str) and re.fullmatch(r"\d{2}", code) is not None)
@@ -160,35 +191,47 @@ def check_tile(code, path):
     )
 
 
-def parse_action(value, path):
-    """バックエンドの行動表記 → 画面用の辞書。不正なら ValueError
+def require_dict(parent, key, path):
+    value = parent.get(key)
+    if not isinstance(value, dict):
+        raise ValueError(f"{path}.{key} がありません（オブジェクトで渡してください）")
+    return value
 
-    "6m"      → {"type": "discard", "tile": "6m"}
-    "スルー"  → {"type": "skip"}（立直 riichi / ロン ron / ツモ tsumo も同様）
-    "7s8sチー"→ {"type": "chi", "with_tiles": ["7s", "8s"]}（ポンは "pon"）
+
+def parse_choice(choice, path):
+    """行動 {"type": ...} → 画面用の辞書（検査つき）。不正なら ValueError
+
+    {"type":"discard","tile":"6m"} / {"type":"pon","with_tiles":["c","c"],"then_discard":"9s"} /
+    {"type":"skip"} など。then_discard は省略可。
     """
-    if isinstance(value, str):
-        if value in VALID_TILES:
-            return {"type": "discard", "tile": value}
-        if value in ACTION_WORDS:
-            return {"type": ACTION_WORDS[value]}
-        m = CALL_PATTERN.match(value)
-        if m:
-            return {"type": "pon" if m.group(2) == "ポン" else "chi",
-                    "with_tiles": TILE_TOKEN.findall(m.group(1))}
-    if is_tenhou_code(value):
-        check_tile(value, path)                                # 天鳳形式の数字コードだと分かる説明で ValueError
-    raise ValueError(
-        f"{path} = {value!r} は行動の表記として不正です。打牌は牌コード、それ以外は "
-        f"スルー / 立直 / ロン / ツモ / 「手牌2枚+チー・ポン」（例 7s8sチー）で渡してください"
-    )
+    if not isinstance(choice, dict) or "type" not in choice:
+        raise ValueError(f'{path} は {{"type": ...}} のオブジェクトで渡してください: {choice!r}')
+    kind = choice["type"]
+    if kind == "discard":
+        check_tile(choice.get("tile"), f"{path}.tile")
+        return {"type": "discard", "tile": choice["tile"]}
+    if kind in ("pon", "chi"):
+        tiles = choice.get("with_tiles")
+        if not isinstance(tiles, list) or len(tiles) != 2:
+            raise ValueError(f"{path}.with_tiles は手牌の2枚の配列にしてください: {tiles!r}")
+        for j, code in enumerate(tiles):
+            check_tile(code, f"{path}.with_tiles[{j}]")
+        out = {"type": kind, "with_tiles": list(tiles)}
+        if choice.get("then_discard") is not None:
+            check_tile(choice["then_discard"], f"{path}.then_discard")
+            out["then_discard"] = choice["then_discard"]
+        return out
+    if kind in CHOICE_NO_ARG:
+        return {"type": kind}
+    raise ValueError(f"{path}.type = {kind!r} は不正です。"
+                     f"discard / pon / chi / skip / ron / tsumo / riichi のどれかにしてください")
 
 
 def validate_meld(meld, path):
     if not isinstance(meld, dict):
         raise ValueError(f"{path} がオブジェクトではありません")
-    if meld.get("type") not in MELD_TYPES:
-        raise ValueError(f"{path}.type は {sorted(MELD_TYPES)} のどれかにしてください: {meld.get('type')!r}")
+    if meld.get("type") is not None and meld["type"] not in MELD_TYPES:      # type は任意（画面では使わない）
+        raise ValueError(f"{path}.type は {sorted(MELD_TYPES)} のどれかにしてください: {meld['type']!r}")
     tiles = meld.get("tiles")
     if not isinstance(tiles, list) or not 3 <= len(tiles) <= 4:
         raise ValueError(f"{path}.tiles は3〜4枚の配列にしてください: {tiles!r}")
@@ -201,36 +244,67 @@ def validate_meld(meld, path):
 
 
 def validate_record(rec, i):
-    """局面1件の必須キー・型・牌コード・行動の表記を検査する。不正なら ValueError"""
+    """局面1件のうち、画面で使う項目を検査する。不正なら ValueError"""
     path = f"[{i}]"
     if not isinstance(rec, dict):
         raise ValueError(f"{path} がオブジェクトではありません")
-    for key in ("kyoku", "turn", "tehai", "player_discard", "ai_discard", "loss"):
-        if key not in rec:
-            raise ValueError(f"{path} に必須キー '{key}' がありません")
-    if not isinstance(rec["kyoku"], str) or not rec["kyoku"].strip():
-        raise ValueError(f"{path}.kyoku は空でない文字列にしてください: {rec['kyoku']!r}")
-    if not isinstance(rec["turn"], int) or isinstance(rec["turn"], bool):
-        raise ValueError(f"{path}.turn は整数にしてください: {rec['turn']!r}")
-    if not isinstance(rec["tehai"], list) or not 2 <= len(rec["tehai"]) <= 14:
-        raise ValueError(f"{path}.tehai は2〜14枚の配列にしてください: {rec['tehai']!r}")
-    for j, code in enumerate(rec["tehai"]):
-        check_tile(code, f"{path}.tehai[{j}]")
-    parse_action(rec["player_discard"], f"{path}.player_discard")
-    parse_action(rec["ai_discard"], f"{path}.ai_discard")
-    loss = rec["loss"]
+
+    # --- meta: 局 ---
+    meta = require_dict(rec, "meta", path)
+    if not isinstance(meta.get("kyoku"), str) or not meta["kyoku"].strip():
+        raise ValueError(f"{path}.meta.kyoku は空でない文字列にしてください: {meta.get('kyoku')!r}")
+    honba = meta.get("honba")
+    if honba is not None and (not isinstance(honba, int) or isinstance(honba, bool) or honba < 0):
+        raise ValueError(f"{path}.meta.honba は0以上の整数にしてください: {honba!r}")
+
+    # --- situation: 巡目ときっかけ ---
+    sit = require_dict(rec, "situation", path)
+    if not isinstance(sit.get("turn"), int) or isinstance(sit["turn"], bool):
+        raise ValueError(f"{path}.situation.turn は整数にしてください: {sit.get('turn')!r}")
+    for key in ("trigger", "trigger_tile"):
+        if key not in sit:
+            raise ValueError(f"{path}.situation に必須キー '{key}' がありません（ツモ牌なしの局面は null）")
+    trigger = sit["trigger"]
+    if trigger is None:                                        # 鳴いた直後など、ツモ牌・他家の打牌がない局面
+        if sit["trigger_tile"] is not None:
+            raise ValueError(f"{path}.situation.trigger が null のとき、trigger_tile も null にしてください")
+    else:
+        if trigger not in TRIGGER_KINDS:
+            raise ValueError(f"{path}.situation.trigger は {sorted(TRIGGER_KINDS)} か null にしてください: {trigger!r}")
+        check_tile(sit["trigger_tile"], f"{path}.situation.trigger_tile")
+        if trigger == "opponent_discard" and sit.get("trigger_actor") not in TRIGGER_ACTORS:
+            raise ValueError(f"{path}.situation.trigger_actor は {sorted(TRIGGER_ACTORS)} のどれかにしてください: "
+                             f"{sit.get('trigger_actor')!r}")
+
+    # --- self: 手牌・副露 ---
+    me = require_dict(rec, "self", path)
+    hand = me.get("hand_with_trigger_tile")
+    if not isinstance(hand, list) or not 2 <= len(hand) <= 14:
+        raise ValueError(f"{path}.self.hand_with_trigger_tile は2〜14枚の配列にしてください: {hand!r}")
+    for j, code in enumerate(hand):
+        check_tile(code, f"{path}.self.hand_with_trigger_tile[{j}]")
+    if trigger is not None and sit["trigger_tile"] not in hand:
+        raise ValueError(f"{path}.situation.trigger_tile = {sit['trigger_tile']!r} が "
+                         f"self.hand_with_trigger_tile に含まれていません")
+    melds = me.get("melds", [])
+    if not isinstance(melds, list):
+        raise ValueError(f"{path}.self.melds は配列にしてください: {melds!r}")
+    for j, meld in enumerate(melds):
+        validate_meld(meld, f"{path}.self.melds[{j}]")
+
+    # --- decision: 行動と期待値差 ---
+    dec = require_dict(rec, "decision", path)
+    parse_choice(dec.get("player_choice"), f"{path}.decision.player_choice")
+    parse_choice(dec.get("ai_choice"), f"{path}.decision.ai_choice")
+    if "loss" not in dec:
+        raise ValueError(f"{path}.decision に必須キー 'loss' がありません")
+    loss = dec["loss"]
     if loss is not None and (not isinstance(loss, (int, float)) or isinstance(loss, bool)):
-        raise ValueError(f"{path}.loss は数値か null にしてください: {loss!r}")
+        raise ValueError(f"{path}.decision.loss は数値か null にしてください: {loss!r}")
+
+    # --- commentary ---
     if rec.get("commentary") is not None and not isinstance(rec["commentary"], str):
         raise ValueError(f"{path}.commentary は文字列か null にしてください: {rec['commentary']!r}")
-    # --- 任意キー ---
-    if "trigger" in rec and rec["trigger"] is not None and rec["trigger"] not in TRIGGERS:
-        raise ValueError(f"{path}.trigger は {sorted(TRIGGERS)} か null にしてください: {rec['trigger']!r}")
-    if "melds" in rec:
-        if not isinstance(rec["melds"], list):
-            raise ValueError(f"{path}.melds は配列にしてください: {rec['melds']!r}")
-        for j, meld in enumerate(rec["melds"]):
-            validate_meld(meld, f"{path}.melds[{j}]")
 
 
 def normalize_backend_response(obj):
@@ -244,78 +318,84 @@ def normalize_backend_response(obj):
 
 
 # -----------------------------------------------------------------------------
-# バックエンドの返り値 → 画面に渡す report の作成
+# バックエンドの返り値 → 画面に渡す report の作成（ここで、画面に必要な項目だけを抽出する）
 # -----------------------------------------------------------------------------
-def kyoku_anchor(name, fallback):
+def kyoku_title(meta):
+    """meta → 局の表示名。『東1局』、本場があれば『東2局 1本場』"""
+    honba = meta.get("honba") or 0
+    return meta["kyoku"].strip() + (f" {honba}本場" if honba else "")
+
+
+def kyoku_anchor(title, fallback):
     """『東2局 1本場』→ 'kyoku-1-1'（目次のアンカー kyoku-<局の番号>-<本場> 用）"""
-    m = re.match(rf"^([{KYOKU_WINDS}])(\d)局", name)
+    m = re.match(rf"^([{KYOKU_WINDS}])(\d)局", title)
     idx = KYOKU_WINDS.index(m.group(1)) * 4 + int(m.group(2)) - 1 if m else fallback
-    honba = re.search(r"(\d+)本場", name)
+    honba = re.search(r"(\d+)本場", title)
     return f"kyoku-{idx}-{honba.group(1) if honba else 0}"
 
 
 def meld_view(m):
-    """副露 → 表示用の牌リスト。鳴いた牌だけ横向き(rotated)にする"""
+    """副露 → 表示用の牌リスト。鳴いた牌だけ横向き(rotated)にする（位置は from で決まる。type は使わない）"""
     tiles = list(m.get("tiles", []))
     called, src = m.get("called"), m.get("from")
     pos = None
     if called in tiles and src:
-        if m.get("type") == "chi":
-            pos = 0                                           # チーは常に上家から（先頭が鳴いた牌）
-        else:
-            pos = {"上家": 0, "対面": 1, "下家": len(tiles) - 1}.get(src)
+        pos = {"上家": 0, "対面": 1, "下家": len(tiles) - 1}.get(src)     # チーは常に上家から → 先頭が鳴いた牌
     if pos is None:
-        return {"type": m.get("type"), "from": src, "tiles": [{"code": t, "rotated": False} for t in tiles]}
+        return {"from": src, "tiles": [{"code": t, "rotated": False} for t in tiles]}
     rest = list(tiles)
     rest.remove(called)
     ordered = rest[:pos] + [called] + rest[pos:]
-    return {"type": m.get("type"), "from": src,
+    return {"from": src,
             "tiles": [{"code": t, "rotated": i == pos} for i, t in enumerate(ordered)]}
 
 
 def entry_view(rec, threshold):
-    """局面1件 → 画面用の辞書"""
-    tehai = list(rec["tehai"])
-    trigger = rec.get("trigger", "自摸")                        # 省略＝自摸
-    if trigger is None:                                        # 鳴いた直後: ツモ牌なし
-        hand, trigger_tile = tehai, None
-    else:                                                      # 最後の1枚（ツモ牌／他家の打牌）を手牌の末尾に分けて表示
-        hand, trigger_tile = tehai[:-1], tehai[-1]
+    """局面1件（新形式）→ 画面用の辞書。画面に必要な項目だけを、JSONから抽出する"""
+    sit, me, dec = rec["situation"], rec["self"], rec["decision"]
 
-    loss = rec["loss"]
-    is_match = rec["player_discard"] == rec["ai_discard"]
-    is_warning = loss is not None and abs(loss) >= threshold
+    hand = list(me["hand_with_trigger_tile"])
+    if sit["trigger"] is None:                                 # 鳴いた直後: ツモ牌なし
+        trigger, trigger_tile = None, None
+    else:                                                      # きっかけの牌を手牌から分けて、末尾に「自摸」「上家打」などで表示
+        trigger_tile = sit["trigger_tile"]
+        trigger = "自摸" if sit["trigger"] == "draw" else f'{sit["trigger_actor"]}打'
+        hand.pop(len(hand) - 1 - hand[::-1].index(trigger_tile))
+
+    player_choice = parse_choice(dec["player_choice"], "decision.player_choice")
+    ai_choice = parse_choice(dec["ai_choice"], "decision.ai_choice")
+    loss = dec["loss"]
 
     return {
-        "turn": rec["turn"],
-        "wall_remaining": None,                                # バックエンドから渡されないため非表示
+        "turn": sit["turn"],
+        "wall_remaining": None,                                # JSONにはあるが、画面では従来どおり表示しない
         "trigger": trigger,
         "trigger_label": f"{trigger} " if trigger else "",
         "trigger_tile": trigger_tile,
         "hand": hand,
-        "melds": [meld_view(m) for m in rec.get("melds", [])],
-        "player_choice": parse_action(rec["player_discard"], "player_discard"),
-        "ai_choice": parse_action(rec["ai_discard"], "ai_discard"),
+        "melds": [meld_view(m) for m in me.get("melds", [])],
+        "player_choice": player_choice,
+        "ai_choice": ai_choice,
         "loss": loss,
-        "is_match": is_match,
-        "is_warning": is_warning,
+        "is_match": player_choice == ai_choice,
+        "is_warning": loss is not None and abs(loss) >= threshold,
         "commentary": rec.get("commentary"),
     }
 
 
 def build_report(records):
     """画面(result_manyhands.html)に渡すJSON全体を作る"""
-    kyokus = {}                                                # 局名 → 局。挿入順＝出現順
+    kyokus = {}                                                # 局の表示名 → 局。挿入順＝出現順
     for rec in records:
-        name = rec["kyoku"].strip()
-        if name not in kyokus:
-            kyokus[name] = {
-                "anchor": kyoku_anchor(name, 100 + len(kyokus)),
-                "name": name,
-                "end_status": "",                              # バックエンドから渡されない（空なら非表示）
+        title = kyoku_title(rec["meta"])
+        if title not in kyokus:
+            kyokus[title] = {
+                "anchor": kyoku_anchor(title, 100 + len(kyokus)),
+                "name": title,
+                "end_status": "",                              # 返り値にない（空なら非表示）
                 "entries": [],
             }
-        kyokus[name]["entries"].append(entry_view(rec, EV_WARNING_THRESHOLD))
+        kyokus[title]["entries"].append(entry_view(rec, EV_WARNING_THRESHOLD))
 
     entries = [e for k in kyokus.values() for e in k["entries"]]
     total = len(entries)
@@ -384,7 +464,7 @@ def analyze():
     # --- 500エラーのテスト用にあえて例外を発生させる ---
     # raise Exception("テスト用の強制エラーです")
 
-    # バックエンドの返り値（局面のリスト）を受け取り、検査して、画面用の report にする。
+    # バックエンドの返り値（局面のリスト）を受け取り、検査して、画面に必要な項目だけを抽出して report にする。
     # 形式の誤り・不正な牌コードは400エラー
     try:
         response, origin = call_backend(source_type, input_data, seat)
