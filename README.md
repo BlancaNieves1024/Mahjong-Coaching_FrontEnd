@@ -30,13 +30,16 @@ apps/
     data/        ダミーのバックエンド返り値、サンプル
     tools/       ダミーデータ生成スクリプト
 prototypes/      開発途中の検証（01: akochan出力からの悪手抽出、02: 画面HTML試作、11: HTML整形、99: 旧ファイル）
-shared/samples/  牌譜URLのサンプル（v1・v2 共通）
+shared/samples/  牌譜URL・バックエンド返り値JSONのサンプル（v1・v2 共通）
 docs/
+  api/           バックエンドとのJSON仕様（ai-input-format.md）
   project/       進捗報告・WBS
   images/        画面キャプチャ（prototype / v1 / v2 / shared）
 ```
 
 v2 のダミーデータは `prototypes/02_ScreenHTML/template_manyhands_v2.html` から `apps/v2/tools/extract_dummy_backend_response.py` で生成している。
+
+バックエンドの返り値の形式は [docs/api/ai-input-format.md](docs/api/ai-input-format.md)（入力JSONの `commentary` にAIのアドバイスを入れたもの）。v2 は、その中から画面に必要な項目だけを読む。
 
 ## 旧構成からの対応
 

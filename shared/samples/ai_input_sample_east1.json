@@ -1,0 +1,7641 @@
+[
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 1,
+      "wall_remaining": 69,
+      "trigger": "draw",
+      "trigger_actor": "自分",
+      "trigger_tile": "8m"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "1m",
+        "2m",
+        "2m",
+        "3m",
+        "4m",
+        "3s",
+        "4s",
+        "5s",
+        "8s",
+        "9s",
+        "e",
+        "w",
+        "c",
+        "8m"
+      ],
+      "melds": [],
+      "river": []
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": []
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": []
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": []
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "3m",
+          "4s",
+          "6m",
+          "7m",
+          "7p",
+          "7p",
+          "8s",
+          "9p",
+          "c",
+          "e",
+          "f",
+          "n",
+          "p"
+        ],
+        "toimen": [
+          "1s",
+          "2s",
+          "3p",
+          "4m",
+          "4m",
+          "4p",
+          "5sr",
+          "6m",
+          "7s",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "1m",
+          "2p",
+          "2p",
+          "3p",
+          "3s",
+          "4p",
+          "7m",
+          "7s",
+          "8p",
+          "8s",
+          "9m",
+          "n",
+          "w"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "discard",
+        "tile": "w"
+      },
+      "ai_choice": {
+        "type": "discard",
+        "tile": "e"
+      },
+      "loss": 0.02832,
+      "player_pt_ev": -0.90394,
+      "ai_pt_ev": -0.87562,
+      "candidates": [
+        {
+          "action": {
+            "type": "discard",
+            "tile": "e"
+          },
+          "pt_ev": -0.87562,
+          "deal_in_pct": 0.00034,
+          "post_deal_in_pt_ev": -32.16042,
+          "tile_passes_pt_ev": -0.87551
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "w"
+          },
+          "pt_ev": -0.90394,
+          "deal_in_pct": 0.00034,
+          "post_deal_in_pt_ev": -32.16042,
+          "tile_passes_pt_ev": -0.90383
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "c"
+          },
+          "pt_ev": -1.02437,
+          "deal_in_pct": 0.00038,
+          "post_deal_in_pt_ev": -32.16042,
+          "tile_passes_pt_ev": -1.02426
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "8m"
+          },
+          "pt_ev": -2.64557,
+          "deal_in_pct": 0.00188,
+          "post_deal_in_pt_ev": -32.16042,
+          "tile_passes_pt_ev": -2.64501
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2m"
+          },
+          "pt_ev": -3.38526,
+          "deal_in_pct": 0.00188,
+          "post_deal_in_pt_ev": -32.16042,
+          "tile_passes_pt_ev": -3.38472
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "1m"
+          },
+          "pt_ev": -3.42334,
+          "deal_in_pct": 0.00124,
+          "post_deal_in_pt_ev": -32.16042,
+          "tile_passes_pt_ev": -3.42298
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4m"
+          },
+          "pt_ev": -4.76435,
+          "deal_in_pct": 0.00275,
+          "post_deal_in_pt_ev": -32.16042,
+          "tile_passes_pt_ev": -4.76359
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "pt_ev": -5.35411,
+          "deal_in_pct": 0.00146,
+          "post_deal_in_pt_ev": -32.16042,
+          "tile_passes_pt_ev": -5.35372
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "8s"
+          },
+          "pt_ev": -5.85417,
+          "deal_in_pct": 0.00188,
+          "post_deal_in_pt_ev": -32.16042,
+          "tile_passes_pt_ev": -5.85368
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "pt_ev": -7.39443,
+          "deal_in_pct": 0.00297,
+          "post_deal_in_pt_ev": -32.16042,
+          "tile_passes_pt_ev": -7.39369
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "pt_ev": -7.39634,
+          "deal_in_pct": 0.00226,
+          "post_deal_in_pt_ev": -32.16042,
+          "tile_passes_pt_ev": -7.39578
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3m"
+          },
+          "pt_ev": -9.31405,
+          "deal_in_pct": 0.00213,
+          "post_deal_in_pt_ev": -32.16042,
+          "tile_passes_pt_ev": -9.31356
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4s"
+          },
+          "pt_ev": -9.31424,
+          "deal_in_pct": 0.00297,
+          "post_deal_in_pt_ev": -32.16042,
+          "tile_passes_pt_ev": -9.31356
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 2,
+      "wall_remaining": 65,
+      "trigger": "draw",
+      "trigger_actor": "自分",
+      "trigger_tile": "c"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "1m",
+        "2m",
+        "2m",
+        "3m",
+        "4m",
+        "8m",
+        "3s",
+        "4s",
+        "5s",
+        "8s",
+        "9s",
+        "e",
+        "c",
+        "c"
+      ],
+      "melds": [],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "n"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "3m",
+          "4s",
+          "6m",
+          "6m",
+          "7m",
+          "7p",
+          "7p",
+          "8s",
+          "9p",
+          "c",
+          "e",
+          "f",
+          "p"
+        ],
+        "toimen": [
+          "1s",
+          "2s",
+          "3p",
+          "4m",
+          "4m",
+          "4p",
+          "5sr",
+          "6m",
+          "7s",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "1m",
+          "2p",
+          "2p",
+          "3p",
+          "3s",
+          "4p",
+          "5m",
+          "7m",
+          "7s",
+          "8p",
+          "8s",
+          "9m",
+          "n"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "discard",
+        "tile": "8m"
+      },
+      "ai_choice": {
+        "type": "discard",
+        "tile": "e"
+      },
+      "loss": 0.08159,
+      "player_pt_ev": -2.09084,
+      "ai_pt_ev": -2.00925,
+      "candidates": [
+        {
+          "action": {
+            "type": "discard",
+            "tile": "e"
+          },
+          "pt_ev": -2.00925,
+          "deal_in_pct": 0.00012,
+          "post_deal_in_pt_ev": -32.03946,
+          "tile_passes_pt_ev": -2.00921
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "8m"
+          },
+          "pt_ev": -2.09084,
+          "deal_in_pct": 0.00064,
+          "post_deal_in_pt_ev": -32.05458,
+          "tile_passes_pt_ev": -2.09065
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2m"
+          },
+          "pt_ev": -2.75266,
+          "deal_in_pct": 0.00064,
+          "post_deal_in_pt_ev": -32.05458,
+          "tile_passes_pt_ev": -2.75247
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "1m"
+          },
+          "pt_ev": -2.94335,
+          "deal_in_pct": 0.00042,
+          "post_deal_in_pt_ev": -32.0525,
+          "tile_passes_pt_ev": -2.94322
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "pt_ev": -3.12516,
+          "deal_in_pct": 0.0005,
+          "post_deal_in_pt_ev": -32.05336,
+          "tile_passes_pt_ev": -3.12502
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "8s"
+          },
+          "pt_ev": -3.36184,
+          "deal_in_pct": 0.00064,
+          "post_deal_in_pt_ev": -32.05458,
+          "tile_passes_pt_ev": -3.36166
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4m"
+          },
+          "pt_ev": -3.47321,
+          "deal_in_pct": 0.00093,
+          "post_deal_in_pt_ev": -32.05604,
+          "tile_passes_pt_ev": -3.47294
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "c"
+          },
+          "pt_ev": -5.61618,
+          "deal_in_pct": 0.00014,
+          "post_deal_in_pt_ev": -32.03941,
+          "tile_passes_pt_ev": -5.61615
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "pt_ev": -5.843,
+          "deal_in_pct": 0.00101,
+          "post_deal_in_pt_ev": -32.05592,
+          "tile_passes_pt_ev": -5.84273
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "pt_ev": -5.85273,
+          "deal_in_pct": 0.00077,
+          "post_deal_in_pt_ev": -32.05561,
+          "tile_passes_pt_ev": -5.85252
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3m"
+          },
+          "pt_ev": -6.22484,
+          "deal_in_pct": 0.00072,
+          "post_deal_in_pt_ev": -32.05544,
+          "tile_passes_pt_ev": -6.22466
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4s"
+          },
+          "pt_ev": -6.56524,
+          "deal_in_pct": 0.00101,
+          "post_deal_in_pt_ev": -32.0562,
+          "tile_passes_pt_ev": -6.56499
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 2,
+      "wall_remaining": 62,
+      "trigger": "opponent_discard",
+      "trigger_actor": "上家",
+      "trigger_tile": "1m"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "1m",
+        "2m",
+        "2m",
+        "3m",
+        "4m",
+        "3s",
+        "4s",
+        "5s",
+        "8s",
+        "9s",
+        "e",
+        "c",
+        "c",
+        "1m"
+      ],
+      "melds": [],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "7s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "3m",
+          "4s",
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8s",
+          "9p",
+          "c",
+          "e",
+          "f"
+        ],
+        "toimen": [
+          "1s",
+          "2s",
+          "3p",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "2p",
+          "3p",
+          "3s",
+          "4p",
+          "5m",
+          "7m",
+          "7s",
+          "8p",
+          "8s",
+          "9m",
+          "e",
+          "n"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "skip"
+      },
+      "ai_choice": {
+        "type": "skip"
+      },
+      "loss": 0.0,
+      "player_pt_ev": -2.899,
+      "ai_pt_ev": -2.899,
+      "candidates": [
+        {
+          "action": {
+            "type": "skip"
+          },
+          "pt_ev": -2.899,
+          "deal_in_pct": null,
+          "post_deal_in_pt_ev": null,
+          "tile_passes_pt_ev": null
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "2m",
+              "3m"
+            ],
+            "then_discard": "8s"
+          },
+          "pt_ev": -6.89803,
+          "deal_in_pct": 0.00021,
+          "post_deal_in_pt_ev": -31.98865,
+          "tile_passes_pt_ev": -6.89798
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "2m",
+              "3m"
+            ],
+            "then_discard": "9s"
+          },
+          "pt_ev": -6.89834,
+          "deal_in_pct": 0.00018,
+          "post_deal_in_pt_ev": -31.96086,
+          "tile_passes_pt_ev": -6.8983
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "2m",
+              "3m"
+            ],
+            "then_discard": "e"
+          },
+          "pt_ev": -6.89998,
+          "deal_in_pct": 4e-05,
+          "post_deal_in_pt_ev": -31.99524,
+          "tile_passes_pt_ev": -6.89997
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "2m",
+              "3m"
+            ],
+            "then_discard": "2m"
+          },
+          "pt_ev": -6.90939,
+          "deal_in_pct": 0.0002,
+          "post_deal_in_pt_ev": -31.99923,
+          "tile_passes_pt_ev": -6.89808
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "2m",
+              "3m"
+            ],
+            "then_discard": "5s"
+          },
+          "pt_ev": -6.91401,
+          "deal_in_pct": 0.00033,
+          "post_deal_in_pt_ev": -31.99178,
+          "tile_passes_pt_ev": -6.89715
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "2m",
+              "3m"
+            ],
+            "then_discard": "3s"
+          },
+          "pt_ev": -6.91508,
+          "deal_in_pct": 0.00025,
+          "post_deal_in_pt_ev": -31.98907,
+          "tile_passes_pt_ev": -6.89763
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "2m",
+              "3m"
+            ],
+            "then_discard": "4s"
+          },
+          "pt_ev": -6.91639,
+          "deal_in_pct": 0.00022,
+          "post_deal_in_pt_ev": -32.18213,
+          "tile_passes_pt_ev": -6.89749
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "2m",
+              "3m"
+            ],
+            "then_discard": "c"
+          },
+          "pt_ev": -6.91818,
+          "deal_in_pct": 4e-05,
+          "post_deal_in_pt_ev": -31.99512,
+          "tile_passes_pt_ev": -6.89984
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 3,
+      "wall_remaining": 61,
+      "trigger": "draw",
+      "trigger_actor": "自分",
+      "trigger_tile": "5p"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "1m",
+        "2m",
+        "2m",
+        "3m",
+        "4m",
+        "3s",
+        "4s",
+        "5s",
+        "8s",
+        "9s",
+        "e",
+        "c",
+        "c",
+        "5p"
+      ],
+      "melds": [],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "7s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "3m",
+          "4s",
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8s",
+          "9p",
+          "c",
+          "e",
+          "f"
+        ],
+        "toimen": [
+          "1s",
+          "2s",
+          "3p",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "2p",
+          "3p",
+          "3s",
+          "4p",
+          "5m",
+          "7m",
+          "7s",
+          "8p",
+          "8s",
+          "9m",
+          "e",
+          "n"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "discard",
+        "tile": "e"
+      },
+      "ai_choice": {
+        "type": "discard",
+        "tile": "e"
+      },
+      "loss": 0.0,
+      "player_pt_ev": -1.85201,
+      "ai_pt_ev": -1.85201,
+      "candidates": [
+        {
+          "action": {
+            "type": "discard",
+            "tile": "e"
+          },
+          "pt_ev": -1.85201,
+          "deal_in_pct": 4e-05,
+          "post_deal_in_pt_ev": -31.99524,
+          "tile_passes_pt_ev": -1.852
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "pt_ev": -2.10545,
+          "deal_in_pct": 0.00018,
+          "post_deal_in_pt_ev": -31.96086,
+          "tile_passes_pt_ev": -2.10539
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "8s"
+          },
+          "pt_ev": -2.17219,
+          "deal_in_pct": 0.00021,
+          "post_deal_in_pt_ev": -31.98865,
+          "tile_passes_pt_ev": -2.17213
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5p"
+          },
+          "pt_ev": -2.52809,
+          "deal_in_pct": 0.00032,
+          "post_deal_in_pt_ev": -31.99478,
+          "tile_passes_pt_ev": -2.528
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "1m"
+          },
+          "pt_ev": -2.74465,
+          "deal_in_pct": 0.0,
+          "post_deal_in_pt_ev": null,
+          "tile_passes_pt_ev": null
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2m"
+          },
+          "pt_ev": -2.76173,
+          "deal_in_pct": 0.0002,
+          "post_deal_in_pt_ev": -31.99923,
+          "tile_passes_pt_ev": -2.76168
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4m"
+          },
+          "pt_ev": -3.41001,
+          "deal_in_pct": 0.0002,
+          "post_deal_in_pt_ev": -31.99424,
+          "tile_passes_pt_ev": -3.40995
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "c"
+          },
+          "pt_ev": -5.20258,
+          "deal_in_pct": 4e-05,
+          "post_deal_in_pt_ev": -31.99512,
+          "tile_passes_pt_ev": -5.20257
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "pt_ev": -5.72259,
+          "deal_in_pct": 0.00033,
+          "post_deal_in_pt_ev": -31.99178,
+          "tile_passes_pt_ev": -5.72251
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "pt_ev": -5.72826,
+          "deal_in_pct": 0.00025,
+          "post_deal_in_pt_ev": -31.98907,
+          "tile_passes_pt_ev": -5.7282
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3m"
+          },
+          "pt_ev": -6.03829,
+          "deal_in_pct": 0.00023,
+          "post_deal_in_pt_ev": -31.98696,
+          "tile_passes_pt_ev": -6.03823
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4s"
+          },
+          "pt_ev": -6.45712,
+          "deal_in_pct": 0.00022,
+          "post_deal_in_pt_ev": -32.18213,
+          "tile_passes_pt_ev": -6.45707
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 3,
+      "wall_remaining": 60,
+      "trigger": "opponent_discard",
+      "trigger_actor": "下家",
+      "trigger_tile": "c"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "1m",
+        "2m",
+        "2m",
+        "3m",
+        "4m",
+        "5p",
+        "3s",
+        "4s",
+        "5s",
+        "8s",
+        "9s",
+        "c",
+        "c",
+        "c"
+      ],
+      "melds": [],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "e",
+          "tsumogiri": false,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "c",
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "7s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "3m",
+          "4s",
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8s",
+          "9p",
+          "e",
+          "f",
+          "f"
+        ],
+        "toimen": [
+          "1s",
+          "2s",
+          "3p",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "2p",
+          "3p",
+          "3s",
+          "4p",
+          "5m",
+          "7m",
+          "7s",
+          "8p",
+          "8s",
+          "9m",
+          "e",
+          "n"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "pon",
+        "with_tiles": [
+          "c",
+          "c"
+        ],
+        "then_discard": "9s"
+      },
+      "ai_choice": {
+        "type": "pon",
+        "with_tiles": [
+          "c",
+          "c"
+        ],
+        "then_discard": "5p"
+      },
+      "loss": 0.30556,
+      "player_pt_ev": -2.03563,
+      "ai_pt_ev": -1.73007,
+      "candidates": [
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "c",
+              "c"
+            ],
+            "then_discard": "5p"
+          },
+          "pt_ev": -1.73007,
+          "deal_in_pct": 0.00575,
+          "post_deal_in_pt_ev": -31.31508,
+          "tile_passes_pt_ev": -1.72837
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "c",
+              "c"
+            ],
+            "then_discard": "9s"
+          },
+          "pt_ev": -2.03563,
+          "deal_in_pct": 0.00291,
+          "post_deal_in_pt_ev": -31.31862,
+          "tile_passes_pt_ev": -2.03478
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "c",
+              "c"
+            ],
+            "then_discard": "1m"
+          },
+          "pt_ev": -2.08634,
+          "deal_in_pct": 0.00236,
+          "post_deal_in_pt_ev": -31.27444,
+          "tile_passes_pt_ev": -2.08565
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "c",
+              "c"
+            ],
+            "then_discard": "8s"
+          },
+          "pt_ev": -2.08955,
+          "deal_in_pct": 0.00368,
+          "post_deal_in_pt_ev": -31.31548,
+          "tile_passes_pt_ev": -2.08847
+        },
+        {
+          "action": {
+            "type": "skip"
+          },
+          "pt_ev": -2.33358,
+          "deal_in_pct": null,
+          "post_deal_in_pt_ev": null,
+          "tile_passes_pt_ev": null
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "c",
+              "c"
+            ],
+            "then_discard": "2m"
+          },
+          "pt_ev": -3.00951,
+          "deal_in_pct": 0.00354,
+          "post_deal_in_pt_ev": -31.31551,
+          "tile_passes_pt_ev": -3.00851
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "c",
+              "c"
+            ],
+            "then_discard": "4m"
+          },
+          "pt_ev": -3.68744,
+          "deal_in_pct": 0.00525,
+          "post_deal_in_pt_ev": -31.30276,
+          "tile_passes_pt_ev": -3.68599
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "c",
+              "c"
+            ],
+            "then_discard": "3m"
+          },
+          "pt_ev": -5.48772,
+          "deal_in_pct": 0.00413,
+          "post_deal_in_pt_ev": -31.3146,
+          "tile_passes_pt_ev": -5.48665
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "c",
+              "c"
+            ],
+            "then_discard": "5s"
+          },
+          "pt_ev": -5.70272,
+          "deal_in_pct": 0.00576,
+          "post_deal_in_pt_ev": -31.31535,
+          "tile_passes_pt_ev": -5.70125
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "c",
+              "c"
+            ],
+            "then_discard": "3s"
+          },
+          "pt_ev": -5.70659,
+          "deal_in_pct": 0.0044,
+          "post_deal_in_pt_ev": -31.31549,
+          "tile_passes_pt_ev": -5.70546
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "c",
+              "c"
+            ],
+            "then_discard": "4s"
+          },
+          "pt_ev": -6.50624,
+          "deal_in_pct": 0.00567,
+          "post_deal_in_pt_ev": -31.30973,
+          "tile_passes_pt_ev": -6.50484
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 5,
+      "wall_remaining": 56,
+      "trigger": "draw",
+      "trigger_actor": "自分",
+      "trigger_tile": "2s"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "1m",
+        "2m",
+        "2m",
+        "3m",
+        "4m",
+        "5p",
+        "3s",
+        "4s",
+        "5s",
+        "8s",
+        "2s"
+      ],
+      "melds": [
+        {
+          "type": "pon",
+          "tiles": [
+            "c",
+            "c",
+            "c"
+          ],
+          "called": "c",
+          "from": "下家"
+        }
+      ],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "e",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": false,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": "自分"
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "c",
+          "e",
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "7s",
+          "9s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "e",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "3m",
+          "4s",
+          "5p",
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8s",
+          "9p",
+          "f",
+          "f"
+        ],
+        "toimen": [
+          "1s",
+          "2s",
+          "3p",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "2p",
+          "3p",
+          "3s",
+          "4p",
+          "5m",
+          "5pr",
+          "7m",
+          "7s",
+          "8p",
+          "8s",
+          "9m",
+          "n"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "discard",
+        "tile": "8s"
+      },
+      "ai_choice": {
+        "type": "discard",
+        "tile": "8s"
+      },
+      "loss": 0.0,
+      "player_pt_ev": 0.50005,
+      "ai_pt_ev": 0.50005,
+      "candidates": [
+        {
+          "action": {
+            "type": "discard",
+            "tile": "8s"
+          },
+          "pt_ev": 0.50005,
+          "deal_in_pct": 0.01213,
+          "post_deal_in_pt_ev": -31.91349,
+          "tile_passes_pt_ev": 0.50398
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5p"
+          },
+          "pt_ev": 0.16039,
+          "deal_in_pct": 0.01972,
+          "post_deal_in_pt_ev": -31.91055,
+          "tile_passes_pt_ev": 0.16671
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "1m"
+          },
+          "pt_ev": -0.37771,
+          "deal_in_pct": 0.00601,
+          "post_deal_in_pt_ev": -31.27451,
+          "tile_passes_pt_ev": -0.37585
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2s"
+          },
+          "pt_ev": -0.81634,
+          "deal_in_pct": 0.01258,
+          "post_deal_in_pt_ev": -31.91429,
+          "tile_passes_pt_ev": -0.81243
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "pt_ev": -1.03473,
+          "deal_in_pct": 0.01972,
+          "post_deal_in_pt_ev": -31.91054,
+          "tile_passes_pt_ev": -1.02864
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2m"
+          },
+          "pt_ev": -1.18885,
+          "deal_in_pct": 0.01186,
+          "post_deal_in_pt_ev": -31.87846,
+          "tile_passes_pt_ev": -1.18521
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4m"
+          },
+          "pt_ev": -1.76961,
+          "deal_in_pct": 0.01659,
+          "post_deal_in_pt_ev": -31.75628,
+          "tile_passes_pt_ev": -1.76464
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3m"
+          },
+          "pt_ev": -3.4583,
+          "deal_in_pct": 0.01391,
+          "post_deal_in_pt_ev": -31.89044,
+          "tile_passes_pt_ev": -3.45434
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4s"
+          },
+          "pt_ev": -4.61795,
+          "deal_in_pct": 0.01967,
+          "post_deal_in_pt_ev": -31.91057,
+          "tile_passes_pt_ev": -4.61258
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "pt_ev": -4.61987,
+          "deal_in_pct": 0.01501,
+          "post_deal_in_pt_ev": -31.91685,
+          "tile_passes_pt_ev": -4.61578
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 6,
+      "wall_remaining": 52,
+      "trigger": "draw",
+      "trigger_actor": "自分",
+      "trigger_tile": "2p"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "1m",
+        "2m",
+        "2m",
+        "3m",
+        "4m",
+        "5p",
+        "2s",
+        "3s",
+        "4s",
+        "5s",
+        "2p"
+      ],
+      "melds": [
+        {
+          "type": "pon",
+          "tiles": [
+            "c",
+            "c",
+            "c"
+          ],
+          "called": "c",
+          "from": "下家"
+        }
+      ],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "e",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8s",
+          "tsumogiri": false,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": "自分"
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "c",
+          "e",
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1s",
+          "7s",
+          "9s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "e",
+          "n",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "3m",
+          "4s",
+          "5p",
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8s",
+          "9p",
+          "f",
+          "f"
+        ],
+        "toimen": [
+          "2s",
+          "3p",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "8p",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "2p",
+          "3p",
+          "3s",
+          "4p",
+          "4p",
+          "5m",
+          "5pr",
+          "7m",
+          "7s",
+          "8p",
+          "8s",
+          "9m"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "discard",
+        "tile": "2p"
+      },
+      "ai_choice": {
+        "type": "discard",
+        "tile": "2p"
+      },
+      "loss": 0.0,
+      "player_pt_ev": -0.85184,
+      "ai_pt_ev": -0.85184,
+      "candidates": [
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2p"
+          },
+          "pt_ev": -0.85184,
+          "deal_in_pct": 0.03535,
+          "post_deal_in_pt_ev": -32.03589,
+          "tile_passes_pt_ev": -0.84081
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5p"
+          },
+          "pt_ev": -1.02862,
+          "deal_in_pct": 0.05491,
+          "post_deal_in_pt_ev": -32.03408,
+          "tile_passes_pt_ev": -1.01159
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "1m"
+          },
+          "pt_ev": -1.72229,
+          "deal_in_pct": 0.00757,
+          "post_deal_in_pt_ev": -31.73604,
+          "tile_passes_pt_ev": -1.72001
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2s"
+          },
+          "pt_ev": -2.0418,
+          "deal_in_pct": 0.03569,
+          "post_deal_in_pt_ev": -32.03299,
+          "tile_passes_pt_ev": -2.03109
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "pt_ev": -2.21333,
+          "deal_in_pct": 0.05397,
+          "post_deal_in_pt_ev": -32.03928,
+          "tile_passes_pt_ev": -2.19722
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2m"
+          },
+          "pt_ev": -2.53243,
+          "deal_in_pct": 0.03148,
+          "post_deal_in_pt_ev": -32.0048,
+          "tile_passes_pt_ev": -2.52315
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4m"
+          },
+          "pt_ev": -2.99613,
+          "deal_in_pct": 0.04191,
+          "post_deal_in_pt_ev": -31.98654,
+          "tile_passes_pt_ev": -2.98398
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3m"
+          },
+          "pt_ev": -4.64836,
+          "deal_in_pct": 0.03752,
+          "post_deal_in_pt_ev": -32.01807,
+          "tile_passes_pt_ev": -4.63808
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "pt_ev": -5.63147,
+          "deal_in_pct": 0.04191,
+          "post_deal_in_pt_ev": -32.04043,
+          "tile_passes_pt_ev": -5.62039
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4s"
+          },
+          "pt_ev": -5.96694,
+          "deal_in_pct": 0.03076,
+          "post_deal_in_pt_ev": -32.35857,
+          "tile_passes_pt_ev": -5.95882
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 7,
+      "wall_remaining": 48,
+      "trigger": "draw",
+      "trigger_actor": "自分",
+      "trigger_tile": "9s"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "1m",
+        "2m",
+        "2m",
+        "3m",
+        "4m",
+        "5p",
+        "2s",
+        "3s",
+        "4s",
+        "5s",
+        "9s"
+      ],
+      "melds": [
+        {
+          "type": "pon",
+          "tiles": [
+            "c",
+            "c",
+            "c"
+          ],
+          "called": "c",
+          "from": "下家"
+        }
+      ],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "e",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "2p",
+          "tsumogiri": true,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": "自分"
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "3m",
+          "c",
+          "e",
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1s",
+          "2s",
+          "7s",
+          "9s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "w",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "e",
+          "n",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "4s",
+          "5p",
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8s",
+          "9p",
+          "9p",
+          "f",
+          "f"
+        ],
+        "toimen": [
+          "3p",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "8p",
+          "9m",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "2p",
+          "3p",
+          "3s",
+          "4p",
+          "4p",
+          "5m",
+          "5pr",
+          "7m",
+          "7s",
+          "8p",
+          "8s",
+          "9m"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "discard",
+        "tile": "9s"
+      },
+      "ai_choice": {
+        "type": "discard",
+        "tile": "9s"
+      },
+      "loss": 0.0,
+      "player_pt_ev": -2.81065,
+      "ai_pt_ev": -2.81065,
+      "candidates": [
+        {
+          "action": {
+            "type": "discard",
+            "tile": "9s"
+          },
+          "pt_ev": -2.81065,
+          "deal_in_pct": 0.0349,
+          "post_deal_in_pt_ev": -31.85248,
+          "tile_passes_pt_ev": -2.80051
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5p"
+          },
+          "pt_ev": -3.21497,
+          "deal_in_pct": 0.19169,
+          "post_deal_in_pt_ev": -31.79017,
+          "tile_passes_pt_ev": -3.16009
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "1m"
+          },
+          "pt_ev": -3.41971,
+          "deal_in_pct": 0.0317,
+          "post_deal_in_pt_ev": -31.73604,
+          "tile_passes_pt_ev": -3.41073
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2s"
+          },
+          "pt_ev": -3.90697,
+          "deal_in_pct": 0.01528,
+          "post_deal_in_pt_ev": -33.47078,
+          "tile_passes_pt_ev": -3.90245
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "pt_ev": -4.15406,
+          "deal_in_pct": 0.11604,
+          "post_deal_in_pt_ev": -31.92696,
+          "tile_passes_pt_ev": -4.12179
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2m"
+          },
+          "pt_ev": -4.3974,
+          "deal_in_pct": 0.09399,
+          "post_deal_in_pt_ev": -31.78271,
+          "tile_passes_pt_ev": -4.37164
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4m"
+          },
+          "pt_ev": -4.79811,
+          "deal_in_pct": 0.14144,
+          "post_deal_in_pt_ev": -31.80209,
+          "tile_passes_pt_ev": -4.75986
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3m"
+          },
+          "pt_ev": -6.12793,
+          "deal_in_pct": 0.08703,
+          "post_deal_in_pt_ev": -32.04767,
+          "tile_passes_pt_ev": -6.10535
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "pt_ev": -6.80382,
+          "deal_in_pct": 0.12669,
+          "post_deal_in_pt_ev": -31.79543,
+          "tile_passes_pt_ev": -6.77211
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4s"
+          },
+          "pt_ev": -7.16208,
+          "deal_in_pct": 0.10403,
+          "post_deal_in_pt_ev": -31.82845,
+          "tile_passes_pt_ev": -7.13639
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 8,
+      "wall_remaining": 44,
+      "trigger": "draw",
+      "trigger_actor": "自分",
+      "trigger_tile": "6p"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "1m",
+        "2m",
+        "2m",
+        "3m",
+        "4m",
+        "5p",
+        "2s",
+        "3s",
+        "4s",
+        "5s",
+        "6p"
+      ],
+      "melds": [
+        {
+          "type": "pon",
+          "tiles": [
+            "c",
+            "c",
+            "c"
+          ],
+          "called": "c",
+          "from": "下家"
+        }
+      ],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "e",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "2p",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": true,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": "自分"
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "4s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "3m",
+          "4s",
+          "c",
+          "e",
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1s",
+          "2s",
+          "7s",
+          "9m",
+          "9s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "w",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "8p",
+          "e",
+          "n",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "5p",
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "7s",
+          "8s",
+          "9p",
+          "9p",
+          "f",
+          "f"
+        ],
+        "toimen": [
+          "3p",
+          "3s",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "8p",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "2p",
+          "3p",
+          "3s",
+          "4p",
+          "4p",
+          "5m",
+          "5pr",
+          "6p",
+          "7m",
+          "7s",
+          "8s",
+          "9m"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "discard",
+        "tile": "2m"
+      },
+      "ai_choice": {
+        "type": "discard",
+        "tile": "2s"
+      },
+      "loss": 0.8943,
+      "player_pt_ev": -1.59801,
+      "ai_pt_ev": -0.70371,
+      "candidates": [
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2s"
+          },
+          "pt_ev": -0.70371,
+          "deal_in_pct": 0.1521,
+          "post_deal_in_pt_ev": -31.66179,
+          "tile_passes_pt_ev": -0.65655
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "1m"
+          },
+          "pt_ev": -0.72898,
+          "deal_in_pct": 0.05425,
+          "post_deal_in_pt_ev": -31.73605,
+          "tile_passes_pt_ev": -0.71215
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "pt_ev": -0.76191,
+          "deal_in_pct": 0.32745,
+          "post_deal_in_pt_ev": -31.66843,
+          "tile_passes_pt_ev": -0.66037
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2m"
+          },
+          "pt_ev": -1.59801,
+          "deal_in_pct": 0.20172,
+          "post_deal_in_pt_ev": -31.70391,
+          "tile_passes_pt_ev": -1.53716
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4m"
+          },
+          "pt_ev": -1.74873,
+          "deal_in_pct": 0.3062,
+          "post_deal_in_pt_ev": -31.71843,
+          "tile_passes_pt_ev": -1.65668
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "6p"
+          },
+          "pt_ev": -3.64457,
+          "deal_in_pct": 0.46217,
+          "post_deal_in_pt_ev": -31.68758,
+          "tile_passes_pt_ev": -3.51437
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5p"
+          },
+          "pt_ev": -3.78423,
+          "deal_in_pct": 0.28162,
+          "post_deal_in_pt_ev": -31.67477,
+          "tile_passes_pt_ev": -3.70546
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3m"
+          },
+          "pt_ev": -3.83916,
+          "deal_in_pct": 0.15022,
+          "post_deal_in_pt_ev": -32.09072,
+          "tile_passes_pt_ev": -3.79666
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "pt_ev": -4.98069,
+          "deal_in_pct": 0.24715,
+          "post_deal_in_pt_ev": -31.69893,
+          "tile_passes_pt_ev": -4.91449
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4s"
+          },
+          "pt_ev": -5.76405,
+          "deal_in_pct": 0.07652,
+          "post_deal_in_pt_ev": -32.72083,
+          "tile_passes_pt_ev": -5.74341
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 9,
+      "wall_remaining": 40,
+      "trigger": "draw",
+      "trigger_actor": "自分",
+      "trigger_tile": "5s"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "1m",
+        "2m",
+        "3m",
+        "4m",
+        "5p",
+        "6p",
+        "2s",
+        "3s",
+        "4s",
+        "5s",
+        "5s"
+      ],
+      "melds": [
+        {
+          "type": "pon",
+          "tiles": [
+            "c",
+            "c",
+            "c"
+          ],
+          "called": "c",
+          "from": "下家"
+        }
+      ],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "e",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "2p",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "2m",
+          "tsumogiri": false,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": "自分"
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "4s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "3m",
+          "4s",
+          "7s",
+          "c",
+          "e",
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "1s",
+          "2s",
+          "7s",
+          "9m",
+          "9s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "w",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "2p",
+          "8p",
+          "e",
+          "n",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "5p",
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8p",
+          "8s",
+          "9p",
+          "9p",
+          "f",
+          "f"
+        ],
+        "toimen": [
+          "3p",
+          "3s",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "8p",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "3p",
+          "3s",
+          "4p",
+          "4p",
+          "5m",
+          "5m",
+          "5pr",
+          "6p",
+          "7m",
+          "7s",
+          "8s",
+          "9m"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "discard",
+        "tile": "1m"
+      },
+      "ai_choice": {
+        "type": "discard",
+        "tile": "1m"
+      },
+      "loss": 0.0,
+      "player_pt_ev": 3.20585,
+      "ai_pt_ev": 3.20585,
+      "candidates": [
+        {
+          "action": {
+            "type": "discard",
+            "tile": "1m"
+          },
+          "pt_ev": 3.20585,
+          "deal_in_pct": 0.0,
+          "post_deal_in_pt_ev": null,
+          "tile_passes_pt_ev": null
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4m"
+          },
+          "pt_ev": 3.03648,
+          "deal_in_pct": 0.46987,
+          "post_deal_in_pt_ev": -31.88531,
+          "tile_passes_pt_ev": 3.20134
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2s"
+          },
+          "pt_ev": -3.22387,
+          "deal_in_pct": 0.27534,
+          "post_deal_in_pt_ev": -31.96325,
+          "tile_passes_pt_ev": -3.14452
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "pt_ev": -3.24587,
+          "deal_in_pct": 0.53203,
+          "post_deal_in_pt_ev": -31.88349,
+          "tile_passes_pt_ev": -3.09269
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "6p"
+          },
+          "pt_ev": -3.52817,
+          "deal_in_pct": 0.83229,
+          "post_deal_in_pt_ev": -31.82165,
+          "tile_passes_pt_ev": -3.29071
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5p"
+          },
+          "pt_ev": -3.65202,
+          "deal_in_pct": 0.46226,
+          "post_deal_in_pt_ev": -31.62747,
+          "tile_passes_pt_ev": -3.5221
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2m"
+          },
+          "pt_ev": -4.06294,
+          "deal_in_pct": 0.32386,
+          "post_deal_in_pt_ev": -31.90306,
+          "tile_passes_pt_ev": -3.97248
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4s"
+          },
+          "pt_ev": -4.60015,
+          "deal_in_pct": 0.17299,
+          "post_deal_in_pt_ev": -32.97151,
+          "tile_passes_pt_ev": -4.55098
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "pt_ev": -5.45267,
+          "deal_in_pct": 0.44757,
+          "post_deal_in_pt_ev": -31.90209,
+          "tile_passes_pt_ev": -5.33376
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3m"
+          },
+          "pt_ev": -6.05427,
+          "deal_in_pct": 0.28216,
+          "post_deal_in_pt_ev": -32.33239,
+          "tile_passes_pt_ev": -5.97992
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 9,
+      "wall_remaining": 37,
+      "trigger": "opponent_discard",
+      "trigger_actor": "上家",
+      "trigger_tile": "3s"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "2m",
+        "3m",
+        "4m",
+        "5p",
+        "6p",
+        "2s",
+        "3s",
+        "4s",
+        "5s",
+        "5s",
+        "3s"
+      ],
+      "melds": [
+        {
+          "type": "pon",
+          "tiles": [
+            "c",
+            "c",
+            "c"
+          ],
+          "called": "c",
+          "from": "下家"
+        }
+      ],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "e",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "2p",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "2m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "1m",
+          "tsumogiri": false,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": "自分"
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "4s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "3m",
+          "4s",
+          "7s",
+          "8s",
+          "c",
+          "e",
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "6s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "1s",
+          "2s",
+          "6s",
+          "7s",
+          "9m",
+          "9s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "w",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "2p",
+          "3s",
+          "8p",
+          "e",
+          "n",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "5p",
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8m",
+          "8p",
+          "9p",
+          "9p",
+          "f",
+          "f"
+        ],
+        "toimen": [
+          "3p",
+          "3s",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "8p",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "3p",
+          "4p",
+          "4p",
+          "5m",
+          "5m",
+          "5m",
+          "5pr",
+          "6p",
+          "7m",
+          "7s",
+          "8s",
+          "9m"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "skip"
+      },
+      "ai_choice": {
+        "type": "skip"
+      },
+      "loss": 0.0,
+      "player_pt_ev": 2.52143,
+      "ai_pt_ev": 2.52143,
+      "candidates": [
+        {
+          "action": {
+            "type": "skip"
+          },
+          "pt_ev": 2.52143,
+          "deal_in_pct": null,
+          "post_deal_in_pt_ev": null,
+          "tile_passes_pt_ev": null
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "4s",
+              "5s"
+            ],
+            "then_discard": "5s"
+          },
+          "pt_ev": -7.63455,
+          "deal_in_pct": 0.64799,
+          "post_deal_in_pt_ev": -32.19033,
+          "tile_passes_pt_ev": -7.4744
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "4s",
+              "5s"
+            ],
+            "then_discard": "2s"
+          },
+          "pt_ev": -8.00788,
+          "deal_in_pct": 0.45632,
+          "post_deal_in_pt_ev": -32.03315,
+          "tile_passes_pt_ev": -7.89774
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "4s",
+              "5s"
+            ],
+            "then_discard": "6p"
+          },
+          "pt_ev": -8.16717,
+          "deal_in_pct": 1.4932,
+          "post_deal_in_pt_ev": -31.80507,
+          "tile_passes_pt_ev": -7.80886
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "4s",
+              "5s"
+            ],
+            "then_discard": "5p"
+          },
+          "pt_ev": -8.22326,
+          "deal_in_pct": 1.31927,
+          "post_deal_in_pt_ev": -31.58313,
+          "tile_passes_pt_ev": -7.91096
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "2s",
+              "4s"
+            ],
+            "then_discard": "5s"
+          },
+          "pt_ev": -8.46184,
+          "deal_in_pct": 0.64799,
+          "post_deal_in_pt_ev": -32.19033,
+          "tile_passes_pt_ev": -8.30708
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "2s",
+              "4s"
+            ],
+            "then_discard": "6p"
+          },
+          "pt_ev": -8.84081,
+          "deal_in_pct": 1.4932,
+          "post_deal_in_pt_ev": -31.80507,
+          "tile_passes_pt_ev": -8.49271
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "2s",
+              "4s"
+            ],
+            "then_discard": "5p"
+          },
+          "pt_ev": -8.95066,
+          "deal_in_pct": 1.31927,
+          "post_deal_in_pt_ev": -31.58313,
+          "tile_passes_pt_ev": -8.64809
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "2s",
+              "4s"
+            ],
+            "then_discard": "4m"
+          },
+          "pt_ev": -9.23125,
+          "deal_in_pct": 0.8606,
+          "post_deal_in_pt_ev": -31.90218,
+          "tile_passes_pt_ev": -9.03445
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "2s",
+              "4s"
+            ],
+            "then_discard": "3m"
+          },
+          "pt_ev": -9.2437,
+          "deal_in_pct": 0.52116,
+          "post_deal_in_pt_ev": -32.35627,
+          "tile_passes_pt_ev": -9.12261
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "2s",
+              "4s"
+            ],
+            "then_discard": "2m"
+          },
+          "pt_ev": -9.25412,
+          "deal_in_pct": 0.56083,
+          "post_deal_in_pt_ev": -31.95331,
+          "tile_passes_pt_ev": -9.1261
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "4s",
+              "5s"
+            ],
+            "then_discard": "4m"
+          },
+          "pt_ev": -9.38962,
+          "deal_in_pct": 0.8606,
+          "post_deal_in_pt_ev": -31.90218,
+          "tile_passes_pt_ev": -9.19419
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "4s",
+              "5s"
+            ],
+            "then_discard": "3m"
+          },
+          "pt_ev": -9.4003,
+          "deal_in_pct": 0.52116,
+          "post_deal_in_pt_ev": -32.35627,
+          "tile_passes_pt_ev": -9.28003
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "4s",
+              "5s"
+            ],
+            "then_discard": "2m"
+          },
+          "pt_ev": -9.40992,
+          "deal_in_pct": 0.56083,
+          "post_deal_in_pt_ev": -31.95331,
+          "tile_passes_pt_ev": -9.28277
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 10,
+      "wall_remaining": 36,
+      "trigger": "draw",
+      "trigger_actor": "自分",
+      "trigger_tile": "3m"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "2m",
+        "3m",
+        "4m",
+        "5p",
+        "6p",
+        "2s",
+        "3s",
+        "4s",
+        "5s",
+        "5s",
+        "3m"
+      ],
+      "melds": [
+        {
+          "type": "pon",
+          "tiles": [
+            "c",
+            "c",
+            "c"
+          ],
+          "called": "c",
+          "from": "下家"
+        }
+      ],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "e",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "2p",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "2m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "1m",
+          "tsumogiri": false,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": "自分"
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "4s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "3m",
+          "4s",
+          "7s",
+          "8s",
+          "c",
+          "e",
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "6s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "1s",
+          "2s",
+          "6s",
+          "7s",
+          "9m",
+          "9s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "w",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "2p",
+          "3s",
+          "8p",
+          "e",
+          "n",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "5p",
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8m",
+          "8p",
+          "9p",
+          "9p",
+          "f",
+          "f"
+        ],
+        "toimen": [
+          "3p",
+          "3s",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "8p",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "3p",
+          "4p",
+          "4p",
+          "5m",
+          "5m",
+          "5m",
+          "5pr",
+          "6p",
+          "7m",
+          "7s",
+          "8s",
+          "9m"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "discard",
+        "tile": "3m"
+      },
+      "ai_choice": {
+        "type": "discard",
+        "tile": "3m"
+      },
+      "loss": 0.0,
+      "player_pt_ev": 2.50772,
+      "ai_pt_ev": 2.50772,
+      "candidates": [
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3m"
+          },
+          "pt_ev": 2.50772,
+          "deal_in_pct": 0.45707,
+          "post_deal_in_pt_ev": -32.35313,
+          "tile_passes_pt_ev": 2.66779
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2m"
+          },
+          "pt_ev": -3.29365,
+          "deal_in_pct": 0.42069,
+          "post_deal_in_pt_ev": -31.9707,
+          "tile_passes_pt_ev": -3.1725
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4m"
+          },
+          "pt_ev": -3.85454,
+          "deal_in_pct": 0.8476,
+          "post_deal_in_pt_ev": -31.89091,
+          "tile_passes_pt_ev": -3.61487
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2s"
+          },
+          "pt_ev": -4.31915,
+          "deal_in_pct": 0.46415,
+          "post_deal_in_pt_ev": -32.0373,
+          "tile_passes_pt_ev": -4.18989
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "pt_ev": -4.36162,
+          "deal_in_pct": 0.66295,
+          "post_deal_in_pt_ev": -32.19304,
+          "tile_passes_pt_ev": -4.17588
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "6p"
+          },
+          "pt_ev": -5.02233,
+          "deal_in_pct": 1.52735,
+          "post_deal_in_pt_ev": -31.80685,
+          "tile_passes_pt_ev": -4.60689
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5p"
+          },
+          "pt_ev": -5.25469,
+          "deal_in_pct": 1.34951,
+          "post_deal_in_pt_ev": -31.58508,
+          "tile_passes_pt_ev": -4.8945
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4s"
+          },
+          "pt_ev": -5.51404,
+          "deal_in_pct": 0.31126,
+          "post_deal_in_pt_ev": -33.05736,
+          "tile_passes_pt_ev": -5.42804
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "pt_ev": -6.71475,
+          "deal_in_pct": 0.0,
+          "post_deal_in_pt_ev": null,
+          "tile_passes_pt_ev": null
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 11,
+      "wall_remaining": 32,
+      "trigger": "draw",
+      "trigger_actor": "自分",
+      "trigger_tile": "5mr"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "2m",
+        "3m",
+        "4m",
+        "5p",
+        "6p",
+        "2s",
+        "3s",
+        "4s",
+        "5s",
+        "5s",
+        "5mr"
+      ],
+      "melds": [
+        {
+          "type": "pon",
+          "tiles": [
+            "c",
+            "c",
+            "c"
+          ],
+          "called": "c",
+          "from": "下家"
+        }
+      ],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "e",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "2p",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "2m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "1m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "3m",
+          "tsumogiri": true,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": "自分"
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "4s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "3m",
+          "3p",
+          "4s",
+          "7s",
+          "8s",
+          "c",
+          "e",
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "6s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "1s",
+          "2s",
+          "6s",
+          "7s",
+          "9m",
+          "9s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "w",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "2p",
+          "3s",
+          "8p",
+          "9m",
+          "e",
+          "n",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "5p",
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8m",
+          "8p",
+          "9p",
+          "9p",
+          "f",
+          "f"
+        ],
+        "toimen": [
+          "3p",
+          "3s",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "8p",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "3p",
+          "4p",
+          "4p",
+          "5m",
+          "5m",
+          "5m",
+          "5pr",
+          "6p",
+          "7m",
+          "7p",
+          "7s",
+          "8s"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "discard",
+        "tile": "2m"
+      },
+      "ai_choice": {
+        "type": "discard",
+        "tile": "2m"
+      },
+      "loss": 0.0,
+      "player_pt_ev": 6.72639,
+      "ai_pt_ev": 6.72639,
+      "candidates": [
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2m"
+          },
+          "pt_ev": 6.72639,
+          "deal_in_pct": 0.60803,
+          "post_deal_in_pt_ev": -32.0654,
+          "tile_passes_pt_ev": 6.9637
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5mr"
+          },
+          "pt_ev": 1.3038,
+          "deal_in_pct": 1.74347,
+          "post_deal_in_pt_ev": -41.66073,
+          "tile_passes_pt_ev": 2.06617
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2s"
+          },
+          "pt_ev": -1.70165,
+          "deal_in_pct": 0.74247,
+          "post_deal_in_pt_ev": -32.01788,
+          "tile_passes_pt_ev": -1.47488
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "pt_ev": -1.8121,
+          "deal_in_pct": 0.91003,
+          "post_deal_in_pt_ev": -32.23692,
+          "tile_passes_pt_ev": -1.53268
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "6p"
+          },
+          "pt_ev": -2.6521,
+          "deal_in_pct": 1.77682,
+          "post_deal_in_pt_ev": -31.99331,
+          "tile_passes_pt_ev": -2.12133
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5p"
+          },
+          "pt_ev": -2.79517,
+          "deal_in_pct": 1.84137,
+          "post_deal_in_pt_ev": -31.5882,
+          "tile_passes_pt_ev": -2.25504
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3m"
+          },
+          "pt_ev": -3.08803,
+          "deal_in_pct": 0.63055,
+          "post_deal_in_pt_ev": -32.58463,
+          "tile_passes_pt_ev": -2.90086
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4s"
+          },
+          "pt_ev": -3.20715,
+          "deal_in_pct": 0.48975,
+          "post_deal_in_pt_ev": -33.19328,
+          "tile_passes_pt_ev": -3.05957
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "pt_ev": -4.5741,
+          "deal_in_pct": 0.67104,
+          "post_deal_in_pt_ev": -31.34455,
+          "tile_passes_pt_ev": -4.39325
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4m"
+          },
+          "pt_ev": -4.62804,
+          "deal_in_pct": 1.24757,
+          "post_deal_in_pt_ev": -31.97107,
+          "tile_passes_pt_ev": -4.2826
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 11,
+      "wall_remaining": 29,
+      "trigger": "opponent_discard",
+      "trigger_actor": "上家",
+      "trigger_tile": "2m"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "3m",
+        "4m",
+        "5mr",
+        "5p",
+        "6p",
+        "2s",
+        "3s",
+        "4s",
+        "5s",
+        "5s",
+        "2m"
+      ],
+      "melds": [
+        {
+          "type": "pon",
+          "tiles": [
+            "c",
+            "c",
+            "c"
+          ],
+          "called": "c",
+          "from": "下家"
+        }
+      ],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "e",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "2p",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "2m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "1m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "3m",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "2m",
+          "tsumogiri": false,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": "自分"
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "4s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "1p",
+          "3m",
+          "3p",
+          "4s",
+          "7s",
+          "8s",
+          "c",
+          "e",
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "6s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "1s",
+          "2s",
+          "6s",
+          "7s",
+          "9m",
+          "9s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "w",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "2m",
+          "2p",
+          "3s",
+          "8p",
+          "9m",
+          "e",
+          "n",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "5p",
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8m",
+          "8p",
+          "9p",
+          "9p",
+          "f",
+          "f"
+        ],
+        "toimen": [
+          "3p",
+          "3s",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "8p",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "3p",
+          "4p",
+          "4p",
+          "5m",
+          "5m",
+          "5m",
+          "5pr",
+          "6p",
+          "7m",
+          "7p",
+          "7s",
+          "8s"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "skip"
+      },
+      "ai_choice": {
+        "type": "skip"
+      },
+      "loss": 0.0,
+      "player_pt_ev": 6.71431,
+      "ai_pt_ev": 6.71431,
+      "candidates": [
+        {
+          "action": {
+            "type": "skip"
+          },
+          "pt_ev": 6.71431,
+          "deal_in_pct": null,
+          "post_deal_in_pt_ev": null,
+          "tile_passes_pt_ev": null
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "3m",
+              "4m"
+            ],
+            "then_discard": "2s"
+          },
+          "pt_ev": -4.64005,
+          "deal_in_pct": 0.98217,
+          "post_deal_in_pt_ev": -32.06702,
+          "tile_passes_pt_ev": -4.368
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "3m",
+              "4m"
+            ],
+            "then_discard": "5s"
+          },
+          "pt_ev": -4.64922,
+          "deal_in_pct": 1.20745,
+          "post_deal_in_pt_ev": -32.30188,
+          "tile_passes_pt_ev": -4.31125
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "3m",
+              "4m"
+            ],
+            "then_discard": "6p"
+          },
+          "pt_ev": -4.83781,
+          "deal_in_pct": 2.3375,
+          "post_deal_in_pt_ev": -32.03667,
+          "tile_passes_pt_ev": -4.18682
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "3m",
+              "4m"
+            ],
+            "then_discard": "5p"
+          },
+          "pt_ev": -4.89983,
+          "deal_in_pct": 2.36166,
+          "post_deal_in_pt_ev": -31.61599,
+          "tile_passes_pt_ev": -4.25362
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "3m",
+              "4m"
+            ],
+            "then_discard": "4s"
+          },
+          "pt_ev": -7.57456,
+          "deal_in_pct": 0.68217,
+          "post_deal_in_pt_ev": -33.2067,
+          "tile_passes_pt_ev": -7.3985
+        },
+        {
+          "action": {
+            "type": "chi",
+            "with_tiles": [
+              "3m",
+              "4m"
+            ],
+            "then_discard": "3s"
+          },
+          "pt_ev": -8.54216,
+          "deal_in_pct": 0.83467,
+          "post_deal_in_pt_ev": -31.34768,
+          "tile_passes_pt_ev": -8.27917
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 12,
+      "wall_remaining": 28,
+      "trigger": "draw",
+      "trigger_actor": "自分",
+      "trigger_tile": "9m"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "3m",
+        "4m",
+        "5mr",
+        "5p",
+        "6p",
+        "2s",
+        "3s",
+        "4s",
+        "5s",
+        "5s",
+        "9m"
+      ],
+      "melds": [
+        {
+          "type": "pon",
+          "tiles": [
+            "c",
+            "c",
+            "c"
+          ],
+          "called": "c",
+          "from": "下家"
+        }
+      ],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "e",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "2p",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "2m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "1m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "3m",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "2m",
+          "tsumogiri": false,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": "自分"
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "4s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "1p",
+          "3m",
+          "3p",
+          "4s",
+          "7s",
+          "8s",
+          "c",
+          "e",
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "6s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "1s",
+          "2s",
+          "6s",
+          "7s",
+          "9m",
+          "9s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "w",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "2m",
+          "2p",
+          "3s",
+          "8p",
+          "9m",
+          "e",
+          "n",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "5p",
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8m",
+          "8p",
+          "9p",
+          "9p",
+          "f",
+          "f"
+        ],
+        "toimen": [
+          "3p",
+          "3s",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "8p",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "3p",
+          "4p",
+          "4p",
+          "5m",
+          "5m",
+          "5m",
+          "5pr",
+          "6p",
+          "7m",
+          "7p",
+          "7s",
+          "8s"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "discard",
+        "tile": "9m"
+      },
+      "ai_choice": {
+        "type": "discard",
+        "tile": "9m"
+      },
+      "loss": 0.0,
+      "player_pt_ev": 6.69255,
+      "ai_pt_ev": 6.69255,
+      "candidates": [
+        {
+          "action": {
+            "type": "discard",
+            "tile": "9m"
+          },
+          "pt_ev": 6.69255,
+          "deal_in_pct": 0.55262,
+          "post_deal_in_pt_ev": -31.27444,
+          "tile_passes_pt_ev": 6.90353
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2s"
+          },
+          "pt_ev": -1.763,
+          "deal_in_pct": 0.9867,
+          "post_deal_in_pt_ev": -32.07066,
+          "tile_passes_pt_ev": -1.46097
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "pt_ev": -1.97204,
+          "deal_in_pct": 1.21133,
+          "post_deal_in_pt_ev": -32.30152,
+          "tile_passes_pt_ev": -1.60015
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3m"
+          },
+          "pt_ev": -2.37903,
+          "deal_in_pct": 0.79374,
+          "post_deal_in_pt_ev": -32.60653,
+          "tile_passes_pt_ev": -2.13718
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "6p"
+          },
+          "pt_ev": -2.46912,
+          "deal_in_pct": 2.35486,
+          "post_deal_in_pt_ev": -32.03481,
+          "tile_passes_pt_ev": -1.7561
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5p"
+          },
+          "pt_ev": -2.58025,
+          "deal_in_pct": 2.37252,
+          "post_deal_in_pt_ev": -31.61952,
+          "tile_passes_pt_ev": -1.87454
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4s"
+          },
+          "pt_ev": -3.47958,
+          "deal_in_pct": 0.68466,
+          "post_deal_in_pt_ev": -33.20643,
+          "tile_passes_pt_ev": -3.27464
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4m"
+          },
+          "pt_ev": -3.85692,
+          "deal_in_pct": 1.61468,
+          "post_deal_in_pt_ev": -32.00595,
+          "tile_passes_pt_ev": -3.39494
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "pt_ev": -4.67788,
+          "deal_in_pct": 0.84766,
+          "post_deal_in_pt_ev": -31.34849,
+          "tile_passes_pt_ev": -4.44987
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5mr"
+          },
+          "pt_ev": -5.72421,
+          "deal_in_pct": 1.80896,
+          "post_deal_in_pt_ev": -41.71146,
+          "tile_passes_pt_ev": -5.06122
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 12,
+      "wall_remaining": 26,
+      "trigger": "opponent_discard",
+      "trigger_actor": "対面",
+      "trigger_tile": "5s"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "3m",
+        "4m",
+        "5mr",
+        "5p",
+        "6p",
+        "2s",
+        "3s",
+        "4s",
+        "5s",
+        "5s",
+        "5s"
+      ],
+      "melds": [
+        {
+          "type": "pon",
+          "tiles": [
+            "c",
+            "c",
+            "c"
+          ],
+          "called": "c",
+          "from": "下家"
+        }
+      ],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "e",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "2p",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "2m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "1m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "3m",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "2m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9m",
+          "tsumogiri": true,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": "自分"
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "4s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "5p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "1p",
+          "3m",
+          "3p",
+          "4s",
+          "5p",
+          "7s",
+          "8s",
+          "c",
+          "e",
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "6s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "5s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "1s",
+          "2s",
+          "5s",
+          "6s",
+          "7s",
+          "9m",
+          "9s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "w",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "2m",
+          "2p",
+          "3s",
+          "8p",
+          "9m",
+          "e",
+          "n",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8m",
+          "8p",
+          "9p",
+          "9p",
+          "f",
+          "f"
+        ],
+        "toimen": [
+          "3p",
+          "3s",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "8p",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "3p",
+          "4p",
+          "4p",
+          "5m",
+          "5m",
+          "5m",
+          "5pr",
+          "6p",
+          "7m",
+          "7p",
+          "7s",
+          "8s"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "skip"
+      },
+      "ai_choice": {
+        "type": "skip"
+      },
+      "loss": 0.0,
+      "player_pt_ev": 6.37887,
+      "ai_pt_ev": 6.37887,
+      "candidates": [
+        {
+          "action": {
+            "type": "skip"
+          },
+          "pt_ev": 6.37887,
+          "deal_in_pct": null,
+          "post_deal_in_pt_ev": null,
+          "tile_passes_pt_ev": null
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "5s",
+              "5s"
+            ],
+            "then_discard": "5p"
+          },
+          "pt_ev": -0.26534,
+          "deal_in_pct": 1.51616,
+          "post_deal_in_pt_ev": -31.73605,
+          "tile_passes_pt_ev": 0.21916
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "5s",
+              "5s"
+            ],
+            "then_discard": "6p"
+          },
+          "pt_ev": -0.93869,
+          "deal_in_pct": 3.37845,
+          "post_deal_in_pt_ev": -31.92107,
+          "tile_passes_pt_ev": 0.14463
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "5s",
+              "5s"
+            ],
+            "then_discard": "3m"
+          },
+          "pt_ev": -3.89253,
+          "deal_in_pct": 1.26418,
+          "post_deal_in_pt_ev": -32.41098,
+          "tile_passes_pt_ev": -3.52739
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "5s",
+              "5s"
+            ],
+            "then_discard": "4s"
+          },
+          "pt_ev": -4.2726,
+          "deal_in_pct": 0.69014,
+          "post_deal_in_pt_ev": -33.20734,
+          "tile_passes_pt_ev": -3.97083
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "5s",
+              "5s"
+            ],
+            "then_discard": "4m"
+          },
+          "pt_ev": -4.36572,
+          "deal_in_pct": 2.79175,
+          "post_deal_in_pt_ev": -31.84952,
+          "tile_passes_pt_ev": -3.57641
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "5s",
+              "5s"
+            ],
+            "then_discard": "2s"
+          },
+          "pt_ev": -4.47027,
+          "deal_in_pct": 0.53798,
+          "post_deal_in_pt_ev": -31.81192,
+          "tile_passes_pt_ev": -4.19945
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "5s",
+              "5s"
+            ],
+            "then_discard": "3s"
+          },
+          "pt_ev": -4.63213,
+          "deal_in_pct": 1.17661,
+          "post_deal_in_pt_ev": -31.33849,
+          "tile_passes_pt_ev": -4.1999
+        },
+        {
+          "action": {
+            "type": "pon",
+            "with_tiles": [
+              "5s",
+              "5s"
+            ],
+            "then_discard": "5mr"
+          },
+          "pt_ev": -6.57748,
+          "deal_in_pct": 3.7113,
+          "post_deal_in_pt_ev": -41.41505,
+          "tile_passes_pt_ev": -5.04706
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 13,
+      "wall_remaining": 24,
+      "trigger": "draw",
+      "trigger_actor": "自分",
+      "trigger_tile": "8s"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "3m",
+        "4m",
+        "5mr",
+        "5p",
+        "6p",
+        "2s",
+        "3s",
+        "4s",
+        "5s",
+        "5s",
+        "8s"
+      ],
+      "melds": [
+        {
+          "type": "pon",
+          "tiles": [
+            "c",
+            "c",
+            "c"
+          ],
+          "called": "c",
+          "from": "下家"
+        }
+      ],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "e",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "2p",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "2m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "1m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "3m",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "2m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9m",
+          "tsumogiri": true,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": "自分"
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "4s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "5p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "1p",
+          "3m",
+          "3p",
+          "4s",
+          "5p",
+          "7s",
+          "8s",
+          "c",
+          "e",
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "6s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "5s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "1s",
+          "2s",
+          "5s",
+          "6s",
+          "7s",
+          "9m",
+          "9s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "w",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "2m",
+          "2p",
+          "3s",
+          "8p",
+          "9m",
+          "c",
+          "e",
+          "n",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8m",
+          "8p",
+          "9p",
+          "9p",
+          "f",
+          "f"
+        ],
+        "toimen": [
+          "3p",
+          "3s",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "8p",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "3p",
+          "4p",
+          "4p",
+          "5m",
+          "5m",
+          "5m",
+          "5pr",
+          "6p",
+          "7m",
+          "7p",
+          "7s",
+          "8s"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "discard",
+        "tile": "8s"
+      },
+      "ai_choice": {
+        "type": "discard",
+        "tile": "8s"
+      },
+      "loss": 0.0,
+      "player_pt_ev": 6.34498,
+      "ai_pt_ev": 6.34498,
+      "candidates": [
+        {
+          "action": {
+            "type": "discard",
+            "tile": "8s"
+          },
+          "pt_ev": 6.34498,
+          "deal_in_pct": 0.35635,
+          "post_deal_in_pt_ev": -33.25243,
+          "tile_passes_pt_ev": 6.48659
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "2s"
+          },
+          "pt_ev": -1.89142,
+          "deal_in_pct": 0.90431,
+          "post_deal_in_pt_ev": -32.48391,
+          "tile_passes_pt_ev": -1.61224
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5s"
+          },
+          "pt_ev": -1.93461,
+          "deal_in_pct": 0.60797,
+          "post_deal_in_pt_ev": -33.47078,
+          "tile_passes_pt_ev": -1.7417
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3m"
+          },
+          "pt_ev": -2.37246,
+          "deal_in_pct": 1.3276,
+          "post_deal_in_pt_ev": -32.46162,
+          "tile_passes_pt_ev": -1.96762
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5p"
+          },
+          "pt_ev": -3.05901,
+          "deal_in_pct": 1.80534,
+          "post_deal_in_pt_ev": -32.01392,
+          "tile_passes_pt_ev": -2.52666
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "6p"
+          },
+          "pt_ev": -3.08291,
+          "deal_in_pct": 3.47305,
+          "post_deal_in_pt_ev": -31.96329,
+          "tile_passes_pt_ev": -2.04379
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4s"
+          },
+          "pt_ev": -3.47114,
+          "deal_in_pct": 0.76255,
+          "post_deal_in_pt_ev": -33.23236,
+          "tile_passes_pt_ev": -3.24245
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "4m"
+          },
+          "pt_ev": -3.9462,
+          "deal_in_pct": 2.86495,
+          "post_deal_in_pt_ev": -31.89094,
+          "tile_passes_pt_ev": -3.12199
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "3s"
+          },
+          "pt_ev": -4.98503,
+          "deal_in_pct": 1.17661,
+          "post_deal_in_pt_ev": -31.33849,
+          "tile_passes_pt_ev": -4.67126
+        },
+        {
+          "action": {
+            "type": "discard",
+            "tile": "5mr"
+          },
+          "pt_ev": -6.24357,
+          "deal_in_pct": 3.80017,
+          "post_deal_in_pt_ev": -41.46907,
+          "tile_passes_pt_ev": -4.85206
+        }
+      ]
+    },
+    "commentary": null
+  },
+  {
+    "meta": {
+      "engine": "Akochan",
+      "kyoku": "東1局",
+      "honba": 0,
+      "kyotaku": 0,
+      "dora_indicators": [
+        "e"
+      ]
+    },
+    "situation": {
+      "turn": 13,
+      "wall_remaining": 22,
+      "trigger": "opponent_discard",
+      "trigger_actor": "対面",
+      "trigger_tile": "4p"
+    },
+    "self": {
+      "wind": "east",
+      "is_dealer": true,
+      "score": 25000,
+      "hand_with_trigger_tile": [
+        "3m",
+        "4m",
+        "5mr",
+        "5p",
+        "6p",
+        "2s",
+        "3s",
+        "4s",
+        "5s",
+        "5s",
+        "4p"
+      ],
+      "melds": [
+        {
+          "type": "pon",
+          "tiles": [
+            "c",
+            "c",
+            "c"
+          ],
+          "called": "c",
+          "from": "下家"
+        }
+      ],
+      "river": [
+        {
+          "tile": "w",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "e",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "8s",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "2p",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "9s",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "2m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "1m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "3m",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "2m",
+          "tsumogiri": false,
+          "riichi": false
+        },
+        {
+          "tile": "9m",
+          "tsumogiri": true,
+          "riichi": false
+        },
+        {
+          "tile": "8s",
+          "tsumogiri": true,
+          "riichi": false
+        }
+      ]
+    },
+    "others": {
+      "shimocha": {
+        "wind": "south",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": "自分"
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "4s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "5p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "1p",
+          "3m",
+          "3p",
+          "4s",
+          "5p",
+          "7s",
+          "8s",
+          "c",
+          "e",
+          "n",
+          "p"
+        ]
+      },
+      "toimen": {
+        "wind": "west",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "6s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "7s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "5s",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "4p",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "1s",
+          "2s",
+          "4p",
+          "5s",
+          "6s",
+          "7s",
+          "9m",
+          "9s",
+          "p"
+        ]
+      },
+      "kamicha": {
+        "wind": "north",
+        "is_dealer": false,
+        "score": 25000,
+        "river": [
+          {
+            "tile": "w",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "1m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "e",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "n",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "w",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "8p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2p",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "3s",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "9m",
+            "tsumogiri": false,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "2m",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          },
+          {
+            "tile": "c",
+            "tsumogiri": true,
+            "riichi": false,
+            "called_by": null
+          }
+        ],
+        "melds": [],
+        "riichi": false,
+        "genbutsu": [
+          "1m",
+          "2m",
+          "2p",
+          "3s",
+          "8p",
+          "9m",
+          "c",
+          "e",
+          "n",
+          "w"
+        ]
+      }
+    },
+    "hidden_info": {
+      "note": "牌譜から復元した他家の手牌。実戦中は見えない情報。助言の根拠にする場合は『結果から見ると』と明示すること。",
+      "hands": {
+        "shimocha": [
+          "6m",
+          "6m",
+          "7m",
+          "7m",
+          "7m",
+          "7p",
+          "7p",
+          "8m",
+          "8p",
+          "9p",
+          "9p",
+          "f",
+          "f"
+        ],
+        "toimen": [
+          "3p",
+          "3s",
+          "4m",
+          "4m",
+          "4p",
+          "4s",
+          "5sr",
+          "6m",
+          "8p",
+          "9p",
+          "9p",
+          "s",
+          "s"
+        ],
+        "kamicha": [
+          "2p",
+          "3p",
+          "4p",
+          "4p",
+          "5m",
+          "5m",
+          "5m",
+          "5pr",
+          "6p",
+          "7m",
+          "7p",
+          "7s",
+          "8s"
+        ]
+      }
+    },
+    "decision": {
+      "player_choice": {
+        "type": "ron"
+      },
+      "ai_choice": {
+        "type": "ron"
+      },
+      "loss": 0.0,
+      "player_pt_ev": 16.96949,
+      "ai_pt_ev": 16.96949,
+      "candidates": [
+        {
+          "action": {
+            "type": "ron"
+          },
+          "pt_ev": 16.96949,
+          "deal_in_pct": null,
+          "post_deal_in_pt_ev": null,
+          "tile_passes_pt_ev": null
+        },
+        {
+          "action": {
+            "type": "skip"
+          },
+          "pt_ev": 5.24723,
+          "deal_in_pct": null,
+          "post_deal_in_pt_ev": null,
+          "tile_passes_pt_ev": null
+        }
+      ]
+    },
+    "commentary": null
+  }
+]
