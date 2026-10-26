@@ -28,7 +28,7 @@ apps/
   v1/            旧版（1局面表示・参照用）
   v2/            現行版（半荘全部表示）
     data/        ダミーのバックエンド返り値、サンプル
-    tools/       ダミーデータ生成スクリプト
+    tools/       入力JSON・ダミーデータの生成スクリプト（Akochanのレポート → 入力JSON）
 prototypes/      開発途中の検証（01: akochan出力からの悪手抽出、02: 画面HTML試作、11: HTML整形、99: 旧ファイル）
 shared/samples/  牌譜URL・バックエンド返り値JSONのサンプル（v1・v2 共通）
 docs/
@@ -37,7 +37,7 @@ docs/
   images/        画面キャプチャ（prototype / v1 / v2 / shared）
 ```
 
-v2 のダミーデータは `prototypes/02_ScreenHTML/template_manyhands_v2.html` から `apps/v2/tools/extract_dummy_backend_response.py` で生成している。
+v2 のダミーデータは、Akochan が出力したレポート（半荘・6局・63局面）から、`apps/v2/tools/build_ai_input.py` で生成している。
 
 バックエンドの返り値の形式は [docs/api/ai-input-format.md](docs/api/ai-input-format.md)（入力JSONの `commentary` にAIのアドバイスを入れたもの）。v2 は、その中から画面に必要な項目だけを読む。
 
