@@ -82,6 +82,8 @@ app = Flask(__name__)
 #     ⚠️ と展開表示の基準（EV_WARNING_THRESHOLD）は変えていない。ワースト5の欄には「ワースト1〜5」の順位を出す。
 #     件数は ADVICE_WORST_N で変えられる。順位は半荘全体（返り値の全局面）で付ける。期待値差が null・0 の局面は対象外。
 #     同じ期待値差の局面は、先に出てくる局面を上位にする。
+#  9. 【今回】局面の見出しのマークを2種類に分けた。ワースト5は ⚠️（MARK_WORST）、それ以外の注意局面は 😕（MARK_WARNING）。
+#     結果画面の上部に、マークの見方を表示する。
 #  8. 【今回】各局面に、4人の河（自分・下家・対面・上家）を表示するようにした。
 #     self.river と others.*.river を読む（rivers_view）。河が無い局面（古い形式など）は、河の欄を出さない。
 #     自分の河にも called_by（誰に鳴かれたか）を持たせた（他家の河と同じ形）。
@@ -121,6 +123,9 @@ VALID_TILES = set(TILE_MAP)
 EV_WARNING_THRESHOLD = 0.15
 # AIのアドバイスを出す局面の数（期待値差の大きい順にワースト何件か）
 ADVICE_WORST_N = 5
+# 局面の見出しのマーク（ワースト5 / それ以外の注意局面）
+MARK_WORST = "⚠️"
+MARK_WARNING = "😕"
 REPORT_TITLE = "牌譜検討"
 AI_LABEL = "AI"                                              # 画面の「AI: 打 ○」の表示名
 
@@ -510,6 +515,7 @@ def build_report(records):
             ["注意局面", f"{warned}/{total}（期待値差 {EV_WARNING_THRESHOLD} 以上）"],
             ["AIアドバイス", f"期待値差の大きい順にワースト{len(ranks)}"],
         ],
+        "marks": {"worst": MARK_WORST, "warning": MARK_WARNING, "worst_n": ADVICE_WORST_N},
         "has_rivers": any(e["rivers"] for e in entries),          # 河の見方の説明を出すか
         "kyokus": list(kyokus.values()),
     }
