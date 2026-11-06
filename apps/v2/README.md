@@ -187,7 +187,7 @@ curl -s -X POST http://127.0.0.1:8080/analyze -F "input_data=https://example.com
 
 - 起動は開発用（`debug=True`）。公開環境ではそのまま使わない。`debug=True` では、コードを保存すると自動で再起動する。
 - 今のバックエンドはダミー。本物をつなぐときは、`app.py` の `call_backend()` の中身だけ差し替える。
-- AIのアドバイス欄は、期待値差（`decision.loss` の絶対値）の大きい順にワースト5の局面にだけ出る（件数は `ADVICE_WORST_N`）。ダミーでは、その5局面にだけ固定文が付く。
+- AIのアドバイス欄は、期待値差（`decision.loss` の絶対値）の大きい順にワースト5の局面にだけ出る（件数は `ADVICE_WORST_N`）。ダミーでは、その5局面の `commentary` に、生成AIで試しに作ったアドバイス文が入っている（文の中身は未検証）。`commentary` が空のワースト5局面には、固定文を入れる。
 - 注意局面の基準は `EV_WARNING_THRESHOLD`（0.15）。
 - バックエンドの返り値の形式は `docs/api/ai-input-format.md`。入力JSONの `commentary` にAIのアドバイスを入れたもの。`app.py` は、その中から画面に必要な項目だけを読む（読む項目の一覧は `app.py` の冒頭コメント）。
 - ダミー（`data/dummy_backend_response.json`）を作り直すときは、リポジトリのルートで次を実行する。実行時には使わない。

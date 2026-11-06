@@ -154,7 +154,7 @@ LEGACY_KEYS = ("tehai", "player_discard", "ai_discard")      # 旧形式（平�
 def dummy_backend_response(source_type, seat):
     """ダミーのバックエンド返り値。半荘全部（9局・109局面）を新形式で返す。
 
-    本物のバックエンドは、AIのアドバイスを commentary に入れて返す。ダミーでは、ワースト5の局面にだけ固定文を入れる。
+    本物のバックエンドは、AIのアドバイスを commentary に入れて返す。ダミーのワースト5には、生成AIで試しに作ったアドバイス文が入っている。commentary が空のワースト5局面にだけ固定文を入れる。
     """
     with open(DUMMY_PATH, "r", encoding="utf-8") as f:
         records = json.load(f)
