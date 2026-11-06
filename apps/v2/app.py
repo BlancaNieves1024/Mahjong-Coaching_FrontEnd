@@ -39,7 +39,7 @@ app = Flask(__name__)
 #   プレイヤーの行動    decision.player_choice
 #   AIの行動            decision.ai_choice
 #   期待値差・注意局面  decision.loss                               絶対値が EV_WARNING_THRESHOLD 以上で注意
-#   AIのアドバイス      commentary                                  注意局面にだけ表示
+#   AIのアドバイス      commentary                                  期待値差の大きい局面ワースト ADVICE_WORST_N（5）件にだけ表示
 #
 #   読まない項目: situation.wall_remaining、self の wind / score / is_dealer、others の河以外、hidden_info、
 #                 decision の candidates と各期待値、meta の engine / dora_indicators / kyotaku
@@ -78,6 +78,12 @@ app = Flask(__name__)
 #     Akochanにある「カン」と「立直宣言つきの打牌」を表せるようにした（行動の種類に追加）。
 #       - カン: {"type": "daiminkan" | "kakan" | "ankan", "tile": ...} → 画面に「大明槓 ○」「加槓 ○」「暗槓 ○」と表示
 #       - 立直宣言つきの打牌: {"type": "discard", "tile": ..., "riichi": true} → 「打 ○ 立直」と表示
+#  8. 【今回】AIアドバイス欄を、注意局面すべてではなく「期待値差（loss の絶対値）の大きい順ワースト5」だけに出すよう変更。
+#     ⚠️ と展開表示の基準（EV_WARNING_THRESHOLD）は変えていない。ワースト5の欄には「ワースト1〜5」の順位を出す。
+#     件数は ADVICE_WORST_N で変えられる。順位は半荘全体（返り値の全局面）で付ける。期待値差が null・0 の局面は対象外。
+#     同じ期待値差の局面は、先に出てくる局面を上位にする。
+#  9. 【今回】局面の見出しのマークを2種類に分けた。ワースト5は ⚠️（MARK_WORST）、それ以外の注意局面は 😕（MARK_WARNING）。
+#     結果画面の上部に、マークの見方を表示する。
 #  8. 【今回】各局面に、4人の河（自分・下家・対面・上家）を表示するようにした。
 #     self.river と others.*.river を読む（rivers_view）。河が無い局面（古い形式など）は、河の欄を出さない。
 #     自分の河にも called_by（誰に鳴かれたか）を持たせた（他家の河と同じ形）。
@@ -115,6 +121,11 @@ VALID_TILES = set(TILE_MAP)
 
 # 期待値差（loss）がこの値以上の局面を「注意」にする（決定事項: 0.15）
 EV_WARNING_THRESHOLD = 0.15
+# AIのアドバイスを出す局面の数（期待値差の大きい順にワースト何件か）
+ADVICE_WORST_N = 5
+# 局面の見出しのマーク（ワースト5 / それ以外の注意局面）
+MARK_WORST = "⚠️"
+MARK_WARNING = "😕"
 REPORT_TITLE = "牌譜検討"
 AI_LABEL = "AI"                                              # 画面の「AI: 打 ○」の表示名
 
@@ -143,16 +154,22 @@ LEGACY_KEYS = ("tehai", "player_discard", "ai_discard")      # 旧形式（平�
 def dummy_backend_response(source_type, seat):
     """ダミーのバックエンド返り値。半荘全部（9局・109局面）を新形式で返す。
 
-    本物のバックエンドは、AIのアドバイスを commentary に入れて返す。ダミーでは、注意局面にだけ固定文を入れる。
+    本物のバックエンドは、AIのアドバイスを commentary に入れて返す。ダミーでは、ワースト5の局面にだけ固定文を入れる。
     """
     with open(DUMMY_PATH, "r", encoding="utf-8") as f:
         records = json.load(f)
-    note = f"【入力ソース: {source_type} / 自家: {seat}番】ここにAIからのコメントが入ります。"
-    for rec in records:
-        loss = rec["decision"]["loss"]
-        if loss is not None and abs(loss) >= EV_WARNING_THRESHOLD and rec.get("commentary") is None:
-            rec["commentary"] = note
+    ranks = worst_ranks([rec["decision"]["loss"] for rec in records])
+    for i, rec in enumerate(records):
+        if i in ranks and rec.get("commentary") is None:
+            rec["commentary"] = f"【入力ソース: {source_type} / 自家: {seat}番】ここにAIからのコメントが入ります。"
     return records
+
+
+def worst_ranks(losses, n=ADVICE_WORST_N):
+    """期待値差のリスト → {局面の番号: ワースト順位(1〜n)}。null・0 は対象外。同じ値なら先の局面が上位"""
+    scored = [(i, abs(l)) for i, l in enumerate(losses) if l is not None and abs(l) > 0]
+    scored.sort(key=lambda x: -x[1])                           # sort は安定なので、同じ値は出現順のまま
+    return {i: rank for rank, (i, _) in enumerate(scored[:n], start=1)}
 
 
 def first_record(obj):
@@ -432,7 +449,7 @@ def rivers_view(rec):
     return out
 
 
-def entry_view(rec, threshold):
+def entry_view(rec, threshold, worst_rank=None):
     """局面1件（新形式）→ 画面用の辞書。画面に必要な項目だけを、JSONから抽出する"""
     sit, me, dec = rec["situation"], rec["self"], rec["decision"]
 
@@ -462,6 +479,7 @@ def entry_view(rec, threshold):
         "loss": loss,
         "is_match": player_choice == ai_choice,
         "is_warning": loss is not None and abs(loss) >= threshold,
+        "worst_rank": worst_rank,                              # AIアドバイスを出すワースト順位（対象外は None）
         "commentary": rec.get("commentary"),
     }
 
@@ -469,7 +487,8 @@ def entry_view(rec, threshold):
 def build_report(records):
     """画面(result_manyhands.html)に渡すJSON全体を作る"""
     kyokus = {}                                                # 局の表示名 → 局。挿入順＝出現順
-    for rec in records:
+    ranks = worst_ranks([rec["decision"]["loss"] for rec in records])
+    for i, rec in enumerate(records):
         title = kyoku_title(rec["meta"])
         if title not in kyokus:
             kyokus[title] = {
@@ -478,7 +497,7 @@ def build_report(records):
                 "end_status": "",                              # 返り値にない（空なら非表示）
                 "entries": [],
             }
-        kyokus[title]["entries"].append(entry_view(rec, EV_WARNING_THRESHOLD))
+        kyokus[title]["entries"].append(entry_view(rec, EV_WARNING_THRESHOLD, ranks.get(i)))
 
     entries = [e for k in kyokus.values() for e in k["entries"]]
     total = len(entries)
@@ -494,7 +513,9 @@ def build_report(records):
             ["局面数", total],
             ["AI一致率", f"{matched}/{total} = {matched / total * 100:.3f}%"],
             ["注意局面", f"{warned}/{total}（期待値差 {EV_WARNING_THRESHOLD} 以上）"],
+            ["AIアドバイス", f"期待値差の大きい順にワースト{len(ranks)}"],
         ],
+        "marks": {"worst": MARK_WORST, "warning": MARK_WARNING, "worst_n": ADVICE_WORST_N},
         "has_rivers": any(e["rivers"] for e in entries),          # 河の見方の説明を出すか
         "kyokus": list(kyokus.values()),
     }
