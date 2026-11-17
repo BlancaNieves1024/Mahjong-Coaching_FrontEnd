@@ -39,10 +39,11 @@ app = Flask(__name__)
 #   プレイヤーの行動    decision.player_choice
 #   AIの行動            decision.ai_choice
 #   期待値差・注意局面  decision.loss                               絶対値が EV_WARNING_THRESHOLD 以上で注意
+#   ドラ                meta.dora_indicators                        表示牌と、その次の牌（ドラ）。カンで増えた局面は局面にも表示
 #   AIのアドバイス      commentary                                  期待値差の大きい局面ワースト ADVICE_WORST_N（5）件にだけ表示
 #
 #   読まない項目: situation.wall_remaining、self の wind / score / is_dealer、others の河以外、hidden_info、
-#                 decision の candidates と各期待値、meta の engine / dora_indicators / kyotaku
+#                 decision の candidates と各期待値、meta の engine / kyotaku
 #                 （読まないので、中身が不正でも検査しない）
 #
 # 行動（player_choice / ai_choice）は {"type": ...} のオブジェクト
@@ -82,6 +83,12 @@ app = Flask(__name__)
 #     ⚠️ と展開表示の基準（EV_WARNING_THRESHOLD）は変えていない。ワースト5の欄には「ワースト1〜5」の順位を出す。
 #     件数は ADVICE_WORST_N で変えられる。順位は半荘全体（返り値の全局面）で付ける。期待値差が null・0 の局面は対象外。
 #     同じ期待値差の局面は、先に出てくる局面を上位にする。
+#  10.【今回】結果画面に、点数・親・自風・オタ風・他家の鳴きを表示するようにした（前回定例のFB）。
+#     局の見出しの下: 場風・自風・オタ風と、局の最初の局面での4人の点数・風・親（wind_roles / seat_view）。
+#     各局面の河の欄: 見出しに風・点数・親を出し、他家は河の下に副露を出す（other_melds_view）。
+#     読む項目: self / others の wind・score・is_dealer、others.*.melds。無い項目は表示しない（検査もしない）。
+#  11.【今回】ドラを表示するようにした。局の見出しの下に、局の最初の局面のドラ表示牌とドラ（dora_view）。
+#     カンでドラ表示牌が増えたときは、増えた最初の局面の手牌の上に、増えたあとのドラ表示牌とドラを出す。
 #  9. 【今回】局面の見出しのマークを2種類に分けた。ワースト5は ⚠️（MARK_WORST）、それ以外の注意局面は 😕（MARK_WARNING）。
 #     結果画面の上部に、マークの見方を表示する。
 #  8. 【今回】各局面に、4人の河（自分・下家・対面・上家）を表示するようにした。
@@ -144,6 +151,9 @@ MELD_FROM = {"上家", "対面", "下家"}
 NESTED_KEYS = ("meta", "situation", "self", "decision")      # 新形式のトップキー
 RIVER_OWNERS = (("self", "自分"), ("shimocha", "下家"), ("toimen", "対面"), ("kamicha", "上家"))   # 河の表示順
 RIVER_PER_ROW = 6                                            # 河は1段に6枚
+WIND_JA = {"east": "東", "south": "南", "west": "西", "north": "北"}   # self.wind / others.*.wind の表示
+SEAT_ORDER = {"自分": 0, "下家": 1, "対面": 2, "上家": 3}      # 自分から見た席の並び（反時計回り）
+SEAT_KEYS = {"shimocha": "下家", "toimen": "対面", "kamicha": "上家"}
 CALLED_BY = {"自分", "下家", "対面", "上家"}
 LEGACY_KEYS = ("tehai", "player_discard", "ai_discard")      # 旧形式（平らな形式）のキー
 
@@ -418,6 +428,65 @@ def meld_view(m):
             "tiles": [{"code": t, "rotated": i == pos, "added": added if i == pos else None} for i, t in enumerate(ordered)]}
 
 
+def relative_from(owner_label, src):
+    """他家の副露の from（自分から見た席）→ その家から見た席（上家・対面・下家）"""
+    if owner_label not in SEAT_ORDER or src not in SEAT_ORDER:
+        return None
+    return {1: "下家", 2: "対面", 3: "上家"}.get((SEAT_ORDER[src] - SEAT_ORDER[owner_label]) % 4)
+
+
+def seat_view(holder, label):
+    """席の情報（風・点数・親）。JSONに無い項目は None（画面に出さない）"""
+    wind = holder.get("wind") if isinstance(holder, dict) else None
+    score = holder.get("score") if isinstance(holder, dict) else None
+    return {"label": label,
+            "wind": WIND_JA.get(wind),
+            "score": score if isinstance(score, int) and not isinstance(score, bool) else None,
+            "is_dealer": bool(holder.get("is_dealer")) if isinstance(holder, dict) else False}
+
+
+def other_melds_view(holder, label):
+    """他家の副露 → 表示用（鳴いた牌を横向きにする。向きはその家から見た出し元で決める）"""
+    out = []
+    for m in holder.get("melds") or []:
+        if not isinstance(m, dict) or not isinstance(m.get("tiles"), list):
+            continue
+        out.append(meld_view({**m, "from": relative_from(label, m.get("from"))}))
+    return out
+
+
+def dora_of(indicator):
+    """ドラ表示牌 → ドラ。数牌は 9 の次が 1、風牌は 東→南→西→北→東、三元牌は 白→發→中→白。赤5は 5 として扱う"""
+    if not isinstance(indicator, str):
+        return None
+    code = indicator[:2] if indicator.endswith("r") else indicator
+    if len(code) == 2 and code[0] in "123456789" and code[1] in "mps":
+        return f"{int(code[0]) % 9 + 1}{code[1]}"
+    for cycle in ("eswn", "pfc"):
+        if code in cycle:
+            return cycle[(cycle.index(code) + 1) % len(cycle)]
+    return None
+
+
+def dora_view(meta):
+    """meta.dora_indicators → [{indicator, dora}]。牌コードとして正しくないものは出さない"""
+    out = []
+    for ind in meta.get("dora_indicators") or []:
+        if isinstance(ind, str) and ind in VALID_TILES:
+            out.append({"indicator": ind, "dora": dora_of(ind)})
+    return out
+
+
+def wind_roles(rec):
+    """場風・自風・オタ風。場風は meta.kyoku の先頭（東1局 → 東）、自風は self.wind"""
+    round_wind = rec["meta"]["kyoku"].strip()[:1]
+    seat_wind = WIND_JA.get(rec["self"].get("wind"))
+    if round_wind not in KYOKU_WINDS or seat_wind is None:
+        return None
+    ota = [w for w in KYOKU_WINDS if w not in (round_wind, seat_wind)]
+    return {"round": round_wind, "seat": seat_wind, "ota": ota, "double": round_wind == seat_wind}
+
+
 def river_note(tile):
     """河の牌1枚に付ける説明（マウスを重ねたときに出る）"""
     parts = []
@@ -445,6 +514,9 @@ def rivers_view(rec):
             t["note"] = river_note(t)
             tiles.append(t)
         out.append({"owner": owner, "label": f"{label}の河", "count": len(tiles),
+                    "seat": seat_view(holder, label),
+                    "melds": [] if owner == "self" else other_melds_view(holder, label),   # 自分の副露は手牌の右に出している
+                    "riichi": bool(holder.get("riichi")) if owner != "self" else False,
                     "rows": [tiles[i:i + RIVER_PER_ROW] for i in range(0, len(tiles), RIVER_PER_ROW)]})
     return out
 
@@ -474,6 +546,7 @@ def entry_view(rec, threshold, worst_rank=None):
         "hand": hand,
         "melds": [meld_view(m) for m in reversed(me.get("melds", []))],      # 新しく鳴いた副露を左に（元のレポートと同じ並び）
         "rivers": rivers_view(rec),
+        "doras": dora_view(rec["meta"]),
         "player_choice": player_choice,
         "ai_choice": ai_choice,
         "loss": loss,
@@ -495,9 +568,16 @@ def build_report(records):
                 "anchor": kyoku_anchor(title, 100 + len(kyokus)),
                 "name": title,
                 "end_status": "",                              # 返り値にない（空なら非表示）
+                "winds": wind_roles(rec),                      # 場風・自風・オタ風（局の最初の局面から）
+                "doras": dora_view(rec["meta"]),               # ドラ表示牌とドラ（局の最初の局面から）
+                "seats": [seat_view(rec["self"] if o == "self" else (rec.get("others") or {}).get(o), l)
+                          for o, l in RIVER_OWNERS],           # 局の最初の局面の点数・風・親
                 "entries": [],
             }
-        kyokus[title]["entries"].append(entry_view(rec, EV_WARNING_THRESHOLD, ranks.get(i)))
+        entry = entry_view(rec, EV_WARNING_THRESHOLD, ranks.get(i))
+        prev = kyokus[title]["entries"][-1]["doras"] if kyokus[title]["entries"] else kyokus[title]["doras"]
+        entry["dora_changed"] = entry["doras"] != prev                  # カンでドラ表示牌が増えた最初の局面
+        kyokus[title]["entries"].append(entry)
 
     entries = [e for k in kyokus.values() for e in k["entries"]]
     total = len(entries)
