@@ -38,6 +38,7 @@ app = Flask(__name__)
 #                       （others は shimocha・toimen・kamicha）      立直宣言牌は横向き、鳴かれた牌は薄く、ツモ切りは下線
 #   プレイヤーの行動    decision.player_choice
 #   AIの行動            decision.ai_choice
+#   受け入れ（待ち牌）  decision.player_choice / ai_choice の acceptance   向聴の説明・受け入れ枚数・牌ごとの残り枚数。無ければ出さない
 #   期待値差・注意局面  decision.loss                               絶対値が EV_WARNING_THRESHOLD 以上で注意
 #   ドラ                meta.dora_indicators                        表示牌と、その次の牌（ドラ）。カンで増えた局面は局面にも表示
 #   AIのアドバイス      commentary                                  期待値差の大きい局面ワースト ADVICE_WORST_N（5）件にだけ表示
@@ -89,6 +90,9 @@ app = Flask(__name__)
 #     読む項目: self / others の wind・score・is_dealer、others.*.melds。無い項目は表示しない（検査もしない）。
 #  11.【今回】ドラを表示するようにした。局の見出しの下に、局の最初の局面のドラ表示牌とドラ（dora_view）。
 #     カンでドラ表示牌が増えたときは、増えた最初の局面の手牌の上に、増えたあとのドラ表示牌とドラを出す。
+#  12.【今回】BEの修正（result_manyhands_BErevised.html）を取り込んだ。行動の後ろに受け入れ情報（acceptance）を表示する。
+#     parse_choice() で acceptance を取り出して検査し（parse_acceptance）、一致判定は acceptance を除いて比べる（same_action）。
+#     ワースト5で commentary が無いときの表示を「AIのアドバイスは取得できませんでした。」に変更（BEの修正どおり）。
 #  9. 【今回】局面の見出しのマークを2種類に分けた。ワースト5は ⚠️（MARK_WORST）、それ以外の注意局面は 😕（MARK_WARNING）。
 #     結果画面の上部に、マークの見方を表示する。
 #  8. 【今回】各局面に、4人の河（自分・下家・対面・上家）を表示するようにした。
@@ -239,7 +243,45 @@ def require_dict(parent, key, path):
     return value
 
 
+def parse_acceptance(acc, path):
+    """受け入れ情報（BEが行動に付ける）→ 画面用の辞書（検査つき）。無ければ None。不正なら ValueError
+
+    {"shanten_desc": "一向聴", "remaining_count": 8, "details": [{"tile": "5m", "remaining": 4}, ...]}
+    """
+    if acc is None:
+        return None
+    if not isinstance(acc, dict):
+        raise ValueError(f"{path} はオブジェクトにしてください: {acc!r}")
+    desc, count, details = acc.get("shanten_desc"), acc.get("remaining_count"), acc.get("details") or []
+    if desc is not None and not isinstance(desc, str):
+        raise ValueError(f"{path}.shanten_desc は文字列にしてください: {desc!r}")
+    if count is not None and (not isinstance(count, int) or isinstance(count, bool) or count < 0):
+        raise ValueError(f"{path}.remaining_count は0以上の整数にしてください: {count!r}")
+    if not isinstance(details, list):
+        raise ValueError(f"{path}.details は配列にしてください: {details!r}")
+    out_details = []
+    for j, d in enumerate(details):
+        if not isinstance(d, dict):
+            raise ValueError(f"{path}.details[{j}] はオブジェクトにしてください: {d!r}")
+        check_tile(d.get("tile"), f"{path}.details[{j}].tile")
+        rem = d.get("remaining")
+        if not isinstance(rem, int) or isinstance(rem, bool) or rem < 0:
+            raise ValueError(f"{path}.details[{j}].remaining は0以上の整数にしてください: {rem!r}")
+        out_details.append({"tile": d["tile"], "remaining": rem})
+    return {"shanten_desc": desc, "remaining_count": count, "details": out_details}
+
+
 def parse_choice(choice, path):
+    """行動 → 画面用の辞書。受け入れ情報（acceptance）があれば付ける（行動の一致判定には使わない）"""
+    out = parse_action(choice, path)
+    if isinstance(choice, dict):
+        acc = parse_acceptance(choice.get("acceptance"), f"{path}.acceptance")
+        if acc:
+            out["acceptance"] = acc
+    return out
+
+
+def parse_action(choice, path):
     """行動 {"type": ...} → 画面用の辞書（検査つき）。不正なら ValueError
 
     {"type":"discard","tile":"6m"} / {"type":"pon","with_tiles":["c","c"],"then_discard":"9s"} /
@@ -521,6 +563,12 @@ def rivers_view(rec):
     return out
 
 
+def same_action(a, b):
+    """プレイヤーとAIの行動が同じか。受け入れ情報（acceptance）は比べない"""
+    strip = lambda c: {k: v for k, v in c.items() if k != "acceptance"}
+    return strip(a) == strip(b)
+
+
 def entry_view(rec, threshold, worst_rank=None):
     """局面1件（新形式）→ 画面用の辞書。画面に必要な項目だけを、JSONから抽出する"""
     sit, me, dec = rec["situation"], rec["self"], rec["decision"]
@@ -550,7 +598,7 @@ def entry_view(rec, threshold, worst_rank=None):
         "player_choice": player_choice,
         "ai_choice": ai_choice,
         "loss": loss,
-        "is_match": player_choice == ai_choice,
+        "is_match": same_action(player_choice, ai_choice),
         "is_warning": loss is not None and abs(loss) >= threshold,
         "worst_rank": worst_rank,                              # AIアドバイスを出すワースト順位（対象外は None）
         "commentary": rec.get("commentary"),
