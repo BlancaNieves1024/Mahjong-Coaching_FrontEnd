@@ -130,6 +130,17 @@
 | ロン | `{"type":"ron"}` | |
 | ツモ | `{"type":"tsumo"}` | ツモ和了。この牌譜には現れず、未確認 |
 
+受け入れ情報（任意。BEが `player_choice` / `ai_choice` に付ける）:
+
+| キー | 型 | 説明 | 例 |
+|---|---|---|---|
+| `acceptance.shanten_desc` | string | 向聴の説明（そのまま表示する） | `"一向聴"` |
+| `acceptance.remaining_count` | int | 受け入れの合計枚数 | `8` |
+| `acceptance.details` | object[] | 受け入れ牌ごとの `tile`（牌コード）と `remaining`（残り枚数） | `[{"tile":"5m","remaining":4}]` |
+
+- 画面は、行動の後ろに「(一向聴 / 受け入れ8枚: 5萬×4 7筒×4)」と表示する。無ければ表示しない。
+- 自分とAIの行動が一致しているかの判定には使わない。
+
 `candidates` の要素:
 
 | キー | 説明 |
@@ -180,6 +191,7 @@
 | 副露 | `self.melds`（`tiles`・`called`・`from`） |
 | 各家の河 | `self.river`、`others.shimocha.river`、`others.toimen.river`、`others.kamicha.river`（`tile`・`tsumogiri`・`riichi`・`called_by`） |
 | プレイヤーの行動・AIの行動 | `decision.player_choice`、`decision.ai_choice` |
+| 受け入れ（待ち牌） | `decision.player_choice.acceptance`、`decision.ai_choice.acceptance` |
 | 期待値差・注意局面 | `decision.loss` |
 | AIのアドバイス | `commentary` |
 
